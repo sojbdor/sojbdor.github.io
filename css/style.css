@@ -1,0 +1,160 @@
+<style>
+     div{ 
+         
+	background-color: #000;
+    width:200px;
+    height:300px;
+    background-position: 50% 50%;
+	margin-top: 25px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	line-height: 18px;
+	text-align: left;
+	margin-left: 25px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+    background-image: url(premierepage/sojbdor.jpg)
+}
+
+
+}
+a:link {
+	color: white
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #666;
+}
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+.landstudies {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFF;
+	font-size: 11px;
+	text-align: justify;
+	line-height: 18px;
+}
+  
+
+
+/*-- ------------- CSS BACKFLIP CARD ---------------- --*/
+
+
+
+
+div.container_trombi{
+	position:relative;
+	width:100%;}
+	
+div.container_trombi div.marge{
+	margin: none;
+    padding: none;}
+
+div.container_trombi div.marge #f1_container{
+  float:left;
+  position:relative;
+  width:  204px;
+  height: 288px;
+  padding: 50px 5px 5px 5px;}
+
+div.container_trombi div.marge #f1_container img:hover{
+    border: black 4px solid;}
+
+div.container_trombi div.marge #f1_card{
+  transform-style: preserve-3d;
+  transition: all 0.2s linear;}
+
+div.container_trombi div.marge #f1_container:hover #f1_card{
+  transform: rotateY(180deg);
+  border-radius:4%;}
+
+#nav{
+	padding: 0; margin: 0;}
+
+#nav li{
+	display: inline;
+	list-style: none;}
+
+#nav{
+	padding: 0; margin: 0;
+	text-align: center;}
+#nav li{
+	display: inline;
+	list-style: none;}
+
+#nav a{
+	display:inline-block;
+	margin: 0 30px;}
+
+div.container_trombi div.marge .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius:4%;}
+
+div.container_trombi div.marge .face.back{
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  background-image:#ffffff;
+  width:204px;
+  height:288px;
+  border-radius:4%;}
+
+div.container_trombi div.marge .face.back img{
+    border:red 4px solid;}
+
+div.container_trombi div.marge .face.back h1,
+div.container_trombi div.marge .face.back2 h1,
+div.container_trombi div.marge .face.back3 h1,
+div.container_trombi div.marge .face.back4 h1,
+div.container_trombi div.marge .face.back5 h1{
+	font-family:'Cuprum';
+	font-size:19px;
+	color:#d2c2b4;}
+
+
+div.container_trombi div.marge .face.back p,
+div.container_trombi div.marge .face.back2 p,
+div.container_trombi div.marge .face.back3 p,
+div.container_trombi div.marge .face.back4 p,
+div.container_trombi div.marge .face.back5 p{
+	font-family:'Play';
+	padding:0 10px 15px 10px;
+	text-align:justify;}
+
+div.container_trombi div.marge .face.back a,
+div.container_trombi div.marge .face.back2 a,
+div.container_trombi div.marge .face.back3 a,
+div.container_trombi div.marge .face.back4 a,
+div.container_trombi div.marge .face.back5 a{
+	outline:none;
+	text-align:right;
+	text-decoration:none;
+	color:#d2c2b4;}
+	
+div.container_trombi div.marge .face.back h1 span:hover,
+div.container_trombi div.marge .face.back2 h1 span:hover,
+div.container_trombi div.marge .face.back3 h1 span:hover,
+div.container_trombi div.marge .face.back4 h1 span:hover,
+div.container_trombi div.marge .face.back5 h1 span:hover{
+	color:#ff9c00;}
+
+/* <!--- ---------------------    FIN CSS BACKFLIP CARD     ----------------------- ----- > */
+    
+
+
+
+
+
