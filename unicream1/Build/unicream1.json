@@ -1,7 +1,7 @@
 {
 "companyName": "julia vision",
 "productName": "sojbdor",
-"dataUrl": "https://github.com/vied12/unicream/releases/download/v1.0.0/unicream1.data.unityweb",
+"dataUrl": "https://d2sujuk31swdqw.cloudfront.net/unicream1.data.unityweb",
 "wasmCodeUrl": "unicream1.wasm.code.unityweb",
 "wasmFrameworkUrl": "unicream1.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
