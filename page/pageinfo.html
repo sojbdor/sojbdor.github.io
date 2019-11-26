@@ -13,9 +13,9 @@
     
 <h1 class="vk-title">INFO</h1>   
     
+<marquee behavior="slide" direction="left">Contact : sojbdor@gmail.com</marquee>
 
-    <marquee behavior="scroll" direction="left">Contact : sojbdor@gmail.com</marquee>
-    <blockquote><div id="background">
+    <blockquote>
     <p id="bg-text">
     <p align="left">Charlène Levasseur is an artist and animator residing in Berlin. Born and rised in the South West of France, she graduated from the institute superior of Art of Toulouse in 2018, where she studied the painting and media program. While in isdaT, she discovered animation through the Adobe After Effects and Avid Media Composer. She quickly became obsessed with the art of moving images and has been involved in the creation of animated work since 2017. Her enthusiasm led her to the creation of a label of art and music devoted to the screening of short animated independent videos and sounds, with 9 artists from around the France. In 2019 Charlène Levasseur relocated to Berlin to take part in the art scene of Germany.</p>
     <p>As an artist who is excited about sound and visuals alike her recent films are created in a pursuit of a synesthetic relationship between image and sound. Her last abstract film is <em>Don’t Walk Alone</em> in collaboration with a sound artist Pablo Mateo.</p>
@@ -84,8 +84,32 @@ a:active {
 	text-align: justify;
 	line-height: 18px;
 }
+  <style style="text/css">
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-left p {
+  animation: slide-left 10s;
+}
 
-  
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+</style>
+
+<div class="slide-left">
+<p>CSS slide-in text...</p>
+</div>
+
 </style>
 
 
