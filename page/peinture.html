@@ -89,15 +89,34 @@ color: #ffffff;
   
 }
   
-blockquote
+
+	
+	blockquote
 {
-  margin-left:170px;
-  font-family: OCR A Std, monospace;
-  padding: 8px;
-  min-height: 44px;
+  position:relative;
+  font-family:OCR A Std, monospace;
+  padding:8px;
+  margin:8px 8px 8px 180px;
+  color:black;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  background:white;
   border:2px solid black;
-  border-radius:6px;  
-  z-index:1;
+  min-height:64px;
+}
+
+blockquote:after 
+{
+  content:"";
+  position:absolute;
+  left:-48px; 
+  display:block; 
+  top:48px; 
+  background: url('https://www.xul.fr/css/images/bubble.png') no-repeat;
+  width:48px;
+  height:20px;
+  padding:0;
 }
 </style>
 </html>
