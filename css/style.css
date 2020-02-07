@@ -1,36 +1,23 @@
-#finder1a {
-    float: left;
-    width: 200px;
+élément {
 }
-#finder1a {
-    border-right: 1px solid 
-    #ddd;
-}
-#finder1a {
-    display: block;
+#menu2 {
+    width: 150px;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    height: auto;
     position: fixed;
-    height: 100% !important;
-    overflow: hidden;
-    margin-top: -70px;
-    width: 150px !important;
-    padding-top: 50px;
-    border-right: 1px solid #ddd;
-    padding-left: 15px;
-}
-#finder1a {
-    float: left;
-    width: 200px;
+    padding-top: 20px;
+    border-right: 1px solid 
+#bbb;
+background-color:
+    #e8ecf1;
 }
 * {
     margin: 0;
-        margin-top: 0px;
     padding: 0;
         padding-top: 0px;
-        padding-left: 0px;
-}
-.container {
-    color: 
-    #000;
 }
 body {
     font-size: 10px;
