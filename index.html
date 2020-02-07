@@ -55,7 +55,7 @@ body * {
 nav menuitem {
    position:relative;
    display:block;
-   opacity:0;
+   opacity:0,4;
    cursor:pointer;
 }
 
@@ -79,9 +79,6 @@ nav > menu > menuitem menuitem menu {
    transform:translateX(100%);
    top:0; right:0;
 }
-/* User Styles Below Not Required */
-/* User Styles Below Not Required */
-/* User Styles Below Not Required */
 
 nav { 
    margin-top: 40px;
@@ -89,16 +86,16 @@ nav {
 }
 
 nav a {
-   background:#75F;
-   color:#FFF;
+   background:#a1a1a1;
+   color:#000000;
    min-width:190px;
    transition: background 0.5s, color 0.5s, transform 0.5s;
    margin:0px 6px 6px 0px;
-   padding:20px 40px;
+   padding:10px 40px;
    box-sizing:border-box;
-   border-radius:3px;
+   border-radius:0px;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-   position:relative;
+   position:fixed;
 }
 
 nav a:hover:before {
