@@ -3,13 +3,10 @@
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>	
 <title>Charlène Levasseur</title>
-
-
-
 <nav>
 		<menu>
 			<menuitem id="demo1">
-				<a></a>
+				<a>drop</a>
 				<menu>
 					<menuitem><a>about</a></menuitem>
                <menuitem>
@@ -42,14 +39,13 @@
 		</menu>
 	</nav>
 
-
-
 <style>
+
 html, body{
    padding:0px;
    margin:0px;
-   background:#000000;
-   font-family: "Lucida Grande";
+   background:#191A1D;
+   font-family: 'Karla', sans-serif;
    width:100vw;
 }
 body * {
@@ -97,15 +93,15 @@ nav {
 }
 
 nav a {
-   background:#a1a1a1;
-   color:#white;
+   background:#75F;
+   color:#FFF;
    min-width:190px;
    transition: background 0.5s, color 0.5s, transform 0.5s;
    margin:0px 6px 6px 0px;
-   padding:10px 40px;
+   padding:20px 40px;
    box-sizing:border-box;
-   border-radius:0px;
-   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+   border-radius:3px;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
    position:relative;
 }
 
@@ -129,9 +125,9 @@ nav > menu > menuitem > a + menu:after{
 nav menuitem > menu > menuitem > a + menu:after{ 
    content: '';
    position:absolute;
-   border:5px solid transparent;
-   border-left: 5px solid white;
-   top: 5px;
+   border:10px solid transparent;
+   border-left: 10px solid white;
+   top: 20px;
    left:-180px;
    transition: opacity 0.6, transform 0s;
 }
@@ -139,18 +135,18 @@ nav menuitem > menu > menuitem > a + menu:after{
 nav > menu > menuitem > menu > menuitem{
    transition: transform 0.6s, opacity 0.6s;
    transform:translateY(150%);
-   opacity:0,7;
+   opacity:0;
 }
 nav > menu > menuitem:hover > menu > menuitem,
 nav > menu > menuitem.hover > menu > menuitem{
    transform:translateY(0%);
-   opacity: 0,4;
+   opacity: 1;
 }
 
 menuitem > menu > menuitem > menu > menuitem{
    transition: transform 0.6s, opacity 0.6s;
    transform:translateX(195px) translateY(0%);
-   opacity: 1;
+   opacity: 0;
 } 
 menuitem > menu > menuitem:hover > menu > menuitem,  
 menuitem > menu > menuitem.hover > menu > menuitem{  
@@ -159,4 +155,3 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 }
 
 </style>
-</html>
