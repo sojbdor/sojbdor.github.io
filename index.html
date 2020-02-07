@@ -57,8 +57,8 @@
 html, body{
    padding:0px;
    margin:0px;
-   background:#000000;
-   font-family: Lucida Grande;
+   background:##a1a1a1;
+   font-family: "Lucida Grande";
    width:100vw;
 }
 body * {
@@ -72,8 +72,8 @@ body * {
 nav menuitem {
    position:relative;
    display:block;
-   opacity:0,4;
-
+   opacity:0;
+   cursor:pointer;
 }
 
 nav menuitem > menu {
@@ -82,7 +82,7 @@ nav menuitem > menu {
 }
 nav > menu { display:flex; }
 
-nav > menu > menuitem { pointer-events: all; opacity:0; }
+nav > menu > menuitem { pointer-events: all; opacity:1; }
 menu menuitem a { white-space:nowrap; display:block; }
    
 menuitem:hover > menu {
@@ -96,6 +96,9 @@ nav > menu > menuitem menuitem menu {
    transform:translateX(100%);
    top:0; right:0;
 }
+/* User Styles Below Not Required */
+/* User Styles Below Not Required */
+/* User Styles Below Not Required */
 
 nav { 
    margin-top: 40px;
@@ -103,14 +106,14 @@ nav {
 }
 
 nav a {
-   background:#a1a1a1;
-   color:#000000;
+   background:#75F;
+   color:#FFF;
    min-width:190px;
    transition: background 0.5s, color 0.5s, transform 0.5s;
    margin:0px 6px 6px 0px;
-   padding:10px 40px;
+   padding:20px 40px;
    box-sizing:border-box;
-   border-radius:0px;
+   border-radius:3px;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
    position:relative;
 }
