@@ -124,7 +124,10 @@ In recent years, mainly produces paintings and sometimes net art works<br><br>
 <menuitem id="demo9"><a>Portfolio</a>
 <menu>
 <menuitem id="demo10"><a href"..unicream1/index.html>UNICREAM</a>
-
+<script src="Build/UnityLoader.js"></script>
+  <script>
+    UnityLoader.instantiate("gameContainer", "Build/unicream1.json");
+  </script>
 </a>
 </menu>
 </menuitem>
@@ -428,6 +431,7 @@ html, body{
    background:#000000;
    font-family: "Lucida Grande";
    width:20vw;
+   overflow-wrap: break-word;
 }
 body * {
    margin:0;
@@ -526,5 +530,12 @@ menuitem > menu > menuitem.hover > menu > menuitem{
    transform:translateX(0) translateY(0%);
    opacity: 1;
 }
+	
+ul[role="menubar"] li {
+    list-style: none;
+}	
+	
+	
+
 </style>
 </html>
