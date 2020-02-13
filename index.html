@@ -488,12 +488,12 @@ nav menuitem {
    position:relative;
    display:block;
    opacity:0;
-   cursor:pointer;allow;
+   cursor:pointer; allow;
 
 }
 nav menuitem > menu {
    position: absolute;
-   pointer-events:none;
+   pointer-events:auto;
 
 }
 nav > menu { display:flex; }
@@ -501,7 +501,7 @@ nav > menu > menuitem { pointer-events: all; opacity:1; }
 menu menuitem a { white-space:nowrap; display:block; }
    
 menuitem:hover > menu {
-   pointer-events:initial;
+   pointer-events:auto;
 
 }
 menuitem:hover > menu > menuitem,
