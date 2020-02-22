@@ -528,14 +528,15 @@ The Nexus, 2018, installation of canvas, 309, Toulouse. Photo: Illyes El Habchi<
 html, body{
    padding:0px;
    margin-right:0px;
-   margin-left:0px;
    background:#000000;
    font-family: "Lucida Grande";
    color: azure;
    width:20vw;
    text-align:justify;
    overflow-wrap: break-word;
-}
+    box-sizing: border-box;
+    }
+    
 html * {
   box-sizing: border-box;
 
@@ -552,7 +553,7 @@ nav menuitem {
    position:relative;
    display:block;
    opacity:0;
-   cursor:pointer;
+   cursor:pointer; 
 
 }
 nav menuitem > menu {
@@ -583,14 +584,16 @@ nav {
    margin-left: 40px;
 }
 nav a {
-   background: #000000;
+   background: black;
    min-width:130px;
    transition: background 0.5s, color 0.5s, transform 0.5s;
    margin:0px 2px 6px 0px;
    padding:7px 7px;
    border: 1px;
-   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
    position:relative;
+ 
 }
 nav a:hover:before {
    content: '';
@@ -643,20 +646,6 @@ ul[role="menubar"] li {
 }
 
 
-
-
-a {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px; justify-content: ;
-  padding: 10px;
-  margin-right: 0px;
-  font-family: "Lucida Grande";
-  text-align: justify;
-  overflow-wrap: break-word;
-}
    
     element {
     margin-left: -840px;
