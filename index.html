@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-us">
     
@@ -518,7 +520,6 @@ The Nexus, 2018, installation of canvas, 309, Toulouse. Photo: Illyes El Habchi<
 </menu>  
 </menuitem>
 	
-	
 </menu>  
 </menuitem>
 </nav>
@@ -528,13 +529,13 @@ The Nexus, 2018, installation of canvas, 309, Toulouse. Photo: Illyes El Habchi<
 html, body{
    padding:0px;
    margin-right:0px;
+   margin-left:0px;
    background:#000000;
    font-family: "Lucida Grande";
    color: azure;
-   width:20vw;
    text-align:justify;
    overflow-wrap: break-word;
-    box-sizing: border-box;
+   box-sizing: border-box;
     }
     
 html * {
@@ -547,8 +548,7 @@ body * {
    padding:0;
 }
 /* HTML Nav Styles */
-/* HTML Nav Styles */
-/* HTML Nav Styles */
+
 nav menuitem {
    position:relative;
    display:block;
@@ -564,25 +564,27 @@ nav menuitem > menu {
 nav > menu { display:flex; }
 nav > menu > menuitem { pointer-events: all; opacity:1; }
 menu menuitem a { white-space:nowrap; display:block; }
-   
 menuitem:hover > menu {
    pointer-events:auto;
 }
+    
 menuitem:hover > menu > menuitem,
 menu:hover > menuitem{
    opacity:1;
 }
+    
 nav > menu > menuitem menuitem menu {
    transform:translateX(100%);
    top:0; right:0;
 }
+	
 /* User Styles Below Not Required */
-/* User Styles Below Not Required */
-/* User Styles Below Not Required */
+
 nav {
    margin-top: 40px;
    margin-left: 40px;
 }
+    
 nav a {
    background: black;
    min-width:130px;
@@ -590,19 +592,20 @@ nav a {
    margin:0px 2px 6px 0px;
    padding:7px 7px;
    border: 1px;
-    border-radius: 0px;
+   border-radius: 0px;
    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
    position:relative;
- 
+   
+    
 }
+    
 nav a:hover:before {
    content: '';
    top:0;left:0;
    position: absolute;
    background:rgba(0, 0, 0, 0.2);
-   width:100%;
-   height:100%;
 }
+    
 nav > menu > menuitem > a + menu:after{
    content: '';
    position:absolute;
@@ -611,6 +614,7 @@ nav > menu > menuitem > a + menu:after{
    left:20px;
    top: -120px;
 }
+    
 nav menuitem > menu > menuitem > a + menu:after{
    content: '';
    position:absolute;
@@ -618,23 +622,27 @@ nav menuitem > menu > menuitem > a + menu:after{
    border-left: 0px solid white;
    left:20px;
    top: -120px;
-   transition: opacity 0.6, transform 0s;
+   transition: opacity 0.6, transform 0s; 
 }
+    
 nav > menu > menuitem > menu > menuitem{
    transition: transform 0.6s, opacity 0.6s;
    transform:translateY(150%);
    opacity:0;
 }
+    
 nav > menu > menuitem:hover > menu > menuitem,
 nav > menu > menuitem.hover > menu > menuitem{
    transform:translateY(0%);
    opacity: 1;
 }
+    
 menuitem > menu > menuitem > menu > menuitem{
    transition: transform 0.6s, opacity 0.6s;
    transform:translateX(195px) translateY(0%);
-   opacity: 0;
+   opacity: 0;   
 }
+    
 menuitem > menu > menuitem:hover > menu > menuitem,  
 menuitem > menu > menuitem.hover > menu > menuitem{  
    transform:translateX(0) translateY(0%);
@@ -644,22 +652,23 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 ul[role="menubar"] li {
     list-style: none;
 }
-
-
+  
    
-    element {
-    margin-left: -840px;
-    margin-top: -1388.17px;
-    display: none;
-}
-   
-img {
+.embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0; overflow: hidden;
+        max-width: 100%; height: auto;
+    }
 
-    position: relative;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-}
-   
+.embed-container iframe, .embed-container object, .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
 
 </style>
 </html>
