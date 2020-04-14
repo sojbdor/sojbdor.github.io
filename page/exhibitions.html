@@ -13,7 +13,21 @@
              //-->
              </script>
 	
-	
+<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>	
 	
 <link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>	
 <title>exhibitions: :</title>
