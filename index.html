@@ -513,6 +513,27 @@ ul {
 	
 	
 	.element::-webkit-scrollbar { width: 0 !important }
-
+.element, .outer{
+width: 300px;
+height: 300px;
+}
+.outer {
+border: 2px solid #666666;
+position: relative;
+overflow: hidden;
+}
+.inner {
+position: absolute;
+left: 0;
+overflow-x: hidden;
+overflow-y: scroll;
+} 
+.inner::-webkit-scrollbar {
+display: none;
+}
+.inner {
+-ms-overflow-style: none;  // IE 10+
+overflow: -moz-scrollbars-none;  // Firefox
+}
 	
 	</style></html>
