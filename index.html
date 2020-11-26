@@ -24,16 +24,16 @@
   <ul class="mainmenu">
     <li><a href="">Sukkube</a>
       <ul class="submenu">
-        <li><a href="../unicream1/index.html">Portfolio 3D</a></li>
-        <li><a href="../page/press">Press</a></li>
-      </ul>
-    </li>
+    <li><a href="../page/about">Introduction</a></li>
+<li><a href="../unicream1/index.html">Portfolio 3D</a></li>
+<li><a href="../page/press">Press</a>
+</li></ul></li>
       
-    <nav class="navigation">
-  <ul class="mainmenu">
-    <li><a href="">Painting</a>
-      <ul class="submenu">
-        <li><a class="tooltip" href="../page/theformoftechno.html">The Form Of Techno<span><img src="../pix/thepullofthechoas.jpg"width="350" height="500"></span></a></li>
+<ul class="mainmenu">
+<li><a href="#">Paintings</a>
+    
+
+<ul class="submenu"><li><a class="tooltip" href="../page/theformoftechno.html">The Form Of Techno<span><img src="../pix/thepullofthechoas.jpg"width="350" height="500"></span></a></li>
        
 <li><a class="tooltip" href="../page/fluideetbones.html">Fluide And Bones<span><img src="../pix/fluidedansmonliquide.jpg"width="350" height="500"></span></a></li>
     
@@ -45,39 +45,36 @@
     
 <li><a class="tooltip" href="../page/emergency.html">Emergency<span><img src="../pix/icebergmenace.jpg"width="400" height="500"></span></a></li>
     
-<li><a class="tooltip" href="../page/orangeetbleu.html">Orange et Bleu<span><img src="../pix/orangeetbleunew.jpg"width="500" height="500"></span></a></li></ul>
-</li>
+<li><a class="tooltip" href="../page/orangeetbleu.html">Orange et Bleu<span><img src="../pix/orangeetbleunew.jpg"width="500" height="500"></span></a></li></ul></li>
+  
       
-  <nav class="navigation">
-  <ul class="mainmenu">
-    <li><a href="">Music</a>
-      <ul class="submenu">
-          <li><a class="tooltip" href="../page/music.html">Releases<span><img src="../pix/reedit.jpg"width="400" height="400"></span></a></li>
-            <li><a href="https://gaswerksiedlung.de/">Gaswerksiedlung Radio</a></li>
-                <li><a href="https://sphere-radio.net/en/sendungen/krkrkr-2/">KRKRKR / Sphere Radio</a></li>  
-          <li><a href="https://www.mixcloud.com/sojbdor/playlists/sans-blabla-radio-campusfm-toulouse/CampusFM">Sans Blabla / Campus FM Toulouse</a><li></ul></li>
+<ul class="mainmenu">
+<li><a href="#">Music</a>
+<ul class="submenu"><li><a class="tooltip" href="../page/music.html">Releases<span><img src="../pix/reedit.jpg"width="400" height="400"></span></a></li>
+<li><a href="https://gaswerksiedlung.de/">Gaswerksiedlung Radio</a></li>
+<li><a href="https://sphere-radio.net/en/sendungen/krkrkr-2/">KRKRKR / Sphere Radio</a></li>  
+<li><a href="https://www.mixcloud.com/sojbdor/playlists/sans-blabla-radio-campusfm-toulouse/CampusFM">Sans Blabla / Campus FM Toulouse</a><li></ul></li>
       
-      <li><a href="">Movie</a>
-          <ul class="submenu"><li><a class="tooltip" href="../page/mov.html">Service for Labels<span><img src="../pix/summer.jpg"width="500" height="300"></span></a></li></ul></li>
-</ul>    
+<li><a href="#">Movie</a>
+<ul class="submenu"><li><a class="tooltip" href="../page/mov.html">Service for Labels<span><img src="../pix/summer.jpg"width="500" height="300"></span></a>
+</li></ul></li> 
        
-</nav>
-
 </html>
+        
 <style>
     
     
 	
 html, body{
-	font-size: 14px;
+	font-size: 13px;
 	font-style: normal;
 	font-family: Arimo, Helvetica, sans-serif; opacity: 0,10;
 	text-align:left;
 	line-height: 1.3em;
 	letter-spacing: 0.060em;
 	bottom:0px;
-	color: black;
-	background: white;
+	color: white;
+	background: black;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	position : absolute;
@@ -133,67 +130,62 @@ ul {
   top: 32px;
 }
     
-html, body {
-	font-family: Arimo, Helvetica, sans-serif; 
-}
 
-/* define a fixed width for the entire menu */
 .navigation {
   width: 300px;
+  color: black;
+
+
 }
 
-/* reset our lists to remove bullet points and padding */
 .mainmenu, .submenu {
   list-style: none;
   padding: 0;
   margin: 0;
+
 }
 
-/* make ALL links (main and submenu) have padding and background color */
 .mainmenu a {
   display: block;
-  background-color: #CCC;
+  background-color: black;
   text-decoration: none;
   padding: 10px;
-  color: #000;
+  color: white;
+
 }
 
-/* add hover behaviour */
 .mainmenu a:hover {
-    background-color: #C5C5C5;
+    background-color: #999
+    color: white;
+
 }
 
 
-/* when hovering over a .mainmenu item,
-  display the submenu inside it.
-  we're changing the submenu's max-height from 0 to 200px;
-*/
 
 .mainmenu li:hover .submenu {
   display: block;
   max-height: 200px;
+  background-color: black;
+  overflow: scroll;
+
+
 }
 
-/*
-  we now overwrite the background-color for .submenu links only.
-  CSS reads down the page, so code at the bottom will overwrite the code at the top.
-*/
 
 .submenu a {
-  background-color: #999;
+  background-color: black;
+
 }
 
-/* hover behaviour for links inside .submenu */
 .submenu a:hover {
-  background-color: #666;
+  background-color: black;
 }
 
-/* this is the initial state of all submenus.
-  we set it to max-height: 0, and hide the overflowed content.
-*/
+
 .submenu {
   overflow: hidden;
   max-height: 0;
+  background-color: black;
   -webkit-transition: all 0.5s ease-out;
 }
 
