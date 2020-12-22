@@ -25,7 +25,8 @@
     <li><a href="">Sukkube</a>
       <ul class="submenu">
     <li><a href="../page/about">Introduction</a></li>
-<li><a href="../unicream1/index.html">Portfolio 3D</a></li></ul></li>
+<li><a href="../unicream1/index.html">Portfolio 3D</a></li>
+<li><a href="../page/press">Press</a></li></ul></li>
       
 <ul class="mainmenu">
 <li><a href="#">Paintings</a>
@@ -38,7 +39,9 @@
 <li><a class="tooltip" href="../page/aboutthelastnight.html">About The Last Night<span><img src="../pix/aboutthelastnight.jpg"width="500" height="400"></span></a></li>
     
 <li><a class="tooltip" href="../page/liebeundfreiheit.html">Liebe Und Freiheit<span><img src="../pix/nightcimeteryinglasgow.jpg"width="500" height="400"></span></a></li>
-        
+    
+<li><a class="tooltip" href="../page/liquidforms.html">Liquid Forms<span><img src="../pix/liquidform2.jpg"width="300" height="500"></span></a></li>
+    
 <li><a class="tooltip" href="../page/emergency.html">Emergency<span><img src="../pix/icebergmenace.jpg"width="400" height="500"></span></a></li>
     
 <li><a class="tooltip" href="../page/orangeetbleu.html">Orange et Bleu<span><img src="../pix/orangeetbleunew.jpg"width="500" height="500"></span></a></li></ul></li>
@@ -49,7 +52,7 @@
 <ul class="submenu"><li><a class="tooltip" href="../page/music.html">Releases<span><img src="../pix/reedit.jpg"width="400" height="400"></span></a></li>
 <li><a href="https://gaswerksiedlung.de/">Gaswerksiedlung Radio</a></li>
 <li><a href="https://sphere-radio.net/en/sendungen/krkrkr-2/">KRKRKR / Sphere Radio</a></li>  
-<li><a href="https://www.mixcloud.com/sojbdor/">Sans Blabla / Campus FM Toulouse</a><li></ul></li>
+<li><a href="https://www.mixcloud.com/sojbdor/playlists/sans-blabla-radio-campusfm-toulouse/CampusFM">Sans Blabla / Campus FM Toulouse</a><li></ul></li>
       
 <li><a href="#">Movie</a>
 <ul class="submenu"><li><a class="tooltip" href="../page/mov.html">Service for Labels<span><img src="../pix/summer.jpg"width="500" height="300"></span></a>
@@ -64,13 +67,13 @@
 html, body{
 	font-size: 13px;
 	font-style: normal;
-	font-family: Arimo, Helvetica, sans-serif; opacity: 0,10;
+	font-family: Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 	text-align:left;
 	line-height: 1.3em;
 	letter-spacing: 0.060em;
 	bottom:0px;
-	color: white;
-	background: black;
+	color: black;
+    background:  radial-gradient(#e66465, #9198e5);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	position : absolute;
@@ -80,43 +83,36 @@ html, body{
 	text-align:justify;}	
 	
 a:link {   
-	color: #999;}
+	color: white;}
 
 a:visited {
- 	color: #999;}
+ 	color: white;}
 
 a:hover {
-	color: #8977d4;
-	opacity: 0.8;}
+	color: white;
+}
 
 a:active {
-	color: black;
-	opacity: 10px;} 
+	color: black;} 
 	
 ul {
-
-	text-indent: 0px;color: black;
-	opacity: 10px;
-    
-    }
+text-indent: 0px; color: black;
+}
 	
-  .tooltip
-{
+  .tooltip {
   text-decoration:none;}
  
- .tooltip span
-{
-  display:none;
+ .tooltip span { display:none;
   margin: right;
 }
  
+.tooltip span img {
+    
+  float:right;
+}
  
-.tooltip span img
-{
-  float:right;}
- 
-.tooltip:hover span
-{
+.tooltip:hover span {
+    
   display:block;
   position:fixed;
   left:90px;
@@ -126,63 +122,56 @@ ul {
   top: 32px;
 }
     
-
 .navigation {
-  width: 300px;
-  color: black;
-
-
+  width: 200px;
+  color: white;
 }
 
 .mainmenu, .submenu {
   list-style: none;
   padding: 0;
   margin: 0;
-
+  color: black;
 }
 
 .mainmenu a {
   display: block;
-  background-color: black;
+  color: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
   text-decoration: none;
-  padding: 10px;
-  color: white;
-
+  padding: 5px;
 }
 
 .mainmenu a:hover {
-    background-color: #999
-    color: white;
-
+  color: white;
+  background: white;
 }
-
-
 
 .mainmenu li:hover .submenu {
   display: block;
-  max-height: 200px;
-  background-color: black;
+  color: black;
+  max-height: 100px;
+  background-color: white;
   overflow: scroll;
-
-
-}
-
+} 
 
 .submenu a {
-  background-color: black;
-
+  background-color: white;
+  color: black;
 }
 
 .submenu a:hover {
-  background-color: black;
+  background-color: white;
+  text-decoration: underline;
+  color: black;
 }
-
 
 .submenu {
   overflow: hidden;
   max-height: 0;
-  background-color: black;
-  -webkit-transition: all 0.5s ease-out;
+  background-color: white;
+  -webkit-transition: all 1s ease-out;
 }
 
 	</style>
