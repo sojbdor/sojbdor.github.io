@@ -68,26 +68,25 @@ Installation with Emmanuelle Pozzo, Eleonore Verger (Orque), Constantin Doggydog
 </html>
         
 <style>
-    
-    
-	
-html, body{
+
+	html, body{
    	font-family: Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 	color: white;
 	font-weight: normal;
-    	letter-spacing: 0.09em;
+    letter-spacing: 0.09em;
 	line-height: 1.2em;
-        background: #29293d;
+    background: #29293d;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	position : absolute;
 	overflow-wrap: break-word;
 	overflow-x: hidden; 
-	overflow-x: auto; 
-	text-align:justify;}
+	text-align: justify;}
 	
 a:link {   
-	color: white;}
+	color: white;
+    overflow: hidden;
+}
 
 a:visited {
  	color: white;}
@@ -106,8 +105,9 @@ text-indent: 0px; color: black;
 
     
 .navigation {
-  width: 400px;
   color: white;
+  overflow: hidden;
+ 
 }
 
 .mainmenu, .submenu {
@@ -115,6 +115,8 @@ text-indent: 0px; color: black;
   padding: 0;
   margin: 0;
   color: black;
+  overflow: hidden;
+
 }
 
 .mainmenu a {
@@ -122,11 +124,15 @@ text-indent: 0px; color: black;
   color: black;
   text-decoration: none;
   padding: 5px;
+  overflow: hidden;
+
 }
 
 .mainmenu a:hover {
   color: black;
   background: white;
+  overflow: hidden;
+
 }
 
 .mainmenu li:hover .submenu {
@@ -140,12 +146,16 @@ text-indent: 0px; color: black;
 .submenu a {
   background-color: white;
   color: black;
+  overflow: hidden;
+
 }
 
 .submenu a:hover {
   background-color: white;
   text-decoration: underline;
   color: black;
+  overflow: hidden;
+
 }
 
 .submenu {
