@@ -1,0 +1,160 @@
+<html> 
+    
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	     <!--
+	     function anti_clic()
+	     {
+		  alert('These photos are copyrighted by their respective owners. All rights reserved. Unauthorized use prohibited.');
+		  return false;
+             }
+             //-->
+             </script> 
+
+<link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>	
+<title>Charlene Levasseur: :</title><STYLE>A {text-decoration: none;} </STYLE>
+</head>
+    
+
+<body> 
+        
+<header>
+        <a href="../page/paintings.html">paintings</a>
+        <a href="../page/musics.html">musics</a>
+        <a href="../page/videos.html">videos</a>
+        <a href="../unicream1/index.html">portfolio</a>
+        <a href="../page/about.html">about</a>
+</header> 
+<br><br>
+    
+<h1>
+Expositions
+</h1>
+    
+<br><br>      
+<div>
+<p>
+
+<img src="../pix/nexus4.jpg"width=100%; oncontextmenu="return false">
+<br>  
+<em>The Nexus</em>, 2018, installation of canvas, photographies by Illyes El Habchi, <em>309</em>, isdaT, Toulouse
+<br><br>
+
+    
+<img src="../pix/nexus5.jpg"width=100%; oncontextmenu="return false">
+<br>
+<em>The Nexus</em>, 2018, installation of canvas, photographies by Illyes El Habchi, 309, isdaT, Toulouse
+<br><br>
+    
+    
+Paintings can talk about stars in Cannes during the global warming. Peoples exchange of information about their last Versace brand purchase, veganism, the end of the world. A girl can be under the rain with an umbrella in the middle of nowhere. Cruella D’enfer can cut the tweed-trousers of a person randomly.
+<br><br>
+    
+<img src="../pix/freshlegs.jpg"width=100%; oncontextmenu="return false">
+<br>  
+<em>Fresh Legs</em>, 2020, installation of canvas, <em>Insel Galerie</em>, Berlin
+<br><br>
+    
+<img src="../pix/VU.jpg"width=100%; oncontextmenu="return false">
+<br><br>
+<em>The Nexus</em>, 2018, installation of canvas, photographies by Illyes El Habchi, 309, isdaT, Toulouse
+<br><br>
+    
+    </p>
+</div>
+</body>
+
+
+
+<style>
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: relative;
+    margin: 15;
+}
+     	
+body{
+ 
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.09em;
+    line-height: 1.2em;
+    background: black;
+    background-attachment: scroll;
+    position : absolute;
+    overflow-wrap: break-word;
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    text-align:justify;
+    margin: 0 -25% 0 0;
+    width: 100%;} 
+
+h1{
+   	text-align: justify;
+    text-decoration: overline;
+    font-size: 16px;
+    margin: 15;}
+
+div{
+   	float: left;
+    margin: 0 -25% 0 0;
+    width: 100%;}
+    
+p{
+    text-align: justify;
+	margin-left: auto;
+    margin-right: auto;
+    width: 60em;
+	align-content: center;}
+	
+a:link { 
+    color: green;
+    text-decoration: overline;
+    cursor: pointer;
+
+
+    
+    }
+    
+a:visited {
+    color: white;}
+    
+a:hover {
+    color: white;}
+    
+a:active {
+    color: black;} 
+	
+ul {    
+    text-indent: 0px; color: black;}
+   
+élément {}
+.related li a {
+    color: #666;
+    font-size: 12px;}
+    
+li a {
+    text-decoration: none;}
+    
+a {
+    text-decoration: none;}
+    
+a {
+    color: #111;}
+    
+ul {
+    list-style: none;}
+
+.sidebar {
+    color: #444;}
+	
+</style>
+
+</html>
