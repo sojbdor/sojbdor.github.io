@@ -62,9 +62,22 @@ Paintings can talk about stars in Cannes during the global warming. Peoples exch
 <em>The Nexus</em>, 2018, installation of canvas, photographies by Illyes El Habchi, 309, isdaT, Toulouse
 <br><br>
     
-    </p>
+ <header1>
+<a href="https://www.instagram.com/sukkube_/">instagram</a>
+<a href="https://soundcloud.com/sojbdorjgpjgj-d">soundcloud</a>
+<a href="https://sukkube.bandcamp.com/">bandcamp</a>	
+<a href="https://www.youtube.com/channel/UCozWDfzeoPvrWJ9gFvGCXLQ/">youtube</a>
+<a href="https://www.mixcloud.com/sojbdor/">mixcloud</a>
+<a href="https://vimeo.com/marilynejuliettesojbdor">vimeo</a></header1>
+ 
+ 
 </div>
+
 </body>
+    
+</html>
+
+
 
 
 
@@ -76,8 +89,17 @@ header {
     justify-content: space-around;
     align-items: flex-end;
     position: relative;
-    margin: 15;
-}
+    margin: 15;}
+
+header1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: relative;
+    margin: 15;}
+
+
      	
 body{
  
