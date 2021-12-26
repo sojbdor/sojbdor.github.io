@@ -67,20 +67,32 @@ UnityLoader.instantiate("gameContainer", "Build/unicream1.json");
 <style>
 
 header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+    z-index: 170;
+    background: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
-    position: relative;
-    margin: 15;}
+}
 
 header1 {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+    z-index: 170;
+    background: black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
-    position: relative;
-    margin: 15;}
+}
 
 
      	
@@ -120,22 +132,17 @@ p{
 	align-content: center;}
 	
 a:link { 
-    color: green;
-    text-decoration: overline;
-    cursor: pointer;
-
-
-    
-    }
+    color: white;
+    cursor: pointer;}
     
 a:visited {
     color: white;}
     
 a:hover {
-    color: white;}
+    color: green;}
     
 a:active {
-    color: black;} 
+    color: white;} 
 	
 ul {    
     text-indent: 0px; color: black;}
