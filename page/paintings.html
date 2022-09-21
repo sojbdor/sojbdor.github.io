@@ -215,6 +215,14 @@ ul {
     
 li a {
     text-decoration: none;}
+
+img.opacity {
+  opacity: 1;
+  /* IE8 et antérieurs */
+  filter: alpha(opacity=100);
+  /* Déclenche "hasLayout" dans IE 7 et antérieurs */
+  zoom: 1;
+}
     
 a {
     text-decoration: none;}
