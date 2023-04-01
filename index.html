@@ -1,83 +1,144 @@
-Bonjour ! Je vais bien, merci. Voici un exemple de code HTML5 pour un lecteur de musique Techno avec des chiffres en fond qui bougent avec l'opacité faible :
-
-```
-<!DOCTYPE html>
-<html>
+<html> 
 <head>
-	<title>Lecteur de musique Techno</title>
-	<style>
-		body {
-			background-color: black;
-			font-family: Arial, sans-serif;
-			overflow: hidden;
-		}
-		
-		h1 {
-			color: white;
-			text-align: center;
-			margin-top: 50px;
-		}
-		
-		#meter {
-			position: relative;
-			height: 30px;
-			width: 100%;
-			background-color: #1F1F1F;
-			margin: 0px;
-			padding: 0px;
-		}
-		
-		#meter div {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			height: 30px;
-			width: 0%;
-			background-color: white;
-			opacity: 0.1;
-			padding: 0px;
-			margin: 0px;
-			transition: all 0.5s ease;
-		}
-		
-		#player {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-		
-		audio {
-			display: block;
-			margin: 0 auto;
-			margin-top: 30px;
-			width: 70%;
-			max-width: 500px;
-		}
-	</style>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	     <!--
+	     function anti_clic()
+	     {
+		  alert('These photos are copyrighted by their respective owners. All rights reserved. Unauthorized use prohibited.');
+		  return false;
+             }
+             //-->
+             </script> 
+<link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>	
+<title>Sukkube</title><STYLE>A {text-decoration: none;} </STYLE>
 </head>
+<br><br>   
+<a href="../index.html"><img src="../pix/favicon.ico" width=5%; oncontextmenu="return false" onDragStart="return flase"></a>
 <body>
-
-<h1>Lecteur de musique Techno</h1>
-
-<div id="meter"></div>
-
-<div id="player">
-	<audio src="https://your-audio-source.mp3" controls></audio>
-</div>
-
-<script>
-	var meter = document.getElementById("meter");
-	var meterWidth = meter.offsetWidth;
 	
-	document.onmousemove = function(e) {
-		var percentage = e.clientX / meterWidth * 100;
-		meter.querySelectorAll("div").forEach(function(elem) {
-			elem.style.width = percentage + "%";
-		});
-	}
-</script>
+<header>
+<a href="../page/musics.html">musics</a>
+<a href="../page/videos.html">videos</a>
+<a href="../unicream1/index.html">portfolio</a>
+<a href="../page/about.html">about</a>
+</header>
+	
+<header1>		
+<a href="https://www.instagram.com/sukkube_/">instagram</a>
+<a href="https://soundcloud.com/sukkube">soundcloud</a>
+<a href="https://sukkube.bandcamp.com/">bandcamp</a>
+<a href="https://www.youtube.com/channel/UCozWDfzeoPvrWJ9gFvGCXLQ">youtube</a>
+<a href="https://open.spotify.com/artist/5PockEYV6xETQLt50xjRrH">spotify</a>
+<a href="https://www.deezer.com/en/artist/124843882">deezer</a>
+<a href="https://www.beatport.com/artist/sukkube/1004727">beatport</a>
+<a href="https://www.mixcloud.com/sojbdor/">mixcloud</a>
+<a href="https://vimeo.com/marilynejuliettesojbdor">vimeo</a>	
+</header1>
 
 </body>
-</html>
+	
+<style>
 
+header {
+position: fixed;
+top: 0px;
+width: 100%;
+left: 0px;
+text-align: center;
+z-index: 170;
+background: black;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: flex-end;}
+
+header1 {
+position: fixed;
+bottom: 0px;
+width: 100%;
+left: 0px;
+text-align: center;
+z-index: 170;
+background: black;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: flex-end;}
+   	
+body{
+font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+color: white;
+font-size: 14px;
+letter-spacing: 0.09em;
+line-height: 1.2em;
+background: black;
+background-attachment: scroll;
+position : absolute;
+overflow-wrap: break-word;
+overflow-x: hidden; 
+overflow-x: auto; 
+text-align:justify;
+width: 90em;
+align-content: center;
+margin-right: auto;} 
+
+h1{
+text-align: justify;
+text-decoration: overline;
+font-size: 16px;
+margin: 15;}
+	
+div{
+float: left;
+margin: -10 -25% 0 0;
+width: 100%;}
+    
+p{
+text-align: justify;
+margin-left: auto;
+margin-right: auto;
+width: 60em;
+align-content: center;}
+font-size: 14px;
+    
+	
+a:link { 
+color: white;
+cursor: pointer;}
+    
+a:visited {
+color: eeeeee;}
+    
+a:hover {
+color: white;}
+    
+a:active {
+color: white;} 
+	
+ul {    
+text-indent: 0px; color: black;}
+   
+élément {}
+.related li a {
+color: #666;
+font-size: 12px;}
+    
+li a {
+text-decoration: none;}
+    
+a {
+text-decoration: none;}
+    
+a {
+color: #111;}
+    
+ul {
+list-style: none;}
+
+.sidebar {
+color: #444;}
+	
+</style>
+</html> 
