@@ -38,6 +38,7 @@ Published by Examine Archive<br><br>
 header {
 font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
 position: fixed;
+color: white;
 top: 0px;
 width: 100%;
 left: 0px;
@@ -52,6 +53,7 @@ align-items: flex-end;}
 header1 {
 font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
 position: fixed;
+color: white;
 bottom: 0px;
 width: 100%;
 left: 0px;
@@ -62,13 +64,15 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 align-items: flex-end;}
-   	
+
 body{
 font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
 color: white;
-font-size: 14px;
+font-size: 20px;
 letter-spacing: 0.09em;
-line-height: 1.2em;
+line-height: var(--line-height-normal);
+font-kerning: normal;
+-moz-osx-font-smoothing: grayscale;
 background: black;
 background-attachment: scroll;
 position: absolute;
@@ -78,7 +82,16 @@ overflow-x: auto;
 text-align:justify;
 width: 90em;
 align-content: center;
-margin-right: auto;} 
+margin-right: auto;
+margin: 0;
+padding: 10;
+width: 50%;
+height: 100%;} 
+    
+.div-1 {
+background-color: white;
+color: black;
+padding: 10; }
 
 </style>
 </html>
