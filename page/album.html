@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,16 +20,18 @@
       text-align: justify;
     }
 
-    /* Container principal en deux colonnes */
+    /* Container principal */
     .container {
       display: flex;
+      flex-wrap: wrap; /* Permet aux colonnes de s'empiler sur mobile */
       justify-content: space-between;
-      padding: 2px;
+      padding: 10px; /* Un peu plus d'espace autour */
     }
 
-    /* Bloc gauche */
+    /* Bloc gauche et droit */
     .left-block, .right-block {
-      width: 50%; /* Chaque bloc prend environ la moitié de l'espace */
+      width: 100%; /* Prend 100% sur mobile */
+      margin-bottom: 20px; /* Espace entre les blocs */
     }
 
     /* Style des sections d'album */
@@ -39,20 +39,37 @@
       font-size: 1.5em;
       color: black;
       background-color: grey;
-      padding: 2px;
+      padding: 10px;
       text-align: center;
+      border-radius: 5px; /* Coins arrondis */
     }
 
     .album-description {
       background-color: white;
       color: black;
-      padding: 2px;
-      margin-bottom: 0px;
+      padding: 10px;
+      border-radius: 5px; /* Coins arrondis */
+      margin-bottom: 10px; /* Espace entre les descriptions d'album */
     }
 
     /* Style d'anti-clic */
     img[oncontextmenu], iframe {
       pointer-events: none;
+    }
+
+    /* Styles pour les écrans plus larges */
+    @media (min-width: 600px) {
+      .left-block, .right-block {
+        width: 48%; /* Prend environ la moitié de l'espace sur les écrans plus larges */
+      }
+    }
+
+    /* Styles pour les iframes */
+    iframe {
+      border: 0;
+      width: 100%; /* S'assure que les iframes sont responsives */
+      height: 180px;
+      border-radius: 5px; /* Coins arrondis */
     }
   </style>
   <script type="text/javascript">
@@ -82,7 +99,7 @@
         Mastered by Sukkube<br>
         Published by EPM<br>
         Released June 3, 2023<br><br>
-        <big><iframe style="border: 0; width: 100%; height: 180px;" src="https://bandcamp.com/EmbeddedPlayer/album=1815077460/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://sukkube.bandcamp.com/album/what-you-gonna-do">What You Gonna Do by Sukkube</a></iframe></big>
+        <big><iframe src="https://bandcamp.com/EmbeddedPlayer/album=1815077460/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://sukkube.bandcamp.com/album/what-you-gonna-do">What You Gonna Do by Sukkube</a></iframe></big>
       </div>
 
     </div>
@@ -100,7 +117,7 @@
         Master by Vladimir Mihajlovic<br>
         Published by Fallen Metropolis<br>
         Released June 6, 2023<br><br>
-        <iframe style="border: 0; width: 100%; height: 180px;" src="https://bandcamp.com/EmbeddedPlayer/album=3031607873/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://fallenmetropolis.bandcamp.com/album/untraceable">Untraceable by Sukkube</a></iframe>
+        <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3031607873/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://fallenmetropolis.bandcamp.com/album/untraceable">Untraceable by Sukkube</a></iframe>
       </div>
 
       <div class="album-description">
@@ -111,7 +128,7 @@
         Artwork by Christian Rutz<br>
         Published by Fallen Metropolis<br>
         Released August 30, 2021<br><br>
-        <iframe style="border: 0; width: 100%; height: 180px;" src="https://bandcamp.com/EmbeddedPlayer/album=3591663322/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://fallenmetropolis.bandcamp.com/album/world-in-data">World In Data by Sukkube</a></iframe>
+        <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3591663322/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://fallenmetropolis.bandcamp.com/album/world-in-data">World In Data by Sukkube</a></iframe>
       </div>
 
       <div class="album-description">
@@ -120,7 +137,7 @@
         Mixed and Mastered by Sukkube<br>
         Artwork by Diffuse Reality<br>
         Released October 20, 2021<br><br>
-        <iframe style="border: 0; width: 100%; height: 180px;" src="https://bandcamp.com/EmbeddedPlayer/album=2215393707/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://diffusereality.bandcamp.com/album/sand-inclusion">Sand Inclusion by Diffuse Reality</a></iframe>
+        <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2215393707/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://diffusereality.bandcamp.com/album/sand-inclusion">Sand Inclusion by Diffuse Reality</a></iframe>
       </div>
     </div>
 
@@ -128,4 +145,3 @@
 
 </body>
 </html>
-
