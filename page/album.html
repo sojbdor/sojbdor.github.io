@@ -6,62 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Album</title>
   <link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>
-  <style>
-    /* Styles pour liens sans soulignement */
-    a { text-decoration: none; }
-
-    /* Style du body */
-    body {
-      font-family: Arial, sans-serif;
-      color: white;
-      background-color: black;
-      margin: 0;
-      padding: 0;
-      text-align: justify;
-    }
-
-    /* Container principal */
-    .container {
-      display: flex;
-      flex-wrap: wrap; /* Permet aux colonnes de s'empiler sur mobile */
-      justify-content: space-between;
-      padding: 10px; /* Un peu plus d'espace autour */
-    }
-
-    /* Bloc gauche et droit */
-    .left-block, .right-block {
-      width: 100%; /* Prend 100% sur mobile */
-      margin-bottom: 2px; /* Espace entre les blocs */
-    }
-
-    /* Style des sections d'album */
-    .album-title {
-      font-size: 1.5em;
-      color: black;
-      background-color: grey;
-      padding: 2px;
-      text-align: center;
-    }
-
-    .album-description {
-background-color: white;
-color: black;
-opacity: 0,5;
-padding: 10px;
-margin-bottom: 10px; /* Espace entre les descriptions d'album */
-    }
-
-    
-
-    /* Styles pour les écrans plus larges */
-    @media (min-width: 600px) {
-      .left-block, .right-block {
-        width: 48%; /* Prend environ la moitié de l'espace sur les écrans plus larges */
-      }
-    }
-
-  
-  </style>
+ 
 
  
 </head>
@@ -71,11 +16,6 @@ margin-bottom: 10px; /* Espace entre les descriptions d'album */
   <a href="../page/index1.html">
     <img src="../pix/logosojbdor.jpg" width="5%" oncontextmenu="return false" ondragstart="return false">
   </a>
-
-  <div class="container">
-
-    <!-- Bloc gauche -->
-    <div class="left-block">
       <div class="album-title"><b>ALBUM</b></div>
 
       <div class="album-description">
@@ -93,8 +33,6 @@ Released June 3, 2023<br><br>
 
     </div>
 
-    <!-- Bloc droit -->
-    <div class="right-block">
 
       <div class="album-title"><b>ALBUM/Co prod</b></div>
 
@@ -143,4 +81,88 @@ Released October 20, 2021<br><br>
   </div>
 
 </body>
+</html>
+
+
+
+<style>
+
+
+header {
+left: 0px;
+font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
+color: white;
+font-size: 20px;
+letter-spacing: 0.09em;
+line-height: var(--line-height-normal);
+font-kerning: normal;
+-moz-osx-font-smoothing: grayscale;
+background: black;
+background-attachment: scroll;
+overflow-wrap: break-word;
+overflow-x: hidden; 
+overflow-x: auto; 
+text-align:justify;
+align-content: center;
+margin-right: auto;
+margin: 0;
+padding: 0;
+width: 50%;
+height: 100%;} 
+
+header1 {
+right: 0px;
+font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
+color: white;
+font-size: 20px;
+letter-spacing: 0.09em;
+line-height: var(--line-height-normal);
+font-kerning: normal;
+-moz-osx-font-smoothing: grayscale;
+background: black;
+background-attachment: scroll;
+overflow-wrap: break-word;
+overflow-x: hidden; 
+overflow-x: auto; 
+text-align:justify;
+align-content: center;
+margin-right: auto;
+margin: 0;
+padding: 0;
+width: 50%;
+height: 100%;} 
+
+body{
+font-family: px-grotesk-web,helvetica neue,helvetica,sans-serif;
+color: white;
+font-size: 20px;
+letter-spacing: 0.09em;
+line-height: var(--line-height-normal);
+font-kerning: normal;
+-moz-osx-font-smoothing: grayscale;
+background: black;
+background-attachment: scroll;
+position: relative;
+overflow-wrap: break-word;
+overflow-x: hidden; 
+overflow-x: auto; 
+text-align:justify;
+align-content: center;
+margin-right: auto;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;} 
+
+.div {
+background-color: grey;
+color: black;
+padding: 10; }
+    
+.div-1 {
+background-color: white;
+color: black;
+padding: 10; }
+
+</style>
 </html>
