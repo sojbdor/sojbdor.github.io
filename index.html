@@ -17,8 +17,33 @@
 
 <body>
 
-<a href="../page/index1.html"><img src="../pix/logosojbdor.jpg" width=15%; oncontextmenu="return false" onDragStart="return flase"><br>click here</a>
+ <nav>
+        <ul>work
+		<li><a href="../page/single.html">single</a></li>
+		<li><a href="../page/ep.html">ep</a></li>
+            	<li><a href="../page/album.html">album</a></li>
+	    	<li><a href="../page/remix.html">remix</a></li>
+		<li><a href="../page/radioshow.html">radioshow, jam</a></li></ul>
 	
+	<ul>audiovisual
+		<li><a href="../page/coproduction.html">co - prod</a></li></ul>
+
+	<ul>video game
+		<li><a href="../unicream1/index.html">unicream</a></li></ul>
+	
+	<ul>research
+                    <li><a href="../page/nonstructure.html">non structure</a></li>
+                    <li><a href="../page/nonarchitect.html">non architect / a-current form</a></li></ul>
+        <ul>label 
+            <li><a href="../page/associatedparaboloid.html">associated paraboloid</a></li></ul>
+
+	<ul>info
+		<li><a href="../page/contact.html">contact</a></li></ul>
+
+	
+    </nav>
+
+<br>
 <br>
 upcoming<br>
 xx.09.25 soundtrack + photography film, La maison aux volets jaunes, Gabriel Duplantier's workshop, Douelle, France<br>
@@ -110,19 +135,74 @@ justify-content: center;
 height: 100vh;
 background-attachment: scroll;
 margin: 0; 
-background: black;        
+background: black;
+padding: 0;
 }
 
-.content {
-text-align: justify; 
-background: black;           
-}
+        /* Style du menu */
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-a {
-text-align: justify; 
-background-color: black;
-color: white; 
-}
+        /* Style des éléments du menu */
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-</style>
+        li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Style du sous-menu */
+        ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 10px 0;
+            min-width: 150px;
+        }
+
+        /* Affichage du sous-menu lors du survol */
+        li:hover > ul {
+            display: block;
+        }
+
+        ul li:hover > a {
+            background-color: #555;
+        }
+
+        ul ul li a {
+            padding: 10px 20px;
+        }
+
+        /* Effet de survol */
+        li:hover > a {
+            background-color: #555;
+        }
+
+        /* Mise en place d'une bordure et effet d'ombre lors du survol du sous-menu */
+        li > a:hover {
+            background-color: #666;
+            border-radius: 4px;
+        }
+    </style>
  
