@@ -106,33 +106,42 @@ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 color: white;
 font-size: 14px;
 letter-spacing: 0.08em;
-background: black;
-background-attachment: scroll;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh; 
-margin: 0; 
-text-align: center;
-align-items: center; /* Centre verticalement */
+
+            display: flex; /* Active Flexbox */
+            flex-direction: column; /* Aligne les éléments verticalement */
+            justify-content: center; /* Centre verticalement */
+            align-items: center; /* Centre horizontalement */
             height: 100vh; /* Hauteur complète de la page */
             margin: 0; /* Supprime les marges par défaut */
+            background: black; /* Arrière-plan noir */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
-        a {
-            display: inline-block; /* Permet d'appliquer des marges et des styles facilement */
-            padding: 10px 20px; /* Ajoute de l'espace interne pour un meilleur rendu */
-            background-color: #4CAF50; /* Couleur de fond */
-            color: white; /* Couleur du texte */
+        nav {
+            text-align: center; /* Centre le texte du menu */
+            margin-bottom: 20px; /* Espace sous le menu */
+        }
+
+        nav a {
             text-decoration: none; /* Supprime le soulignement */
-            border-radius: 5px; /* Arrondi des bords */
-            text-align: center; /* Aligne le texte dans le bouton */
+            color: white; /* Couleur blanche pour les liens */
+            padding: 10px 20px; /* Ajoute de l'espace autour des liens */
+            background-color: #4CAF50; /* Couleur de fond verte */
+            border-radius: 5px; /* Coins arrondis */
+            margin: 0 10px; /* Espacement horizontal entre les liens */
         }
 
-        a:hover {
+        nav a:hover {
             background-color: #45a049; /* Couleur différente au survol */
         }
-    </style>
+
+        .content {
+            max-width: 600px; /* Largeur maximale pour une bonne lisibilité */
+            text-align: justify; /* Texte justifié */
+            padding: 20px; /* Espace interne pour respirer */
+            background-color: #1e1e1e; /* Arrière-plan sombre pour contraster */
+            border-radius: 10px; /* Coins arrondis */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre subtile */
 	
 </style>
  
