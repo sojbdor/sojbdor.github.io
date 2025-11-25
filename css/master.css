@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'CommitMono';
+  src: url('../fonts/CommitMono.otf')
+}
+
+@font-face {
+  font-family: 'Future';
+  src: url('../fonts/Future-Italic.ttf')
+}
+
+
+body {
+font-family: CommitMono, Monospace;
+color: white;
+font-size: 14px;
+/* letter-spacing: 0.08em; */
+text-align:left;
+position: relative;
+background: black;
+overflow-x: hidden;
+margin: 2em;
+}
+
+* {
+--celadon: #74d3aeff;
+--sage-green: #678d58ff;
+--muted-olive: #a6c48aff;
+--champagne-mist: #f6e7cbff;
+--sweet-salmon: #dd9787ff;
+--mint-leaf: #3ab795ff;
+--pale-slate: #c3c7d5ff;
+--peach-fuzz: #ffd5c2ff;
+--dusty-denim: #6c91bfff;
+--mauve-shadow: #5d4e60ff;
+}
+
+.menu {
+  background: white;
+  box-sizing: border-box;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  width: 250px;
+  padding: 1rem;
+  position: fixed;
+}
+
+.main {
+  background: white;
+  color: black;
+  box-sizing: border-box;
+  font-size: 13.2px;
+  letter-spacing: 0.08em;
+  margin-left: 270px;
+  max-width: 1000px;
+  padding: 2rem;
+  min-width: 0;
+}
+
+a {
+background: white;
+color: black;
+text-decoration: none;
+}
+
+a:link {background: white;
+color: black
+}
+
+a:visited {
+color: bleu;
+background: white;
+}
+
+a:focus {
+background: white;
+color: black
+}
+
+a:hover {background: black;
+color: white
+}
+
+a:active {color: white;
+background: bleu;
+}
+
+big {
+  font-family: Future, sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+@media (max-width: 700px) {
+  .main {
+    margin-left: 0;
+  }
+
+	.menu {
+		position:relative;
+		width: 100%;
+    padding: 2rem;
+	}
+}
