@@ -56,9 +56,8 @@ padding: 1rem;
 }
 
 .shadowbox {
-  background: white;
   color: 660099;
-  box-sizing: border-box;
+  opacity: 0.5;
   font-size: 50px;
   padding: 1rem;
   text-align: center;
