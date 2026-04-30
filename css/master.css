@@ -56,6 +56,17 @@ margin: 2em;
   min-width: 0;
 }
 
+.shadowbox {
+  font-size: 20px;
+  width: 10em;
+  border: 10px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: lightblue;
+  padding: 1rem;
+  position: fixed;
+}
+
 a {
 background: white;
 color: black;
