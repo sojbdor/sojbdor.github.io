@@ -18,7 +18,7 @@ text-align:left;
 position: relative;
 background: black;
 overflow-x: hidden;
-margin: 0em;
+padding: 1rem;
 }
 
 * {
