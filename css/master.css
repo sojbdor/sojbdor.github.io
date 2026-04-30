@@ -57,13 +57,15 @@ margin: 2em;
 }
 
 .shadowbox {
-  font-size: 50px;
   color: 660099;
-  padding: 0rem;
+  font-size: 50px;
+  width: 250px;
+  padding: 1rem;
   position: fixed;
-  padding: 0;
-  margin-right: 10%;
 }
+
+
+
 
 a {
 background: white;
