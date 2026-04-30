@@ -18,7 +18,7 @@ text-align:left;
 position: relative;
 background: black;
 overflow-x: hidden;
-margin: 2em;
+margin: 4em;
 }
 
 * {
@@ -42,6 +42,8 @@ margin: 2em;
   width: 250px;
   padding: 1rem;
   position: fixed;
+  min-width: 0;
+  max-width: 1000px;
 }
 
 .main {
@@ -51,21 +53,22 @@ margin: 2em;
   font-size: 13.2px;
   letter-spacing: 0.08em;
   margin-left: 270px;
-  max-width: 1000px;
   padding: 4rem;
   min-width: 0;
+  max-width: 1000px;
+
 }
 
 .shadowbox {
   color: 660099;
   font-size: 50px;
-  width: 250px;
   padding: 1rem;
+  margin-left: 270px;
   position: fixed;
+  min-width: 0;
+  max-width: 1000px;
+
 }
-
-
-
 
 a {
 background: white;
