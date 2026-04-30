@@ -61,8 +61,8 @@ margin: 2em;
   color: 660099;
   padding: 0rem;
   position: fixed;
-  margin-left: 250px;
-  max-width: 1000px;
+  padding: 0;
+  margin: 3px 0 3px 0;
 }
 
 a {
