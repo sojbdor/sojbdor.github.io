@@ -35,7 +35,7 @@ padding: 1rem;
 }
 
 .menu {
-  background: 2B2B2B;
+  background: 525252;
   box-sizing: border-box;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -46,8 +46,8 @@ padding: 1rem;
 }
 
 .main {
-  background: white;
-  color: black;
+  background: #525252;
+  color: white;
   box-sizing: border-box;
   font-size: 13.2px;
   letter-spacing: 0.08em;
