@@ -80,6 +80,17 @@ padding: 1rem;
   top: 0px;
 }
 
+.shadowbox1 {
+  color: #660099;
+  opacity: 0.8;
+  font-size: 24px;
+  text-align: left;
+  position: fixed;
+  margin-left: 1000px;
+  padding: 1rem;
+  top: 0px;
+}
+
 
 a {
   background: white;
