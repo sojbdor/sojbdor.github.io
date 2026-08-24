@@ -13,7 +13,7 @@ body {
 font-family: CommitMono, Monospace;
 color: 2B2B2B;
 font-size: 15px;
-/* letter-spacing: 0.08em; */
+letter-spacing: 1.6;
 text-align:left;
 position: relative;
 background: black;
@@ -47,7 +47,7 @@ padding: 1rem;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.10em;
-  line-height: 1.5em;
+  line-height: 1.6em;
   width: 250px;
   padding: 1rem;
   position: fixed;
