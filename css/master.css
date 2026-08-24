@@ -64,6 +64,7 @@ padding: 1rem;
   padding: 2rem;
   width: 60%;
   max-width: 1000px;
+  text-align: left;
 }
 
 .shadowbox {
