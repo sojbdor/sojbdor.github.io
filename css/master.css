@@ -59,6 +59,7 @@ padding: 1rem;
   background: #660099;
   color: #white;
   box-sizing: border-box;
+  font-family: CommitMono, Monospace;
   font-size: 14px;
   letter-spacing: 0.07em;
   margin-left: 250px;
