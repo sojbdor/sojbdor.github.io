@@ -91,7 +91,7 @@ a:link {
 }
 
 a:visited {
-  color: #600f79;
+  color: #660099;
   background: white;
 }
 
@@ -108,7 +108,7 @@ a:hover {
 a:active {
 
   color: white;
-  background: #0000FF;
+  background: #660099;
 }
 
 big {
