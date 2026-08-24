@@ -11,13 +11,13 @@
 
 body {
 font-family: CommitMono, Monospace;
-color: #F0F0F0;
+color: var(--champagne-mist);
 font-size: 15px;
 letter-spacing: 0.01em;
 line-height: 1.6;
 text-align:left;
 position: relative;
-background: black;
+background: var(--mauve-shadow);
 overflow-x: hidden;
 padding: 1rem;
 }
