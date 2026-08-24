@@ -71,11 +71,11 @@ padding: 1rem;
 .shadowbox {
   color: #660099;
   opacity: 0.8;
-  font-size: 50px;
+  font-size: 24px;
   text-align:right;
   position: fixed;
   margin-left: 270px;
-  padding: 0,5rem;
+  padding: 1rem;
 }
 
 a {
