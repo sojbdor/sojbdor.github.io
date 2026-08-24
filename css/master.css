@@ -67,6 +67,7 @@ padding: 1rem;
   width: 60%;
   max-width: 1000px;
   text-align: justify;
+  position: relative;
   z-index: 1;
 	
 }
