@@ -75,7 +75,8 @@ padding: 1rem;
   text-align:right;
   position: fixed;
   margin-left: 270px;
-  padding: 1rem;
+  padding: 0,5rem;
+  text-align: left;
 }
 
 a {
