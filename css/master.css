@@ -61,7 +61,7 @@ padding: 1rem;
   box-sizing: border-box;
   font-size: 14px;
   letter-spacing: 0.07em;
-  margin-left: 270px;
+  margin-left: 260px;
   padding: 2rem;
   width: 60%;
   max-width: 1000px;
@@ -77,6 +77,17 @@ padding: 1rem;
   margin-left: 270px;
   padding: 0rem;
 }
+
+.shadowbox1 {
+  color: #660099;
+  opacity: 0.8;
+  font-size: 24px;
+  text-align:right;
+  position: fixed;
+  margin-left: 800px;
+  padding: 0rem;
+}
+
 
 a {
   background: white;
