@@ -17,7 +17,7 @@ letter-spacing: 0.01em;
 line-height: 1.6;
 text-align:left;
 position: relative;
-background: var(--mauve-shadow);
+background: 060606;
 overflow-x: hidden;
 padding: 1rem;
 }
@@ -42,7 +42,7 @@ padding: 1rem;
 }
 
 .menu {
-  background: #545252;
+  background: 060606;
   box-sizing: border-box;
   font-family: Future;
   font-size: 16px;
@@ -118,13 +118,13 @@ big {
 }
 
 @media (max-width: 700px) {
-  .main {
+.main {
     margin-left: 0;
   }
 
-	.menu {
-		position:relative;
-		width: 100%;
+.menu {
+	position:relative;
+	width: 100%;
     padding: 2rem;
 	}
 }
