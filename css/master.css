@@ -17,7 +17,7 @@ letter-spacing: 0.01em;
 line-height: 1.6;
 text-align:left;
 position: relative;
-background: 060606;
+background: #060606;
 overflow-x: hidden;
 padding: 1rem;
 }
@@ -57,7 +57,7 @@ padding: 1rem;
 
 .main {
   background: #060606;
-  color: #ADADAD;
+  color: #060606;
   box-sizing: border-box;
   font-size: 14px;
   letter-spacing: 0.07em;
@@ -91,7 +91,7 @@ a:link {
 }
 
 a:visited {
-  color: #5d4e60ff;
+  color: #600f79;
   background: white;
 }
 
