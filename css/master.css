@@ -76,7 +76,7 @@ padding: 1rem;
   text-align: left;
   position: fixed;
   margin-left: 250px;
-  padding: 0rem;
+  padding: 1rem;
   top: 0px;
 
 }
@@ -89,7 +89,7 @@ padding: 1rem;
   text-align: right;
   position: fixed;
   margin-right: 0px;
-  padding: 0rem;
+  padding: 1rem;
   top: 0px;
 
 }
@@ -101,7 +101,7 @@ padding: 1rem;
   text-align:right;
   position: fixed;
   margin-right: 0px;
-  padding: 0rem;
+  padding: 1rem;
   top: 150px;
 	
 }
