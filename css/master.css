@@ -70,6 +70,7 @@ max-width: 1000px;
   width: 60%;
   max-width: 1000px;
   text-align: justify;
+  position: relative;
 }
 
 .shadowbox {
@@ -81,6 +82,7 @@ max-width: 1000px;
   margin-left: 1000px;
   padding: 1rem;
   top: 0px;
+  position: relative;
   max-width: 1000px;
 }
 
