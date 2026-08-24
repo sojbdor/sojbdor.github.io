@@ -80,7 +80,7 @@ padding: 1rem;
 
 a {
 background: white;
-color: #00FFFF;
+color: var(--mint-leaf);
 text-decoration: none;
 transition: color 0.3s ease;
 }
