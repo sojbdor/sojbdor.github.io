@@ -79,36 +79,36 @@ padding: 1rem;
 }
 
 a {
-background: white;
-color: var(--mint-leaf);
-text-decoration: none;
-transition: color 0.3s ease;
+  background: white;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:link {
-background: white;
-color: black
+  background: white;
+  color: black
 }
 
 a:visited {
-color: #0000FF;
-background: white;
+  color: #5d4e60ff;
+  background: white;
 }
 
 a:focus {
-background: white;
-color: black
+  background: white;
+  color: black
 }
 
 a:hover {
-color: #FF00AA;
-text-decoration: underline;
+  color: #FF00AA;
+  text-decoration: underline;
 }
 
 a:active {
 
-color: white;
-background: #0000FF;
+  color: white;
+  background: #0000FF;
 }
 
 big {
