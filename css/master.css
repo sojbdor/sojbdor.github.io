@@ -80,8 +80,9 @@ padding: 1rem;
 
 a {
 background: white;
-color: black;
+color: #00FFFF;
 text-decoration: none;
+transition: color 0.3s ease;
 }
 
 a:link {
@@ -100,8 +101,8 @@ color: black
 }
 
 a:hover {
-background: black;
-color: white
+color: #FF00AA;
+text-decoration: underline;
 }
 
 a:active {
