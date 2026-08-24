@@ -56,8 +56,8 @@ padding: 1rem;
 }
 
 .main {
-  background: #660099;
-  color: white;
+  background: grey;
+  color: dark grey;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   font-size: 14px;
