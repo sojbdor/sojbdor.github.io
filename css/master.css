@@ -62,6 +62,8 @@ padding: 1rem;
   letter-spacing: 0.08em;
   margin-left: 270px;
   padding: 0rem;
+  width: 80%;
+  max-width: 1000px;
 }
 
 .shadowbox {
