@@ -11,7 +11,7 @@
 
 body {
 font-family: CommitMono, Monospace;
-color: #060606;
+color: white;
 font-size: 15px;
 letter-spacing: 0.01em;
 line-height: 1.6;
@@ -57,7 +57,7 @@ padding: 1rem;
 
 .main {
   background: grey;
-  color: dark grey;
+  color: white;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   font-size: 14px;
