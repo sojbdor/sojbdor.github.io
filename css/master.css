@@ -69,7 +69,7 @@ padding: 1rem;
   text-align: justify;
 }
 
-box-shadow {
+shadowbox {
   background: grey;
   color: white;
   box-sizing: border-box;
