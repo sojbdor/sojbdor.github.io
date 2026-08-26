@@ -129,30 +129,3 @@ big {
 	width: 100%;
     padding: 2rem;
 	}
-
-
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
-    white-space: nowrap;
-    
-}
-
-.marquee-content {
-    display: inline-block;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    color: #000000;
-    animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Pause on hover */
-.marquee-container:hover .marquee-content {
-    animation-play-state: paused;
-}
