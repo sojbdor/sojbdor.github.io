@@ -119,6 +119,11 @@ big {
   font-size: 24px;
 }
 
+.marquee-rtl {
+  overflow: hidden; /* important */
+  width:50%; max-width: 30em; /* A ADAPTER */
+}
+
 @media (max-width: 700px) {
 .main {
     margin-left: 0;
