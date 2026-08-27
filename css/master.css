@@ -151,3 +151,7 @@ big {
   aspect-ratio: 16/9; /* Ratio standard pour les vidéos (optionnel mais recommandé) */
   max-width: 100%; /* Empêche le débordement */
 }
+
+.ma-ligne {
+    border: 1px solid white;
+  }
