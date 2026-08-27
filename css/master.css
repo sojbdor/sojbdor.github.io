@@ -70,6 +70,37 @@ padding: 1rem;
   position: fixed;
 }
 
+.menu3 {
+  background: grey;
+  box-sizing: border-box;
+  font-family: Future;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  line-height: 1.6em;
+  width: 220px;
+  padding: 1rem;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+.menu4 {
+  background: grey;
+  box-sizing: border-box;
+  font-family: CommitMono, Monospace;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  line-height: 1.6em;
+  width: 220px;
+  padding: 1rem;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
 
 .main {
   background: grey;
