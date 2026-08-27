@@ -56,6 +56,22 @@ padding: 1rem;
   position: fixed;
 }
 
+.menu2 {
+  background: grey;
+  box-sizing: border-box;
+  font-family: Future;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  line-height: 1.6em;
+  width: 200px;
+  bottom: 0px
+  padding: 1rem;
+  position: fixed;
+}
+
+
 .main {
   background: grey;
   color: white;
