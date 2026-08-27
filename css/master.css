@@ -97,8 +97,8 @@ padding: 1rem;
 .menu3-header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 0.7rem;
-  margin-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
   font-family: Future;
   font-size: 13px;
   letter-spacing: 0.10em;
@@ -107,7 +107,7 @@ padding: 1rem;
 
 /* LISTE */
 .playlist {
-  height: 350px;
+  height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
 }
