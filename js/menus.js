@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("site-menus");
 
   if (!container) {
-    console.error("site-menus introuvable");
+    console.error("❌ #site-menus introuvable");
     return;
   }
 
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menu1.innerHTML = `
 
-    <a href="../index.html">
+    <a href="/index.html">
       <img
-        src="../pix/cartedevisite.png"
+        src="/pix/cartedevisite.png"
         width="50%"
         oncontextmenu="return false"
         ondragstart="return false">
@@ -29,17 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <br><br>
 
-    <a href="../page/album.html">album</a><br>
-
-    <a href="../page/ep.html">ep</a><br>
-
-    <a href="../page/single.html">single</a><br>
-
-    <a href="../page/remix.html">remix</a><br>
-
-    <a href="../page/video.html">film score</a><br>
-
-    <a href="../page/label.html">label</a><br>
+    <a href="/page/album.html">album</a><br>
+    <a href="/page/ep.html">ep</a><br>
+    <a href="/page/single.html">single</a><br>
+    <a href="/page/remix.html">remix</a><br>
+    <a href="/page/video.html">film score</a><br>
+    <a href="/page/label.html">label</a><br>
 
   `;
 
@@ -132,17 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <span>RELEASES</span>
     </div>
 
-
-    <div
-      id="playlist"
-      class="playlist">
+    <div id="playlist" class="playlist">
 
       <div class="loading">
         LOADING...
       </div>
 
     </div>
-
 
     <iframe
       id="soundcloud-player"
@@ -156,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =====================================
-     MENU 4
+     MENU 4 — LONG BIO
      ===================================== */
 
   const menu4 = document.createElement("div");
@@ -186,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     After graduating from isdaT (Institute Superior of the Arts
     of Toulouse), she moved to Berlin, where she has been
     performing live since 2021. The same year, she founded
-    Associate Records
+    Associate Records.
 
     <br><br>
 
@@ -227,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =====================================
-     AJOUT DES MENUS
+     AJOUT DES 4 MENUS
      ===================================== */
 
   container.appendChild(menu1);
@@ -236,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
   container.appendChild(menu4);
 
 
-  console.log("Menus chargés");
+  console.log("✓ Menus 1, 2, 3 et 4 chargés");
 
 });
 ```
