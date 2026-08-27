@@ -1,159 +1,27 @@
-const iframe = document.getElementById("soundcloud-player");
-const playlistElement = document.getElementById("playlist");
-const trackCountElement = document.getElementById("track-count");
+<div class="menu3">
 
-const widget = SC.Widget(iframe);
+  <div class="menu3-header">
+    <span>RELEASES</span>
+  </div>
 
-let tracks = [];
-let currentTrack = -1;
+  <div id="playlist" class="playlist">
+    <div class="loading">LOADING...</div>
+  </div>
 
+  <!-- Lecteur SoundCloud invisible -->
+  <iframe
+    id="soundcloud-player"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1998325212&auto_play=false"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay; encrypted-media">
+  </iframe>
 
-/* =========================
-   SOUNDCLOUD PRÊT
-   ========================= */
+</div>
 
-widget.bind(SC.Widget.Events.READY, function () {
 
-  console.log("SoundCloud ready");
+<!-- API SoundCloud -->
+<script src="https://w.soundcloud.com/player/api.js"></script>
 
-  widget.getSounds(function (sounds) {
-
-    console.log("Morceaux récupérés :", sounds);
-
-    tracks = sounds || [];
-
-
-
-
-    /* Nettoyage */
-
-    playlistElement.innerHTML = "";
-
-
-    /* Création de la liste */
-
-    tracks.forEach(function (sound, index) {
-
-      const track = document.createElement("div");
-
-      track.classList.add("track");
-
-
-      /* Récupération sécurisée du titre */
-
-
-const title = sound && sound.title
-  ? sound.title
-  : "UNKNOWN TRACK";
-
-console.log("PISTE", index + 1, sound);
-
-
-      track.innerHTML = `
-        <span class="track-play">▷</span>
-
-        <span class="track-number">
-          ${String(index + 1).padStart(2, "0")}
-        </span>
-
-        <span class="track-title">
-          ${title}
-        </span>
-      `;
-
-
-      /* Clic sur le morceau */
-
-      track.addEventListener("click", function () {
-
-        playTrack(index);
-
-      });
-
-
-      playlistElement.appendChild(track);
-
-    });
-
-  });
-
-});
-
-
-/* =========================
-   LECTURE
-   ========================= */
-
-function playTrack(index) {
-
-  if (!tracks[index]) {
-    return;
-  }
-
-  currentTrack = index;
-
-  widget.skip(index);
-
-  widget.play();
-
-  updateActiveTrack();
-}
-
-
-/* =========================
-   MORCEAU ACTIF
-   ========================= */
-
-function updateActiveTrack() {
-
-  const elements =
-    document.querySelectorAll(".track");
-
-
-  elements.forEach(function (element, index) {
-
-    const icon =
-      element.querySelector(".track-play");
-
-
-    element.classList.remove("active");
-
-
-    if (index === currentTrack) {
-
-      element.classList.add("active");
-
-      icon.textContent = "▶";
-
-    } else {
-
-      icon.textContent = "▷";
-
-    }
-
-  });
-
-}
-
-
-/* =========================
-   MORCEAU TERMINÉ
-   ========================= */
-
-widget.bind(SC.Widget.Events.FINISH, function () {
-
-  if (currentTrack < tracks.length - 1) {
-
-    currentTrack++;
-
-    playTrack(currentTrack);
-
-  } else {
-
-    currentTrack = -1;
-
-    updateActiveTrack();
-
-  }
-
-});
+<!-- Ton lecteur -->
+<script src="player.js"></script>
