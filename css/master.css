@@ -73,7 +73,7 @@ padding: 1rem;
 .menu3 {
   background: grey;
   box-sizing: border-box;
-  font-family: Future;
+  font-family: CommitMono, Monospace;
   color: white;
   font-size: 16px;
   text-transform: uppercase;
