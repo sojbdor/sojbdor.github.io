@@ -99,6 +99,9 @@ padding: 1rem;
   position: fixed;
   bottom: 16px;
   right: 16px;
+  max-height: 50vh;
+  /* Active le défilement si le texte est trop long */
+  overflow-y: auto;
 }
 
 
