@@ -321,6 +321,18 @@ big {
 
 }
 
+ iframe[src*="bandcamp.com"] {
+    display: block;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+
+    border: 0;
+  }
+
 .iframe-youtube {
   display: block;
   width: 100%;
