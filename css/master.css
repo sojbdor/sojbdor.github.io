@@ -59,7 +59,7 @@ padding: 1rem;
 .menu2 {
   background: grey;
   box-sizing: border-box;
-  font-family: Future;
+  font-family: CommitMono, Monospace;
   color: white;
   font-size: 18px;
   text-transform: uppercase;
