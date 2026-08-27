@@ -1,13 +1,10 @@
 const iframe = document.getElementById("soundcloud-player");
-
 const playlistElement = document.getElementById("playlist");
-
 const trackCountElement = document.getElementById("track-count");
 
 const widget = SC.Widget(iframe);
 
 let tracks = [];
-
 let currentTrack = -1;
 
 
@@ -19,11 +16,11 @@ widget.bind(SC.Widget.Events.READY, function () {
 
   console.log("SoundCloud ready");
 
-
   widget.getSounds(function (sounds) {
 
-    tracks = sounds;
+    console.log("Morceaux récupérés :", sounds);
 
+    tracks = sounds || [];
 
     /* Nombre de morceaux */
 
@@ -45,13 +42,23 @@ widget.bind(SC.Widget.Events.READY, function () {
       track.classList.add("track");
 
 
+      /* Récupération sécurisée du titre */
+
+      const title =
+        sound && sound.title
+          ? sound.title
+          : "UNKNOWN TRACK";
+
+
       track.innerHTML = `
         <span class="track-play">▷</span>
+
         <span class="track-number">
           ${String(index + 1).padStart(2, "0")}
         </span>
+
         <span class="track-title">
-          ${sound.title}
+          ${title}
         </span>
       `;
 
@@ -75,7 +82,7 @@ widget.bind(SC.Widget.Events.READY, function () {
 
 
 /* =========================
-   LECTURE D'UN MORCEAU
+   LECTURE
    ========================= */
 
 function playTrack(index) {
@@ -84,22 +91,13 @@ function playTrack(index) {
     return;
   }
 
-
   currentTrack = index;
-
-
-  /*
-   * On demande à SoundCloud
-   * de jouer le morceau.
-   */
 
   widget.skip(index);
 
   widget.play();
 
-
   updateActiveTrack();
-
 }
 
 
@@ -115,11 +113,11 @@ function updateActiveTrack() {
 
   elements.forEach(function (element, index) {
 
-    element.classList.remove("active");
-
-
     const icon =
       element.querySelector(".track-play");
+
+
+    element.classList.remove("active");
 
 
     if (index === currentTrack) {
