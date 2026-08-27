@@ -96,7 +96,7 @@ padding: 1rem;
   line-height: 1.6em;
   width: 220px;
   padding: 1rem;
-  position: relative;
+  position: fixed;
   bottom: 16px;
   right: 16px;
 }
