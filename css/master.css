@@ -8,6 +8,11 @@
   src: url('../fonts/Future-Italic.ttf')
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
 font-family: CommitMono, Monospace;
@@ -323,4 +328,232 @@ big {
   max-width: 100%; /* Empêche le débordement */
 }
 
+@media (max-width: 700px) {
+
+  /* =========================
+     RÉGLAGES GÉNÉRAUX MOBILE
+     ========================= */
+
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 0.7rem;
+
+    font-size: 14px;
+
+    overflow-x: hidden;
+  }
+
+
+  /* =========================
+     MENU PRINCIPAL
+     ========================= */
+
+  .menu {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-bottom: 0.7rem;
+
+    padding: 1rem;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     MENU 2
+     ========================= */
+
+  .menu2 {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-bottom: 0.7rem;
+
+    padding: 1rem;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     MENU 3 — SOUND
+     ========================= */
+
+  .menu3 {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    height: 320px;
+
+    margin-bottom: 0.7rem;
+
+    padding: 1rem;
+
+    box-sizing: border-box;
+  }
+
+
+  .playlist {
+
+    height: 250px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* =========================
+     MENU 4
+     ========================= */
+
+  .menu4 {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    max-height: 300px;
+
+    margin-bottom: 0.7rem;
+
+    padding: 1rem;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* =========================
+     MAIN
+     ========================= */
+
+  .main {
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 1.2rem;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    letter-spacing: 0.04em;
+
+    line-height: 1.6;
+
+    text-align: left;
+  }
+
+
+  /* =========================
+     SHADOWBOX
+     ========================= */
+
+  shadowbox {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 1.2rem;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     LIENS
+     ========================= */
+
+  a {
+
+    word-break: break-word;
+  }
+
+
+  /* =========================
+     IMAGES
+     ========================= */
+
+  img {
+
+    max-width: 100%;
+
+    height: auto;
+  }
+
+
+  /* =========================
+     YOUTUBE
+     ========================= */
+
+  .iframe-youtube {
+
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    max-width: 100%;
+  }
+
+
+  /* =========================
+     LIGNES
+     ========================= */
+
+  .ma-ligne {
+
+    width: 100%;
+
+    margin: 10px 0;
+  }
+
+}
 
