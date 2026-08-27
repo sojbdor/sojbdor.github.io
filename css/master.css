@@ -177,12 +177,27 @@ big {
 .main {
     margin-left: 0;
   }
+@media (max-width: 700px) {
 
-.menu {
-	position:relative;
-	width: 100%;
-    padding: 2rem;
-	}
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .menu,
+  .menu2,
+  .menu3,
+  .menu4 {
+    position: relative;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    margin-bottom: 1rem;
+  }
+
+}
 
 .iframe-youtube {
   width: 100%; /* Prend toute la largeur du parent */
