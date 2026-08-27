@@ -322,11 +322,13 @@ big {
 }
 
 .iframe-youtube {
-  width: 100%; /* Prend toute la largeur du parent */
-  height: auto; /* Garde les proportions */
-  aspect-ratio: 16/9; /* Ratio standard pour les vidéos (optionnel mais recommandé) */
-  max-width: 100%; /* Empêche le débordement */
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
 }
+
 
 @media (max-width: 700px) {
 
