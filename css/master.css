@@ -79,7 +79,6 @@ padding: 1rem;
   top: 16px;
   right: 16px;
   width: 250px;
-  height: 420px;
   box-sizing: border-box;
   background: #060606;
   color: white;
@@ -106,14 +105,12 @@ padding: 1rem;
   border-bottom: 1px solid white;
 }
 
-
 /* LISTE */
 .playlist {
   height: 350px;
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 
 /* SCROLLBAR */
 .playlist::-webkit-scrollbar {
