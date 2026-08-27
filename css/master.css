@@ -154,7 +154,7 @@ big {
 
 .ma-ligne {
   border: none; /* Supprime toutes les bordures par défaut */
-  border-top: 1px solid white; /* Applique une bordure blanche en haut */
+  border-top: 1px solid white !important;
   width: 100%; /* Largeur à 100% du conteneur parent */
   margin: 10px 0; /* Espacement vertical (optionnel) */
 }
