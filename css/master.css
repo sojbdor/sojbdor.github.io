@@ -73,17 +73,27 @@ padding: 1rem;
 .menu3 {
   background: grey;
   box-sizing: border-box;
-  font-family: CommitMono, Monospace;
+  font-family: Future;
   color: white;
-  font-size: 10px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.10em;
   line-height: 1.6em;
-  width: 250px;
+
+  width: 220px;
   padding: 1rem;
+
   position: fixed;
   top: 16px;
   right: 16px;
+
+  z-index: 2;
+}
+
+.menu3 iframe {
+  display: block;
+  width: 100%;
+  border: none;
 }
 
 .menu4 {
