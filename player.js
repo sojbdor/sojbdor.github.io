@@ -42,7 +42,11 @@ widget.bind(SC.Widget.Events.READY, function () {
       /* Récupération sécurisée du titre */
 
 
-       const title = JSON.stringify(sound);
+const title = sound && sound.title
+  ? sound.title
+  : "UNKNOWN TRACK";
+
+console.log("PISTE", index + 1, sound);
 
 
       track.innerHTML = `
