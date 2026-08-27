@@ -70,25 +70,143 @@ padding: 1rem;
   position: fixed;
 }
 
+/* =========================
+   MENU 3 — MUSIC
+   ========================= */
+
 .menu3 {
   position: fixed;
   top: 16px;
   right: 16px;
   width: 250px;
-  height: 300px;
-  background: black;
-  padding: 0;
-  margin: 0;
-  z-index: 9999;
+  height: 420px;
+  box-sizing: border-box;
+  background: #060606;
+  color: white;
+  padding: 1rem;
+  font-family: CommitMono, Monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  line-height: 1.6em;
+  border: 1px solid #333333;
+  z-index: 10;
 }
 
-.menu3 iframe {
-  display: block;
-  width: 250px;
-  height: 300px;
-  border: none;
+
+/* HEADER */
+
+.menu3-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
+  font-family: Future;
+  font-size: 13px;
+  letter-spacing: 0.10em;
+  border-bottom: 1px solid white;
 }
 
+
+/* LISTE */
+.playlist {
+  height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+/* SCROLLBAR */
+.playlist::-webkit-scrollbar {
+  width: 3px;
+}
+
+.playlist::-webkit-scrollbar-track {
+  background: #060606;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: #74d3ae;
+}
+
+
+/* MORCEAUX */
+
+.track {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #333333;
+  cursor: pointer;
+  transition:
+  color 0.2s ease,
+  padding-left 0.2s ease;
+}
+
+
+/* SURVOL */
+
+.track:hover {
+  color: #74d3ae;
+  padding-left: 4px;
+}
+
+
+/* MORCEAU EN COURS */
+
+.track.active {
+  color: #74d3ae;
+}
+
+
+/* NUMÉRO */
+
+.track-number {
+  display: inline-block;
+  width: 28px;
+  color: #666666;
+}
+
+.track.active .track-number {
+  color: #74d3ae;
+}
+
+/* PETIT TRIANGLE */
+
+.track-play {
+  display: inline-block;
+  width: 15px;
+  color: #666666;
+}
+
+.track.active .track-play {
+  color: #74d3ae;
+}
+
+
+/* TITRE */
+
+.track-title {
+  display: inline;
+}
+
+
+/* CHARGEMENT */
+
+.loading {
+  color: #666666;
+  padding-top: 1rem;
+  font-size: 9px;
+}
+
+
+/* IFRAME SOUNDCLOUD */
+
+#soundcloud-player {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
 
 .menu4 {
   background: grey;
