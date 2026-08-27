@@ -145,3 +145,10 @@ big {
 	width: 100%;
     padding: 2rem;
 	}
+
+.iframe-youtube {
+  width: 100%; /* Prend toute la largeur du parent */
+  height: auto; /* Garde les proportions */
+  aspect-ratio: 16/9; /* Ratio standard pour les vidéos (optionnel mais recommandé) */
+  max-width: 100%; /* Empêche le débordement */
+}
