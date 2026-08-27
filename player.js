@@ -1,27 +1,263 @@
-<div class="menu3">
+const iframe =
+  document.getElementById("soundcloud-player");
 
-  <div class="menu3-header">
-    <span>RELEASES</span>
-  </div>
+const playlistElement =
+  document.getElementById("playlist");
 
-  <div id="playlist" class="playlist">
-    <div class="loading">LOADING...</div>
-  </div>
-
-  <!-- Lecteur SoundCloud invisible -->
-  <iframe
-    id="soundcloud-player"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1998325212&auto_play=false"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay; encrypted-media">
-  </iframe>
-
-</div>
+const widget =
+  SC.Widget(iframe);
 
 
-<!-- API SoundCloud -->
-<script src="https://w.soundcloud.com/player/api.js"></script>
+let tracks = [];
 
-<!-- Ton lecteur -->
-<script src="player.js"></script>
+let currentTrack = -1;
+
+
+/* =========================
+   SOUNDCLOUD READY
+   ========================= */
+
+widget.bind(
+  SC.Widget.Events.READY,
+  function () {
+
+    console.log("SoundCloud ready");
+
+
+    widget.getSounds(
+      function (sounds) {
+
+        console.log(
+          "Morceaux récupérés :",
+          sounds
+        );
+
+
+        tracks = sounds || [];
+
+
+        /* Nettoyage */
+
+        playlistElement.innerHTML = "";
+
+
+        /* =========================
+           CRÉATION DES TRACKS
+           ========================= */
+
+        tracks.forEach(
+          function (sound, index) {
+
+            const track =
+              document.createElement("div");
+
+
+            track.classList.add("track");
+
+
+            /*
+             * Récupération du titre
+             */
+
+            const title =
+              sound &&
+              sound.title
+                ? sound.title
+                : "TRACK UNAVAILABLE";
+
+
+            /*
+             * Si le titre n'existe pas,
+             * on ajoute la classe unknown.
+             */
+
+            if (
+              !sound ||
+              !sound.title
+            ) {
+
+              track.classList.add("unknown");
+
+            }
+
+
+            track.innerHTML = `
+
+              <span class="track-play">
+                ▷
+              </span>
+
+              <span class="track-number">
+                ${String(index + 1).padStart(2, "0")}
+              </span>
+
+              <span class="track-title">
+                ${title}
+              </span>
+
+            `;
+
+
+            /* =========================
+               CLIC
+               ========================= */
+
+            if (
+              sound &&
+              sound.title
+            ) {
+
+              track.addEventListener(
+                "click",
+                function () {
+
+                  playTrack(index);
+
+                }
+              );
+
+            }
+
+
+            playlistElement.appendChild(
+              track
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================
+   LECTURE
+   ========================= */
+
+function playTrack(index) {
+
+  if (!tracks[index]) {
+
+    return;
+
+  }
+
+
+  currentTrack = index;
+
+
+  /*
+   * Changement de morceau
+   */
+
+  widget.skip(index);
+
+
+  /*
+   * Lecture
+   */
+
+  widget.play();
+
+
+  /*
+   * Mise à jour visuelle
+   */
+
+  updateActiveTrack();
+
+}
+
+
+/* =========================
+   TRACK ACTIF
+   ========================= */
+
+function updateActiveTrack() {
+
+  const elements =
+    document.querySelectorAll(".track");
+
+
+  elements.forEach(
+    function (element, index) {
+
+      const icon =
+        element.querySelector(
+          ".track-play"
+        );
+
+
+      element.classList.remove(
+        "active"
+      );
+
+
+      if (
+        index === currentTrack
+      ) {
+
+        element.classList.add(
+          "active"
+        );
+
+        icon.textContent = "▶";
+
+      }
+
+      else {
+
+        icon.textContent = "▷";
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================
+   FIN DU MORCEAU
+   ========================= */
+
+widget.bind(
+  SC.Widget.Events.FINISH,
+  function () {
+
+
+    /*
+     * S'il reste un morceau
+     */
+
+    if (
+      currentTrack <
+      tracks.length - 1
+    ) {
+
+      currentTrack++;
+
+      playTrack(
+        currentTrack
+      );
+
+    }
+
+
+    /*
+     * Fin de la playlist
+     */
+
+    else {
+
+      currentTrack = -1;
+
+      updateActiveTrack();
+
+    }
+
+  }
+);
