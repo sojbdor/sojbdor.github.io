@@ -98,7 +98,7 @@ shadowbox {
 
 a {
   background: white;
-  color: white;
+  color: #5d4e60ff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -134,7 +134,15 @@ big {
   font-size: 24px;
 }
 
+.ma-ligne {
+  border: none; /* Supprime toutes les bordures par défaut */
+  border-top: 1px solid white !important;
+  width: 100%; /* Largeur à 100% du conteneur parent */
+  margin: 10px 0; /* Espacement vertical (optionnel) */
+}
+
 @media (max-width: 700px) {
+	
 .main {
     margin-left: 0;
   }
@@ -152,9 +160,4 @@ big {
   max-width: 100%; /* Empêche le débordement */
 }
 
-.ma-ligne {
-  border: none; /* Supprime toutes les bordures par défaut */
-  border-top: 1px solid white !important;
-  width: 100%; /* Largeur à 100% du conteneur parent */
-  margin: 10px 0; /* Espacement vertical (optionnel) */
-}
+
