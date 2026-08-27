@@ -22,10 +22,7 @@ widget.bind(SC.Widget.Events.READY, function () {
 
     tracks = sounds || [];
 
-    /* Nombre de morceaux */
 
-    trackCountElement.textContent =
-      String(tracks.length).padStart(2, "0");
 
 
     /* Nettoyage */
