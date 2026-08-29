@@ -361,7 +361,6 @@ big {
     overflow-x: hidden;
   }
 
-
   /* =========================
      MENU PRINCIPAL
      ========================= */
@@ -540,7 +539,7 @@ big {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  width: 100%;
+  width: 60%;
   margin-top: 2rem;
 }
 
