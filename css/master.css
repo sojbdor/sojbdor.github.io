@@ -452,24 +452,16 @@ big {
   .menu4 {
 
     position: relative;
-
     top: auto;
     left: auto;
     right: auto;
     bottom: auto;
-
     width: 100%;
-
     max-height: 300px;
-
     margin-bottom: 0.7rem;
-
     padding: 1rem;
-
     box-sizing: border-box;
-
     overflow-y: auto;
-
     -webkit-overflow-scrolling: touch;
   }
 
@@ -481,21 +473,13 @@ big {
   .main {
 
     position: relative;
-
     width: 100%;
-
     margin: 0;
-
     padding: 1.2rem;
-
     box-sizing: border-box;
-
     font-size: 13px;
-
     letter-spacing: 0.04em;
-
     line-height: 1.6;
-
     text-align: left;
   }
 
@@ -507,13 +491,9 @@ big {
   shadowbox {
 
     display: block;
-
     width: 100%;
-
     margin: 0;
-
     padding: 1.2rem;
-
     box-sizing: border-box;
   }
 
@@ -535,7 +515,6 @@ big {
   img {
 
     max-width: 100%;
-
     height: auto;
   }
 
@@ -547,11 +526,8 @@ big {
   .iframe-youtube {
 
     width: 100%;
-
     height: auto;
-
     aspect-ratio: 16 / 9;
-
     max-width: 100%;
   }
 
@@ -563,8 +539,56 @@ big {
   .ma-ligne {
 
     width: 100%;
-
     margin: 10px 0;
+  }
+
+}
+
+/* =========================
+   FEED PHOTO
+   ========================= */
+
+.photo-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.photo-feed a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #222;
+}
+
+.photo-feed img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* petit zoom au survol */
+
+.photo-feed a:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   TELEPHONE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .photo-feed {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 1.5rem;
   }
 
 }
