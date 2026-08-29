@@ -563,7 +563,7 @@ big {
 @media (max-width: 700px) {
 
   .photo-feed {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     margin-top: 1.5rem;
   }
