@@ -397,13 +397,9 @@ big {
     left: auto;
     right: auto;
     bottom: auto;
-
     width: 100%;
-
     margin-bottom: 0.7rem;
-
     padding: 1rem;
-
     box-sizing: border-box;
   }
 
@@ -420,15 +416,10 @@ big {
     left: auto;
     right: auto;
     bottom: auto;
-
     width: 100%;
-
     height: 320px;
-
     margin-bottom: 0.7rem;
-
     padding: 1rem;
-
     box-sizing: border-box;
   }
 
@@ -436,7 +427,6 @@ big {
   .playlist {
 
     height: 250px;
-
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -463,7 +453,6 @@ big {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-
 
   /* =========================
      MAIN
