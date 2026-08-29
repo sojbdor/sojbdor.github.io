@@ -353,11 +353,8 @@ big {
   body {
     width: 100%;
     box-sizing: border-box;
-
     padding: 0.7rem;
-
     font-size: 14px;
-
     overflow-x: hidden;
   }
 
@@ -368,18 +365,13 @@ big {
   .menu {
 
     position: relative;
-
     top: auto;
     left: auto;
     right: auto;
     bottom: auto;
-
     width: 100%;
-
     margin-bottom: 0.7rem;
-
     padding: 1rem;
-
     box-sizing: border-box;
   }
 
@@ -391,7 +383,6 @@ big {
   .menu2 {
 
     position: relative;
-
     top: auto;
     left: auto;
     right: auto;
@@ -410,7 +401,6 @@ big {
   .menu3 {
 
     position: relative;
-
     top: auto;
     left: auto;
     right: auto;
@@ -428,7 +418,6 @@ big {
     height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
-
     -webkit-overflow-scrolling: touch;
   }
 
@@ -540,6 +529,7 @@ big {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   width: 60%;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
