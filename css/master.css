@@ -59,6 +59,7 @@ padding: 1rem;
   width: 250px;
   padding: 1rem;
   position: fixed;
+  z-index: 10;
 }
 
 .menu2 {
@@ -73,6 +74,8 @@ padding: 1rem;
   bottom: 16px;
   padding: 1rem;
   position: fixed;
+  z-index: 10;
+
 }
 
 /* =========================
@@ -108,6 +111,7 @@ padding: 1rem;
   font-size: 13px;
   letter-spacing: 0.10em;
   border-bottom: 1px solid white;
+  z-index: 10;
 
 }
 
@@ -131,7 +135,6 @@ padding: 1rem;
   background: #74d3ae;
 }
 
-
 /* MORCEAUX */
 
 .track {
@@ -143,7 +146,6 @@ padding: 1rem;
   padding-left 0.2s ease;
 }
 
-
 /* SURVOL */
 
 .track:hover {
@@ -151,13 +153,11 @@ padding: 1rem;
   padding-left: 4px;
 }
 
-
 /* MORCEAU EN COURS */
 
 .track.active {
   color: #660099;
 }
-
 
 /* NUMÉRO */
 
@@ -183,13 +183,11 @@ padding: 1rem;
   color: #74d3ae;
 }
 
-
 /* TITRE */
 
 .track-title {
   display: inline;
 }
-
 
 /* CHARGEMENT */
 
@@ -198,7 +196,6 @@ padding: 1rem;
   padding-top: 1rem;
   font-size: 9px;
 }
-
 
 /* IFRAME SOUNDCLOUD */
 
@@ -227,6 +224,8 @@ padding: 1rem;
   max-height: 50vh;
   /* Active le défilement si le texte est trop long */
   overflow-y: auto;
+  z-index: 10;
+
 }
 
 
