@@ -48,7 +48,6 @@ padding: 1rem;
 }
 
 .menu {
-
   box-sizing: border-box;
   font-family: Future;
   color: white;
@@ -63,7 +62,6 @@ padding: 1rem;
 }
 
 .menu2 {
-
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   color: white;
@@ -220,7 +218,6 @@ padding: 1rem;
   bottom: 16px;
   right: 16px;
   max-height: 50vh;
-  /* Active le défilement si le texte est trop long */
   overflow-y: auto;
   z-index: 10;
 
@@ -290,34 +287,21 @@ big {
 }
 
 .sukkube-booking-button {
-  /* Police et texte */
-  font-family: Future, sans-serif;
-  font-size: 14px;
+  font-family: Future ;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.10em;
-  color: white; /* Texte en blanc */
-  text-decoration: none; /* Pas de soulignement */
-
-  /* Fond et bordure */
-  background-color: var(--fonce); /* Utilise une de tes variables de couleur */
-  border: 1px solid white; /* Bordure blanche fine */
-
-  /* Espacement et dimensions */
-  padding: 12px 24px;
+  padding: 10px 22px;
   display: inline-block;
-
-  /* Effets visuels */
   cursor: pointer;
-  transition: all 0.3s ease; /* Animation fluide */
-
-  /* Ombre légère pour un effet moderne */
+  transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sukkube-booking-button:hover {
-  background-color: white; /* Fond blanc au survol */
-  color: var(--fonce); /* Texte foncé au survol */
-  border-color: var(--fonce); /* Bordure foncée au survol */
+  background-color: white; 
+  color: var(--fonce);
+  border-color: var(--fonce);
 }
 
 .ma-ligne {
@@ -391,7 +375,6 @@ big {
      ========================= */
 
   .menu {
-
     position: relative;
     top: auto;
     left: auto;
@@ -409,7 +392,6 @@ big {
      ========================= */
 
   .menu2 {
-
     position: relative;
     top: auto;
     left: auto;
@@ -427,7 +409,6 @@ big {
      ========================= */
 
   .menu3 {
-
     position: relative;
     top: auto;
     left: auto;
@@ -442,7 +423,6 @@ big {
 
 
   .playlist {
-
     height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -455,7 +435,6 @@ big {
      ========================= */
 
   .menu4 {
-
     position: relative;
     top: auto;
     left: auto;
@@ -475,7 +454,6 @@ big {
      ========================= */
 
   .main {
-
     position: relative;
     width: 100%;
     margin: 0;
@@ -493,7 +471,6 @@ big {
      ========================= */
 
   shadowbox {
-
     display: block;
     width: 100%;
     margin: 0;
@@ -507,7 +484,6 @@ big {
      ========================= */
 
   a {
-
     word-break: break-word;
   }
 
@@ -517,7 +493,6 @@ big {
      ========================= */
 
   img {
-
     max-width: 100%;
     height: auto;
   }
@@ -528,7 +503,6 @@ big {
      ========================= */
 
   .iframe-youtube {
-
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -541,7 +515,6 @@ big {
      ========================= */
 
   .ma-ligne {
-
     width: 100%;
     margin: 10px 0;
   }
