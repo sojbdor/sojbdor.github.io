@@ -283,8 +283,9 @@ a:active {
 }
 
 big {
-  font-family: Minion Pro Regular ;
+  font-family: Future ;
   text-transform: uppercase;
+  font-style: italic;
   font-size: 24px;
 }
 
