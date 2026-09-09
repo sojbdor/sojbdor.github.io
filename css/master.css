@@ -287,21 +287,15 @@ big {
 }
 
 .sukkube-booking-button {
-  font-family: Future ;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  padding: 10px 22px;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: white;
+  color: #5d4e60ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .sukkube-booking-button:hover {
-  background-color: white; 
-  color: var(--fonce);
-  border-color: var(--fonce);
+  color: #5d4e60ff;
+  text-decoration: underline;
 }
 
 .ma-ligne {
