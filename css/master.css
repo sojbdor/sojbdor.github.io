@@ -285,18 +285,6 @@ big {
   font-size: 24px;
 }
 
-.sukkube-booking-button {
-  background: white;
-  color: #5d4e60ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.sukkube-booking-button:hover {
-  color: #5d4e60ff;
-  text-decoration: underline;
-}
-
 .ma-ligne {
   border: none; /* Supprime toutes les bordures par défaut */
   border-top: 1px solid white !important;
