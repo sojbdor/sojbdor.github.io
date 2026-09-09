@@ -289,6 +289,37 @@ big {
   font-size: 24px;
 }
 
+.sukkube-booking-button {
+  /* Police et texte */
+  font-family: Future, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: white; /* Texte en blanc */
+  text-decoration: none; /* Pas de soulignement */
+
+  /* Fond et bordure */
+  background-color: var(--fonce); /* Utilise une de tes variables de couleur */
+  border: 1px solid white; /* Bordure blanche fine */
+
+  /* Espacement et dimensions */
+  padding: 12px 24px;
+  display: inline-block;
+
+  /* Effets visuels */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animation fluide */
+
+  /* Ombre légère pour un effet moderne */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sukkube-booking-button:hover {
+  background-color: white; /* Fond blanc au survol */
+  color: var(--fonce); /* Texte foncé au survol */
+  border-color: var(--fonce); /* Bordure foncée au survol */
+}
+
 .ma-ligne {
   border: none; /* Supprime toutes les bordures par défaut */
   border-top: 1px solid white !important;
