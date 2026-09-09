@@ -48,7 +48,7 @@ padding: 1rem;
 }
 
 .menu {
-  background: grey;
+
   box-sizing: border-box;
   font-family: Future;
   color: white;
@@ -63,7 +63,7 @@ padding: 1rem;
 }
 
 .menu2 {
-  background: grey;
+
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   color: white;
@@ -88,7 +88,6 @@ padding: 1rem;
   right: 16px;
   width: 250px;
   box-sizing: border-box;
-  background: #060606;
   color: white;
   padding: 1rem;
   font-family: CommitMono, Monospace;
@@ -209,7 +208,6 @@ padding: 1rem;
 }
 
 .menu4 {
-  background: grey;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   color: white;
@@ -230,7 +228,6 @@ padding: 1rem;
 
 
 .main {
-  background: grey;
   color: white;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
@@ -243,7 +240,6 @@ padding: 1rem;
 }
 
 shadowbox {
-  background: grey;
   color: white;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
