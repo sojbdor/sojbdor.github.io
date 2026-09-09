@@ -209,7 +209,7 @@ padding: 1rem;
   box-sizing: border-box;
   font-family: CommitMono, Monospace;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.10em;
   line-height: 1.6em;
   width: 250px;
@@ -222,7 +222,6 @@ padding: 1rem;
   z-index: 10;
 
 }
-
 
 .main {
   color: white;
@@ -344,7 +343,6 @@ big {
   border: 0;
 }
 
-
 @media (max-width: 700px) {
 
   /* =========================
@@ -380,7 +378,6 @@ big {
     box-sizing: border-box;
   }
 
-
   /* =========================
      MENU 2
      ========================= */
@@ -396,7 +393,6 @@ big {
     padding: 1rem;
     box-sizing: border-box;
   }
-
 
   /* =========================
      MENU 3 — SOUND
@@ -415,14 +411,12 @@ big {
     box-sizing: border-box;
   }
 
-
   .playlist {
     height: 250px;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
-
 
   /* =========================
      MENU 4
@@ -459,7 +453,6 @@ big {
     text-align: left;
   }
 
-
   /* =========================
      SHADOWBOX
      ========================= */
@@ -472,7 +465,6 @@ big {
     box-sizing: border-box;
   }
 
-
   /* =========================
      LIENS
      ========================= */
@@ -480,7 +472,6 @@ big {
   a {
     word-break: break-word;
   }
-
 
   /* =========================
      IMAGES
@@ -490,7 +481,6 @@ big {
     max-width: 100%;
     height: auto;
   }
-
 
   /* =========================
      YOUTUBE
@@ -502,7 +492,6 @@ big {
     aspect-ratio: 16 / 9;
     max-width: 100%;
   }
-
 
   /* =========================
      LIGNES
@@ -549,7 +538,6 @@ big {
 .photo-feed a:hover img {
   transform: scale(1.04);
 }
-
 
 /* =========================
    TELEPHONE
