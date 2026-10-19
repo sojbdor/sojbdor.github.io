@@ -322,6 +322,12 @@ big {
   html {
     width: 100%;
     overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+
+  html::-webkit-scrollbar {
+  display: none;            
   }
 
   body {
