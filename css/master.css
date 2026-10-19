@@ -79,10 +79,8 @@ padding: 0.5rem;
 /* HEADER */
 
 .menu3-header {
-  display: flex;
+  display: none;
   justify-content: space-between;
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.6rem;
   font-family: Future;
   font-size: 15px;
   padding: 0.5rem;
