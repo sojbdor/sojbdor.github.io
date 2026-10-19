@@ -125,41 +125,10 @@ padding: 0.5rem;
   padding-left 0.2s ease;
 }
 
-/* SURVOL */
-
-.track:hover {
-  color: #660099;
-  padding-left: 4px;
-}
-
 /* MORCEAU EN COURS */
 
 .track.active {
   color: #660099;
-}
-
-/* NUMÉRO */
-
-.track-number {
-  display: inline-block;
-  width: 28px;
-  color: #666666;
-}
-
-.track.active .track-number {
-  color: #74d3ae;
-}
-
-/* PETIT TRIANGLE */
-
-.track-play {
-  display: inline-block;
-  width: 15px;
-  color: #666666;
-}
-
-.track.active .track-play {
-  color: #74d3ae;
 }
 
 /* TITRE */
