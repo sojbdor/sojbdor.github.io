@@ -25,7 +25,6 @@ position: relative;
 background: #060606;
 overflow-x: hidden;
 padding: 0.5rem;
-
 }
 
 
@@ -90,7 +89,6 @@ padding: 0.5rem;
   letter-spacing: 0.10em;
   border-bottom: 1px solid white;
   z-index: 10;
-
 }
 
 /* LISTE */
@@ -237,11 +235,10 @@ big {
 }
 
 .ma-ligne {
-  border: none; /* Supprime toutes les bordures par défaut */
+  border: none; 
   border-top: 1px solid white !important;
-  width: 100%; /* Largeur à 100% du conteneur parent */
-  margin: 10px 0; /* Espacement vertical (optionnel) */
-}
+  width: 100%;
+  margin: 10px 0;
 
 @media (max-width: 700px) {
 
