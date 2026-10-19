@@ -28,24 +28,6 @@ padding: 0.5rem;
 
 }
 
-* {
---celadon: #74d3aeff;
---sage-green: #678d58ff;
---muted-olive: #a6c48aff;
---champagne-mist: #f6e7cbff;
---sweet-salmon: #dd9787ff;
---mint-leaf: #3ab795ff;
---pale-slate: #c3c7d5ff;
---peach-fuzz: #ffd5c2ff;
---dusty-denim: #6c91bfff;
---mauve-shadow: #5d4e60ff;
---fonce: #2B2B2B;
---foncee: #333333;
---fonceee: #404040;
---fonceee: #474747;
---fonceeee: #4F4D4D;
---fonceeeee: #545252;
-}
 
 .menu {
   box-sizing: border-box;
