@@ -94,6 +94,12 @@ padding: 0.5rem;
   height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.playlist::-webkit-scrollbar {
+  display: none;
 }
 
 /* SCROLLBAR */
@@ -351,14 +357,17 @@ big {
     box-sizing: border-box;
   }
 
-  .playlist {
-    height: 250px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-  }
+.playlist {
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.playlist::-webkit-scrollbar {
+  display: none;
+}
 
   /* =========================
      MENU 4
