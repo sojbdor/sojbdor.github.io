@@ -98,9 +98,6 @@ padding: 0.5rem;
   -ms-overflow-style: none;   
 }
 
-.playlist::-webkit-scrollbar {
-  display: none;            
-}
 
 /* MORCEAUX */
 
