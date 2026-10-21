@@ -120,12 +120,12 @@ body {
 
 .menu2 {
   position: fixed;
-  top: 145px;
+  top: 130px;
   left: 2.3%;
   bottom: auto;
   z-index: 10;
 
-  width: 22%;
+  width: 21%;
   max-width: 280px;
   max-height: calc(100vh - 165px);
   padding: 8px;
@@ -147,7 +147,7 @@ body {
 
 .menu3 {
   position: fixed;
-  top: 175px;
+  top: 130px;
   right: 2.3%;
   left: auto;
   bottom: calc(45vh + 36px);
@@ -155,7 +155,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  width: 22%;
+  width: 21%;
   max-width: 280px;
   min-width: 0;
   min-height: 0;
@@ -347,7 +347,8 @@ body {
 
 .main {
   box-sizing: border-box;
-  width: 48%;
+  width: 50%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 8px;
 
@@ -570,13 +571,15 @@ big {
   }
 
   .menu2 {
+    top: 130px;
     left: 2%;
-    width: 20%;
+    width: 19%;
   }
 
- .menu3 {
+  .menu3 {
+    top: 130px;
     right: 2%;
-    width: 23%;
+    width: 21%;
   }
 
   .menu4 {
@@ -585,7 +588,8 @@ big {
   }
 
   .main {
-    width: 48%;
+    width: 52%;
+    margin: 0 auto;
   }
 
   .album-grid {
@@ -695,6 +699,7 @@ big {
 
   .main {
     width: 100%;
+    max-width: 100%;
     margin: 20px 0;
     padding: 8px;
     font-size: 13px;
