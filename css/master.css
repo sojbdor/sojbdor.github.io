@@ -49,14 +49,18 @@ body {
   left: auto;
   right: auto;
   z-index: 100;
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 26px;
+
   width: 100%;
   margin: 0 0 36px;
   padding: 0 0 16px;
+
   border-bottom: 1px solid #555;
+
   color: white;
   font-family: Future, sans-serif;
   font-size: 13px;
@@ -120,13 +124,16 @@ body {
   left: 2.3%;
   bottom: auto;
   z-index: 10;
+
   width: 22%;
   max-width: 280px;
   max-height: calc(100vh - 165px);
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -140,18 +147,23 @@ body {
 
 .menu3 {
   position: fixed;
-  /* Keep the playlist below the horizontal navigation */
   top: 175px;
   right: 2.3%;
   left: auto;
-  bottom: auto;
+  bottom: calc(45vh + 36px);
   z-index: 20;
+
+  display: flex;
+  flex-direction: column;
   width: 22%;
   max-width: 280px;
   min-width: 0;
-  max-height: calc(100vh - 195px);
+  min-height: 0;
   padding: 8px;
+  box-sizing: border-box;
+
   overflow: hidden;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -164,32 +176,44 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  flex: 0 0 auto;
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
+
   padding: 8px 0;
   margin-bottom: 8px;
   border-bottom: 1px solid #555;
+
   font-family: Future, sans-serif;
   font-size: 14px;
   letter-spacing: 0.10em;
 }
 
-/* Liste des morceaux */
+/* Liste des morceaux : reste dans l’espace disponible au-dessus du menu 4 */
 
-.playlist,
-#playlist {
+.menu3 .playlist,
+.menu3 #playlist {
+  flex: 1 1 auto;
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  height: 300px;
-  max-height: 300px;
+  min-height: 0;
+  height: auto;
+  max-height: none;
   box-sizing: border-box;
+
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
+
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
+}
+
+/* Au cas où #playlist porte aussi la classe .playlist */
+.menu3 .playlist {
+  flex: 1 1 auto;
 }
 
 .playlist::-webkit-scrollbar {
@@ -215,12 +239,14 @@ body {
   padding: 9px 7px;
   border-bottom: 1px solid #292929;
   overflow-wrap: anywhere;
+
   color: #aaa;
   cursor: pointer;
+
   transition:
-  color 0.2s ease,
-  padding-left 0.2s ease,
-  background 0.2s ease;
+    color 0.2s ease,
+    padding-left 0.2s ease,
+    background 0.2s ease;
 }
 
 .track:hover {
@@ -250,8 +276,10 @@ body {
   padding: 4px 8px;
   border: 1px solid #555;
   border-radius: 0;
+
   background: transparent;
   color: white;
+
   font-family: CommitMono, monospace;
   font-size: 10px;
   cursor: pointer;
@@ -278,9 +306,11 @@ body {
   position: absolute;
   left: -9999px;
   top: 0;
+
   width: 1px;
   height: 1px;
   padding: 0;
+
   opacity: 0;
   pointer-events: none;
 }
@@ -294,13 +324,16 @@ body {
   right: 2.3%;
   bottom: 16px;
   z-index: 10;
+
   width: 22%;
   max-width: 280px;
   max-height: 45vh;
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 10px;
@@ -317,6 +350,7 @@ body {
   width: 48%;
   margin: 0 auto;
   padding: 8px;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 13px;
@@ -331,6 +365,7 @@ shadowbox {
   width: 40%;
   margin-right: 0;
   padding: 8px;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 14px;
@@ -404,6 +439,7 @@ big {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+
   width: 60%;
   margin: 32px auto 0;
 }
@@ -444,6 +480,7 @@ big {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px 5.5%;
+
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
@@ -592,9 +629,11 @@ big {
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 16px;
+
     width: 100%;
     margin: 0 0 24px;
     padding: 0 0 14px;
+
     border-bottom: 1px solid #555;
     font-size: 12px;
   }
@@ -623,11 +662,14 @@ big {
     right: auto;
     bottom: auto;
     left: auto;
+
     width: 100%;
     max-width: none;
     max-height: none;
+
     margin: 20px 0;
     padding: 8px;
+
     overflow: visible;
   }
 
@@ -638,10 +680,11 @@ big {
   }
 
   .menu3 .playlist,
-  .menu3 #playlist,
-  #playlist {
+  .menu3 #playlist {
+    flex: 0 0 auto;
     width: 100%;
     max-width: 100%;
+    min-height: 0;
     height: 250px;
     max-height: 250px;
     overflow-y: auto;
