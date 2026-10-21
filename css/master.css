@@ -1,55 +1,572 @@
 
+@font-face {
+  font-family: 'CommitMono';
+  src: url('../fonts/CommitMono.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Future';
+  src: url('../fonts/Future-Italic.ttf');
+  font-display: swap;
+}
+
 /* =========================
-   FIX PLAYLIST SOUNDCLOUD
-   Ne chevauche plus le menu du haut
+   RÉGLAGES GÉNÉRAUX
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 16px 2.3%;
+  background: #060606;
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+/* =========================
+   MENU PRINCIPAL — HAUT
+   ========================= */
+
+.menu {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+
+  width: 100%;
+  margin: 0 0 36px;
+  padding: 0 0 16px;
+
+  border-bottom: 1px solid #555;
+
+  color: white;
+  font-family: Future, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.10em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* Logo */
+
+.menu > a:first-child {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 14px;
+}
+
+.menu > a:first-child img {
+  display: block;
+  width: 60px;
+  max-width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navigation : album, ep, single... */
+
+.menu > a:not(:first-child) {
+  display: inline-block;
+  padding: 4px 0;
+  background: transparent;
+  color: #ccc;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.menu > a:not(:first-child):link,
+.menu > a:not(:first-child):visited {
+  background: transparent;
+  color: #ccc;
+}
+
+.menu > a:not(:first-child):hover {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.menu > a:not(:first-child):active {
+  color: #a64dff;
+}
+
+/* =========================
+   MENU 2 — PRÉSENTATION
+   ========================= */
+
+.menu2 {
+  position: fixed;
+  top: 145px;
+  left: 2.3%;
+  bottom: auto;
+  z-index: 10;
+
+  width: 22%;
+  max-width: 280px;
+  max-height: calc(100vh - 165px);
+  padding: 8px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+/* =========================
+   MENU 3 — PLAYLIST
    ========================= */
 
 .menu3 {
   position: fixed;
-  top: 115px;
+  top: 145px;
   right: 2.3%;
-  bottom: auto;
   left: auto;
-
-  width: 250px;
-  max-width: 22%;
-  max-height: calc(100vh - 140px);
-
-  padding: 8px;
-  overflow: hidden;
+  bottom: auto;
   z-index: 20;
+
+  width: 22%;
+  max-width: 280px;
+  max-height: calc(100vh - 165px);
+  padding: 8px;
+
+  overflow: hidden;
+
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
 }
 
-/* La liste défile à l'intérieur de la playlist */
-.menu3 .playlist {
-  height: auto;
-  max-height: calc(100vh - 180px);
+.menu3-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  overflow-x: hidden;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #555;
+
+  font-family: Future, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.10em;
+}
+
+/* Liste des morceaux */
+
+.playlist {
+  height: auto;
+  max-height: calc(100vh - 220px);
+
   overflow-y: auto;
+  overflow-x: hidden;
   overscroll-behavior: contain;
 
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
 }
 
-/* Barre de défilement discrète */
-.menu3 .playlist::-webkit-scrollbar {
+.playlist::-webkit-scrollbar {
   width: 3px;
 }
 
-.menu3 .playlist::-webkit-scrollbar-thumb {
+.playlist::-webkit-scrollbar-thumb {
   background: #555;
 }
 
-/* Le lecteur audio reste invisible */
+.playlist::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Chaque morceau */
+
+.track {
+  display: block;
+  padding: 9px 7px;
+  border-bottom: 1px solid #292929;
+
+  color: #aaa;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease,
+    background 0.2s ease;
+}
+
+.track:hover {
+  padding-left: 11px;
+  color: white;
+  background: #111;
+}
+
+.track.active {
+  color: #b56cff;
+}
+
+/* Titre du morceau */
+
+.track-title {
+  display: inline;
+  overflow-wrap: anywhere;
+}
+
+/* Boutons éventuels générés par player.js */
+
+.track button,
+.playlist button {
+  padding: 4px 8px;
+  border: 1px solid #555;
+  border-radius: 0;
+
+  background: transparent;
+  color: white;
+
+  font-family: CommitMono, monospace;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.track button:hover,
+.playlist button:hover {
+  background: white;
+  color: black;
+}
+
+/* Chargement */
+
+.loading {
+  padding: 8px 0;
+  color: #777;
+  font-size: 9px;
+}
+
+/* Lecteur SoundCloud invisible */
+
 #soundcloud-player {
   position: absolute;
   left: -9999px;
+  top: 0;
+
   width: 1px;
   height: 1px;
+  padding: 0;
+
   opacity: 0;
   pointer-events: none;
+}
+
+/* =========================
+   MENU 4 — BIOGRAPHIE
+   ========================= */
+
+.menu4 {
+  position: fixed;
+  right: 2.3%;
+  bottom: 16px;
+  z-index: 10;
+
+  width: 22%;
+  max-width: 280px;
+  max-height: 45vh;
+  padding: 8px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+}
+
+/* =========================
+   CONTENU PRINCIPAL
+   ========================= */
+
+.main {
+  box-sizing: border-box;
+  width: 48%;
+  margin: 0 auto;
+  padding: 8px;
+
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  text-align: left;
+}
+
+shadowbox {
+  display: block;
+  box-sizing: border-box;
+  width: 40%;
+  margin-right: 0;
+  padding: 8px;
+
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+}
+
+/* =========================
+   LIENS
+   ========================= */
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:link,
+a:visited {
+  color: #ccc;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 3px;
+}
+
+a:active {
+  color: #a64dff;
+}
+
+/* =========================
+   TITRES
+   ========================= */
+
+big {
+  font-family: Future, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.ma-ligne {
+  width: 100%;
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #555;
+}
+
+/* =========================
+   YOUTUBE
+   ========================= */
+
+.iframe-youtube {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* =========================
+   GALERIE PHOTO
+   ========================= */
+
+.photo-feed:not(:has(.album-grid)) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+
+  width: 60%;
+  margin: 32px auto 0;
+}
+
+.photo-feed:not(:has(.album-grid)) a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #222;
+}
+
+.photo-feed:not(:has(.album-grid)) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.photo-feed:not(:has(.album-grid)) a:hover img {
+  transform: scale(1.04);
+  opacity: 0.8;
+}
+
+/* =========================
+   DISCOGRAPHIE
+   ========================= */
+
+.photo-feed:has(.album-grid) {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px 5.5%;
+
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.album {
+  min-width: 0;
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.album iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 120px;
+  border: 1px solid #333;
+  background: #000;
+}
+
+.album .album-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #111;
+}
+
+.album .album-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.album .album-cover:hover img {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.album h2 {
+  margin: 12px 0 10px;
+  font-family: Future, sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.album p {
+  margin: 0 0 12px;
+  font-family: CommitMono, monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+
+.album .album-info {
+  margin-top: 16px;
+  color: #999;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* =========================
+   TABLETTE
+   ========================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  body {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+
+  .menu {
+    gap: 10px 18px;
+    font-size: 12px;
+  }
+
+  .menu2 {
+    left: 2%;
+    width: 20%;
+  }
+
+  .menu3 {
+    right: 2%;
+    width: 23%;
+  }
+
+  .menu4 {
+    right: 2%;
+    width: 23%;
+  }
+
+  .main {
+    width: 48%;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 24px;
+  }
+
+  .photo-feed:not(:has(.album-grid)) {
+    width: 75%;
+  }
 }
 
 /* =========================
@@ -57,7 +574,60 @@
    ========================= */
 
 @media (max-width: 700px) {
-  .menu3 {
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  /* Menu principal */
+
+  .menu {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 0 0 14px;
+
+    border-bottom: 1px solid #555;
+    font-size: 12px;
+  }
+
+  .menu > a:first-child {
+    flex: 0 0 100%;
+    margin: 0 0 8px;
+  }
+
+  .menu > a:first-child img {
+    width: 50px;
+    max-width: 50px;
+  }
+
+  .menu > a:not(:first-child) {
+    padding: 3px 0;
+  }
+
+  /* Menus secondaires en flux normal */
+
+  .menu2,
+  .menu3,
+  .menu4 {
     position: relative;
     top: auto;
     right: auto;
@@ -67,14 +637,114 @@
     width: 100%;
     max-width: none;
     max-height: none;
+
     margin: 20px 0;
     padding: 8px;
+
     overflow: visible;
+  }
+
+  /* Playlist défilante sur mobile */
+
+  .menu3 {
+    overflow: hidden;
   }
 
   .menu3 .playlist {
     height: 250px;
     max-height: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Contenu central */
+
+  .main {
+    width: 100%;
+    margin: 20px 0;
+    padding: 8px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  shadowbox {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .iframe-youtube {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Galerie générale */
+
+  .photo-feed:not(:has(.album-grid)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    width: 100%;
+    margin: 24px 0 0;
+  }
+
+  /* Albums */
+
+  .photo-feed:has(.album-grid) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 14px;
+  }
+
+  .album iframe {
+    height: 110px;
+  }
+
+  .album h2 {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .album p {
+    font-size: 10px;
+  }
+
+  .album .album-info {
+    font-size: 9px;
+  }
+}
+
+/* =========================
+   PETITS TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 360px) {
+  body {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .menu {
+    gap: 8px 13px;
+    font-size: 11px;
+  }
+
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .album iframe {
+    height: 120px;
   }
 }
