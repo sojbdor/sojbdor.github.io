@@ -1,12 +1,17 @@
+
 @font-face {
   font-family: 'CommitMono';
-  src: url('../fonts/CommitMono.otf')
+  src: url('../fonts/CommitMono.otf');
 }
 
 @font-face {
   font-family: 'Future';
-  src: url('../fonts/Future-Italic.ttf')
+  src: url('../fonts/Future-Italic.ttf');
 }
+
+/* =========================
+   RÉGLAGES GÉNÉRAUX
+   ========================= */
 
 *,
 *::before,
@@ -14,23 +19,31 @@
   box-sizing: border-box;
 }
 
-body {
-font-family: CommitMono, Monospace;
-color: white;
-font-size: 15px;
-letter-spacing: 0.01em;
-line-height: 1.6;
-text-align:left;
-position: relative;
-background: #060606;
-overflow-x: hidden;
-padding: 0.5rem;
+html {
+  width: 100%;
 }
 
+body {
+  font-family: CommitMono, monospace;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  text-align: left;
+  position: relative;
+  background: #060606;
+  overflow-x: hidden;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+/* =========================
+   MENU PRINCIPAL
+   ========================= */
 
 .menu {
   box-sizing: border-box;
-  font-family: Future;
+  font-family: Future, sans-serif;
   color: white;
   font-size: 15px;
   text-transform: uppercase;
@@ -39,22 +52,24 @@ padding: 0.5rem;
   width: 250px;
   padding: 0.5rem;
   position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
   z-index: 10;
 }
 
 .menu2 {
   box-sizing: border-box;
-  font-family: CommitMono, Monospace;
+  font-family: CommitMono, monospace;
   color: white;
   font-size: 11px;
   letter-spacing: 0.10em;
   line-height: 1.6em;
   width: 250px;
   bottom: 16px;
+  left: 0.5rem;
   padding: 0.5rem;
   position: fixed;
   z-index: 10;
-
 }
 
 /* =========================
@@ -69,19 +84,17 @@ padding: 0.5rem;
   box-sizing: border-box;
   color: white;
   padding: 0.5rem;
-  font-family: CommitMono, Monospace;
+  font-family: CommitMono, monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   line-height: 1.6em;
   z-index: 10;
 }
 
-/* HEADER */
-
 .menu3-header {
   display: none;
   justify-content: space-between;
-  font-family: Future;
+  font-family: Future, sans-serif;
   font-size: 15px;
   padding: 0.5rem;
   letter-spacing: 0.10em;
@@ -89,15 +102,19 @@ padding: 0.5rem;
   z-index: 10;
 }
 
-/* LISTE */
+/* LISTE MUSICALE */
+
 .playlist {
   height: 250px;
-  overflow-y: auto;        
+  overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: none;        
-  -ms-overflow-style: none;   
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
+.playlist::-webkit-scrollbar {
+  display: none;
+}
 
 /* MORCEAUX */
 
@@ -106,45 +123,43 @@ padding: 0.5rem;
   border-bottom: 1px solid #333333;
   cursor: pointer;
   transition:
-  color 0.2s ease,
-  padding-left 0.2s ease;
+    color 0.2s ease,
+    padding-left 0.2s ease;
 }
-
-/* MORCEAU EN COURS */
 
 .track.active {
   color: #660099;
 }
 
-/* TITRE */
-
 .track-title {
   display: inline;
 }
 
-/* CHARGEMENT */
-
 .loading {
   color: #666666;
-  padding-top: 0,5rem;
+  padding-top: 0.5rem;
   font-size: 9px;
 }
 
-/* IFRAME SOUNDCLOUD */
+/* LECTEUR SOUNDCLOUD */
 
 #soundcloud-player {
   position: absolute;
   width: 1px;
   height: 1px;
   left: -9999px;
-  padding: 0.5rem;
+  padding: 0;
   opacity: 0;
   pointer-events: none;
 }
 
+/* =========================
+   MENU 4
+   ========================= */
+
 .menu4 {
   box-sizing: border-box;
-  font-family: CommitMono, Monospace;
+  font-family: CommitMono, monospace;
   color: white;
   font-size: 11px;
   letter-spacing: 0.10em;
@@ -159,10 +174,14 @@ padding: 0.5rem;
   z-index: 10;
 }
 
+/* =========================
+   CONTENU PRINCIPAL
+   ========================= */
+
 .main {
   color: white;
   box-sizing: border-box;
-  font-family: CommitMono, Monospace;
+  font-family: CommitMono, monospace;
   font-size: 14px;
   letter-spacing: 0.07em;
   margin: 0 auto;
@@ -172,19 +191,24 @@ padding: 0.5rem;
 }
 
 shadowbox {
+  display: block;
   color: white;
   box-sizing: border-box;
-  font-family: CommitMono, Monospace;
+  font-family: CommitMono, monospace;
   font-size: 14px;
   letter-spacing: 0.07em;
-  margin-right: 0px;
+  margin-right: 0;
   padding: 0.5rem;
   width: 40%;
 }
 
+/* =========================
+   LIENS
+   ========================= */
+
 a {
   background: white;
-  color: #5d4e60ff;
+  color: #5d4e60;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -205,7 +229,7 @@ a:focus {
 }
 
 a:hover {
-  color: #5d4e60ff;
+  color: #5d4e60;
   text-decoration: underline;
 }
 
@@ -214,50 +238,31 @@ a:active {
   background: #660099;
 }
 
+/* =========================
+   TITRES
+   ========================= */
+
 big {
-  font-family: Future ;
+  font-family: Future, sans-serif;
   text-transform: uppercase;
   font-style: italic;
   font-size: 15px;
 }
 
+/* =========================
+   LIGNE HORIZONTALE
+   ========================= */
+
 .ma-ligne {
-  border: none; 
+  border: none;
   border-top: 1px solid white !important;
   width: 100%;
   margin: 10px 0;
-  }
-
-@media (max-width: 700px) {
-
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .menu,
-  .menu2,
-  .menu3,
-  .menu4 {
-    position: relative;
-    width: 100%;
-    right: auto;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    margin-bottom: 0.5rem;
-  }
-
 }
 
-@media screen and (max-width: 700px) {
-
-  iframe[src*="bandcamp.com"] {
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-
-}
+/* =========================
+   IFRAME YOUTUBE
+   ========================= */
 
 .iframe-youtube {
   display: block;
@@ -267,21 +272,159 @@ big {
   border: 0;
 }
 
+/* =========================
+   GRILLE PHOTO GÉNÉRALE
+   Pour les autres pages utilisant
+   .photo-feed avec des images seules
+   ========================= */
+
+.photo-feed:not(:has(.album-grid)) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 60%;
+  margin: 2rem auto 0;
+}
+
+.photo-feed:not(:has(.album-grid)) a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #222;
+}
+
+.photo-feed:not(:has(.album-grid)) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-feed:not(:has(.album-grid)) a:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   ALBUMS — DISCOGRAPHIE
+   ========================= */
+
+.photo-feed:has(.album-grid) {
+  display: block;
+  width: calc(100% - 250px);
+  margin: 1rem 0 0 250px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 1.2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.album {
+  min-width: 0;
+  color: white;
+  font-family: CommitMono, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+/* POCHETTES */
+
+.album .album-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #111111;
+}
+
+.album .album-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+.album .album-cover:hover img {
+  opacity: 0.75;
+}
+
+/* TITRES DES ALBUMS */
+
+.album h2 {
+  font-family: Future, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  margin: 0.8rem 0 0.5rem;
+}
+
+/* DESCRIPTIONS */
+
+.album p {
+  font-family: CommitMono, monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.7rem;
+  overflow-wrap: anywhere;
+}
+
+.album .album-info {
+  font-size: 10px;
+  opacity: 0.6;
+  line-height: 1.8;
+}
+
+/* =========================
+   TABLETTE
+   ========================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .photo-feed:has(.album-grid) {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    padding: 0.5rem;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  .photo-feed:not(:has(.album-grid)) {
+    width: 70%;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 700px) {
-
-  /* =========================
-     RÉGLAGES GÉNÉRAUX MOBILE
-     ========================= */
-
   html {
     width: 100%;
     overflow-x: hidden;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   html::-webkit-scrollbar {
-  display: none;            
+    display: none;
   }
 
   body {
@@ -292,9 +435,7 @@ big {
     overflow-x: hidden;
   }
 
-  /* =========================
-     MENU PRINCIPAL
-     ========================= */
+  /* MENU PRINCIPAL */
 
   .menu {
     position: relative;
@@ -305,12 +446,9 @@ big {
     width: 100%;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    box-sizing: border-box;
   }
 
-  /* =========================
-     MENU 2
-     ========================= */
+  /* MENU 2 */
 
   .menu2 {
     position: relative;
@@ -321,12 +459,9 @@ big {
     width: 100%;
     margin-bottom: 0.7rem;
     padding: 0.5rem;
-    box-sizing: border-box;
   }
 
-  /* =========================
-     MENU 3 — SOUND
-     ========================= */
+  /* MENU 3 */
 
   .menu3 {
     position: relative;
@@ -338,20 +473,17 @@ big {
     height: 320px;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    box-sizing: border-box;
   }
 
-.playlist {
-  height: 250px;
-  overflow-y: auto;          
-  overflow-x: hidden;
-  scrollbar-width: none;        
-  -ms-overflow-style: none;
-}
+  .playlist {
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 
-  /* =========================
-     MENU 4
-     ========================= */
+  /* MENU 4 */
 
   .menu4 {
     position: relative;
@@ -363,59 +495,46 @@ big {
     max-height: 300px;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    box-sizing: border-box;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* =========================
-     MAIN
-     ========================= */
+  /* CONTENU PRINCIPAL */
 
   .main {
     position: relative;
     width: 100%;
     margin: 0;
     padding: 0.5rem;
-    box-sizing: border-box;
     font-size: 13px;
     letter-spacing: 0.04em;
     line-height: 1.6;
     text-align: left;
   }
 
-  /* =========================
-     SHADOWBOX
-     ========================= */
+  /* SHADOWBOX */
 
   shadowbox {
     display: block;
     width: 100%;
     margin: 0;
     padding: 0.5rem;
-    box-sizing: border-box;
   }
 
-  /* =========================
-     LIENS
-     ========================= */
+  /* LIENS */
 
   a {
-    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
-  /* =========================
-     IMAGES
-     ========================= */
+  /* IMAGES GÉNÉRALES */
 
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /* =========================
-     YOUTUBE
-     ========================= */
+  /* YOUTUBE */
 
   .iframe-youtube {
     width: 100%;
@@ -424,142 +543,50 @@ big {
     max-width: 100%;
   }
 
-  /* =========================
-     LIGNES
-     ========================= */
+  /* LIGNES */
 
   .ma-ligne {
     width: 100%;
     margin: 10px 0;
   }
 
-}
+  /* GRILLE PHOTO GÉNÉRALE */
 
-/* =========================
-   FEED PHOTO
-   ========================= */
-
-.photo-feed {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  width: 60%;
-  margin: 0 auto;
-  margin-top: 2rem;
-}
-
-.photo-feed a {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #222;
-}
-
-.photo-feed img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-/* petit zoom au survol */
-
-.photo-feed a:hover img {
-  transform: scale(1.04);
-}
-
-/* =========================
-   TELEPHONE
-   ========================= */
-
-@media (max-width: 700px) {
-
-  .photo-feed {
-    grid-template-columns: repeat(4, 1fr);
+  .photo-feed:not(:has(.album-grid)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 5px;
-    margin-top: 1.5rem;
+    width: 100%;
+    margin: 1.5rem 0 0;
   }
 
-}
+  /* GRILLE ALBUMS */
 
-/* ALBUM GRID */
-
-.photo-feed {
+  .photo-feed:has(.album-grid) {
     width: 100%;
-    box-sizing: border-box;
-    padding: 30px;
-}
+    margin: 1rem 0 0;
+    padding: 0.5rem;
+  }
 
-.album-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 45px 25px;
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.8rem 0.8rem;
+  }
 
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-.album {
-    min-width: 0;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-.album iframe {
-    display: block;
-    width: 100%;
-    height: 350px;
-    border: 0;
-}
-
-.album h2 {
-    font-size: 18px;
-    font-weight: normal;
-    margin: 15px 0 10px;
-}
-
-.album p {
+  .album h2 {
     font-size: 13px;
-    line-height: 1.6;
-    margin: 0 0 12px;
+  }
+
+  .album p {
+    font-size: 10px;
+  }
 }
 
-.album .album-info {
-    font-size: 11px;
-    line-height: 1.8;
-    opacity: 0.65;
-}
+/* =========================
+   PETITS TÉLÉPHONES
+   ========================= */
 
-/* TABLET */
-
-@media screen and (max-width: 900px) {
-    .album-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 20px;
-    }
-
-    .photo-feed {
-        padding: 20px;
-    }
-}
-
-/* MOBILE */
-
-@media screen and (max-width: 550px) {
-    .album-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .photo-feed {
-        padding: 15px;
-    }
-
-    .album iframe {
-        height: 350px;
-    }
+@media (max-width: 360px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+  }
 }
