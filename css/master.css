@@ -1,494 +1,55 @@
 
-@font-face {
-  font-family: 'CommitMono';
-  src: url('../fonts/CommitMono.otf');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Future';
-  src: url('../fonts/Future-Italic.ttf');
-  font-display: swap;
-}
-
 /* =========================
-   RÉGLAGES GÉNÉRAUX
+   FIX PLAYLIST SOUNDCLOUD
+   Ne chevauche plus le menu du haut
    ========================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  width: 100%;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 16px 2.3%;
-  background: #060606;
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  line-height: 1.6;
-  text-align: left;
-  overflow-x: hidden;
-}
-
-/* =========================
-   MENU PRINCIPAL — EN HAUT
-   ========================= */
-
-.menu {
-  position: relative;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 30px;
-
-  width: 100%;
-  padding: 0 0 16px;
-  margin: 0 0 40px;
-
-  border-bottom: 1px solid #555;
-
-  font-family: Future, sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-
-/* Logo */
-
-.menu > a:first-child {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  margin-right: 20px;
-}
-
-.menu > a:first-child img {
-  display: block;
-  width: 64px;
-  max-width: 64px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Liens de navigation */
-
-.menu > a:not(:first-child) {
-  display: inline-block;
-  padding: 5px 0;
-  background: transparent;
-  color: #ccc;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-.menu > a:not(:first-child):link,
-.menu > a:not(:first-child):visited {
-  background: transparent;
-  color: #ccc;
-}
-
-.menu > a:not(:first-child):hover {
-  background: transparent;
-  color: white;
-  text-decoration: none;
-}
-
-.menu > a:not(:first-child):focus-visible {
-  outline: 1px solid white;
-  outline-offset: 4px;
-}
-
-/* =========================
-   MENUS SECONDAIRES
-   ========================= */
-
-.menu2 {
-  box-sizing: border-box;
-  position: fixed;
-  bottom: 16px;
-  left: 2.3%;
-  z-index: 10;
-
-  width: 250px;
-  padding: 8px;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  letter-spacing: 0.10em;
-  line-height: 1.6em;
-}
 
 .menu3 {
   position: fixed;
-  top: 16px;
+  top: 115px;
   right: 2.3%;
-  z-index: 10;
+  bottom: auto;
+  left: auto;
 
   width: 250px;
-  padding: 8px;
+  max-width: 22%;
+  max-height: calc(100vh - 140px);
 
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  line-height: 1.6em;
+  padding: 8px;
+  overflow: hidden;
+  z-index: 20;
 }
 
-.menu3-header {
-  display: none;
-  justify-content: space-between;
-  padding: 8px;
+/* La liste défile à l'intérieur de la playlist */
+.menu3 .playlist {
+  height: auto;
+  max-height: calc(100vh - 180px);
 
-  border-bottom: 1px solid white;
-
-  font-family: Future, sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.10em;
-}
-
-/* Playlist */
-
-.playlist {
-  height: 250px;
-  overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
 }
 
-.playlist::-webkit-scrollbar {
-  display: none;
+/* Barre de défilement discrète */
+.menu3 .playlist::-webkit-scrollbar {
+  width: 3px;
 }
 
-.track {
-  padding: 8px;
-  border-bottom: 1px solid #333;
-  cursor: pointer;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+.menu3 .playlist::-webkit-scrollbar-thumb {
+  background: #555;
 }
 
-.track:hover {
-  padding-left: 12px;
-}
-
-.track.active {
-  color: #a64dff;
-}
-
-.track-title {
-  display: inline;
-}
-
-.loading {
-  padding-top: 8px;
-  color: #666;
-  font-size: 9px;
-}
-
-/* Lecteur SoundCloud caché */
-
+/* Le lecteur audio reste invisible */
 #soundcloud-player {
   position: absolute;
   left: -9999px;
   width: 1px;
   height: 1px;
-  padding: 0;
   opacity: 0;
   pointer-events: none;
-}
-
-/* Menu 4 */
-
-.menu4 {
-  box-sizing: border-box;
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 10;
-
-  width: 250px;
-  max-height: 50vh;
-  padding: 8px;
-  overflow-y: auto;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  letter-spacing: 0.10em;
-  line-height: 1.6em;
-}
-
-/* =========================
-   CONTENU PRINCIPAL
-   ========================= */
-
-.main {
-  box-sizing: border-box;
-  width: 60%;
-  margin: 0 auto;
-  padding: 8px;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 14px;
-  letter-spacing: 0.07em;
-  text-align: justify;
-}
-
-shadowbox {
-  display: block;
-  box-sizing: border-box;
-  width: 40%;
-  margin-right: 0;
-  padding: 8px;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 14px;
-  letter-spacing: 0.07em;
-}
-
-/* =========================
-   LIENS GÉNÉRAUX
-   ========================= */
-
-a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:link,
-a:visited {
-  color: #ccc;
-}
-
-a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-a:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 3px;
-}
-
-a:active {
-  color: #a64dff;
-}
-
-/* =========================
-   TITRES ET SÉPARATEURS
-   ========================= */
-
-big {
-  font-family: Future, sans-serif;
-  font-size: 15px;
-  font-style: italic;
-  text-transform: uppercase;
-}
-
-.ma-ligne {
-  width: 100%;
-  margin: 10px 0;
-  border: 0;
-  border-top: 1px solid #555;
-}
-
-/* =========================
-   IFRAME YOUTUBE
-   ========================= */
-
-.iframe-youtube {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border: 0;
-}
-
-/* =========================
-   GRILLE PHOTO GÉNÉRALE
-   ========================= */
-
-.photo-feed:not(:has(.album-grid)) {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-
-  width: 60%;
-  margin: 32px auto 0;
-}
-
-.photo-feed:not(:has(.album-grid)) a {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #222;
-}
-
-.photo-feed:not(:has(.album-grid)) img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.photo-feed:not(:has(.album-grid)) a:hover img {
-  transform: scale(1.04);
-  opacity: 0.8;
-}
-
-/* =========================
-   DISCOGRAPHIE
-   ========================= */
-
-.photo-feed:has(.album-grid) {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 44px 5.5%;
-
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.album {
-  min-width: 0;
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-
-/* Lecteurs Bandcamp */
-
-.album iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 120px;
-  border: 1px solid #333;
-  background: #000;
-}
-
-/* Pochettes si tu utilises des images */
-
-.album .album-cover {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #111;
-}
-
-.album .album-cover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.25s ease, transform 0.3s ease;
-}
-
-.album .album-cover:hover img {
-  opacity: 0.8;
-  transform: scale(1.02);
-}
-
-/* Titres */
-
-.album h2 {
-  margin: 12px 0 10px;
-
-  font-family: Future, sans-serif;
-  font-size: 17px;
-  font-weight: normal;
-  font-style: italic;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* Descriptions */
-
-.album p {
-  margin: 0 0 12px;
-
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-  overflow-wrap: anywhere;
-}
-
-.album .album-info {
-  margin-top: 16px;
-  color: #999;
-  font-size: 10px;
-  line-height: 1.8;
-}
-
-/* =========================
-   TABLETTES
-   ========================= */
-
-@media (min-width: 701px) and (max-width: 1000px) {
-  body {
-    padding-right: 2%;
-    padding-left: 2%;
-  }
-
-  .menu {
-    gap: 10px 20px;
-    margin-bottom: 30px;
-    font-size: 12px;
-  }
-
-  .menu > a:first-child {
-    margin-right: 8px;
-  }
-
-  .menu > a:first-child img {
-    width: 52px;
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px 24px;
-  }
-
-  .photo-feed:not(:has(.album-grid)) {
-    width: 75%;
-  }
-
-  .main {
-    width: 75%;
-  }
 }
 
 /* =========================
@@ -496,181 +57,24 @@ big {
    ========================= */
 
 @media (max-width: 700px) {
-  html {
-    width: 100%;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  html::-webkit-scrollbar {
-    display: none;
-  }
-
-  body {
-    width: 100%;
-    padding: 12px 14px;
-    font-size: 14px;
-    overflow-x: hidden;
-  }
-
-  /* Navigation horizontale qui se replie */
-
-  .menu {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-
-    width: 100%;
-    margin: 0 0 28px;
-    padding: 0 0 14px;
-
-    border-bottom: 1px solid #555;
-    font-size: 12px;
-  }
-
-  .menu > a:first-child {
-    width: 100%;
-    margin: 0 0 8px;
-  }
-
-  .menu > a:first-child img {
-    width: 50px;
-    max-width: 50px;
-  }
-
-  .menu > a:not(:first-child) {
-    padding: 3px 0;
-  }
-
-  /* Menus secondaires */
-
-  .menu2,
-  .menu3,
-  .menu4 {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-
-    width: 100%;
-    max-height: none;
-    margin-bottom: 12px;
-    padding: 8px;
-  }
-
   .menu3 {
-    height: 320px;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 20px 0;
+    padding: 8px;
+    overflow: visible;
   }
 
-  .playlist {
+  .menu3 .playlist {
     height: 250px;
-  }
-
-  /* Contenu */
-
-  .main {
-    width: 100%;
-    margin: 0;
-    padding: 8px;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  shadowbox {
-    width: 100%;
-    margin: 0;
-    padding: 8px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .iframe-youtube {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
-
-  .ma-ligne {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  /* Galerie générale */
-
-  .photo-feed:not(:has(.album-grid)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
-    width: 100%;
-    margin: 24px 0 0;
-  }
-
-  /* Albums */
-
-  .photo-feed:has(.album-grid) {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 14px;
-  }
-
-  .album iframe {
-    height: 110px;
-  }
-
-  .album h2 {
-    margin-top: 10px;
-    font-size: 13px;
-  }
-
-  .album p {
-    font-size: 10px;
-  }
-
-  .album .album-info {
-    font-size: 9px;
-  }
-}
-
-/* =========================
-   TRÈS PETITS TÉLÉPHONES
-   ========================= */
-
-@media (max-width: 360px) {
-  body {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .menu {
-    gap: 8px 14px;
-    font-size: 11px;
-  }
-
-  .album-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .album iframe {
-    height: 120px;
+    max-height: 250px;
+    overflow-y: auto;
   }
 }
