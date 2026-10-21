@@ -40,6 +40,46 @@ body {
 }
 
 /* =========================
+   COLONNES PRINCIPALES
+   ========================= */
+
+/*
+   Le HTML doit contenir :
+   .layout-columns
+     .menu2
+     .main
+     .menu3
+*/
+
+.layout-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 2fr)
+    minmax(0, 0.9fr);
+  align-items: start;
+  gap: 2.5%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Les trois colonnes restent dans le flux normal */
+
+.menu2,
+.main,
+.menu3 {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+}
+
+/* =========================
    MENU PRINCIPAL — HAUT
    ========================= */
 
@@ -49,14 +89,18 @@ body {
   left: auto;
   right: auto;
   z-index: 100;
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 26px;
+
   width: 100%;
   margin: 0 0 36px;
   padding: 0 0 16px;
+
   border-bottom: 1px solid #555;
+
   color: white;
   font-family: Future, sans-serif;
   font-size: 13px;
@@ -115,18 +159,16 @@ body {
    ========================= */
 
 .menu2 {
-  position: fixed;
-  top: 130px;
-  left: 2.3%;
-  bottom: auto;
   z-index: 10;
-  width: 21%;
-  max-width: 280px;
-  max-height: calc(100vh - 165px);
+
+  width: 100%;
+  max-height: calc(100vh - 180px);
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -139,20 +181,19 @@ body {
    ========================= */
 
 .menu3 {
-  position: fixed;
-  top: 130px;
-  right: 2.3%;
-  left: auto;
   z-index: 20;
+
   display: flex;
   flex-direction: column;
-  width: 21%;
-  max-width: 280px;
+
+  width: 100%;
   min-width: 0;
   min-height: 0;
+  max-height: calc(100vh - 180px);
   padding: 8px;
-  box-sizing: border-box;
+
   overflow: hidden;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -160,47 +201,56 @@ body {
   line-height: 1.6;
 }
 
+/* En-tête de la playlist */
+
 .menu3-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+
   flex: 0 0 auto;
+
   min-width: 0;
   max-width: 100%;
-  box-sizing: border-box;
   padding: 8px 0;
   margin-bottom: 8px;
+
   border-bottom: 1px solid #555;
+
   font-family: Future, sans-serif;
   font-size: 14px;
   letter-spacing: 0.10em;
 }
 
-/* Liste des morceaux : reste dans l’espace disponible au-dessus du menu 4 */
+/* Liste des morceaux */
 
 .menu3 .playlist,
 .menu3 #playlist {
   flex: 1 1 auto;
-  top: 130px;
+
   width: 100%;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
   height: auto;
   max-height: none;
-  box-sizing: border-box;
+
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
+
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
 }
 
-/* Au cas où #playlist porte aussi la classe .playlist */
+/* Au cas où .playlist et #playlist désignent le même élément */
+
 .menu3 .playlist {
   flex: 1 1 auto;
 }
+
+/* Barre de défilement */
 
 .playlist::-webkit-scrollbar {
   width: 3px;
@@ -218,15 +268,19 @@ body {
 
 .track {
   display: block;
+
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  box-sizing: border-box;
+
   padding: 9px 7px;
   border-bottom: 1px solid #292929;
+
   overflow-wrap: anywhere;
+
   color: #aaa;
   cursor: pointer;
+
   transition:
     color 0.2s ease,
     padding-left 0.2s ease,
@@ -260,12 +314,17 @@ body {
   padding: 4px 8px;
   border: 1px solid #555;
   border-radius: 0;
+
   background: transparent;
   color: white;
+
   font-family: CommitMono, monospace;
   font-size: 10px;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .track button:hover,
@@ -288,9 +347,11 @@ body {
   position: absolute;
   left: -9999px;
   top: 0;
+
   width: 1px;
   height: 1px;
   padding: 0;
+
   opacity: 0;
   pointer-events: none;
 }
@@ -304,13 +365,16 @@ body {
   right: 2.3%;
   bottom: 16px;
   z-index: 10;
+
   width: 22%;
   max-width: 280px;
   max-height: 45vh;
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 10px;
@@ -323,11 +387,12 @@ body {
    ========================= */
 
 .main {
-  box-sizing: border-box;
-  width: 50%;
+  width: 100%;
   max-width: 100%;
-  margin: 0 auto;
+  min-width: 0;
+  margin: 0;
   padding: 8px;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 13px;
@@ -336,12 +401,15 @@ body {
   text-align: left;
 }
 
+/* Bloc de contenu spécifique */
+
 shadowbox {
   display: block;
-  box-sizing: border-box;
+
   width: 40%;
   margin-right: 0;
   padding: 8px;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 14px;
@@ -401,9 +469,11 @@ big {
 
 .iframe-youtube {
   display: block;
+
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+
   border: 0;
 }
 
@@ -411,28 +481,38 @@ big {
    GALERIE PHOTO
    ========================= */
 
+/* Galerie classique */
+
 .photo-feed:not(:has(.album-grid)) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+
   width: 60%;
   margin: 32px auto 0;
 }
 
 .photo-feed:not(:has(.album-grid)) a {
   display: block;
+
   width: 100%;
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
   background: #222;
 }
 
 .photo-feed:not(:has(.album-grid)) img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .photo-feed:not(:has(.album-grid)) a:hover img {
@@ -459,11 +539,13 @@ big {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+
   align-items: start;
 }
 
 .album {
   min-width: 0;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 12px;
@@ -474,27 +556,36 @@ big {
 
 .album iframe {
   display: block;
+
   width: 100%;
   max-width: 100%;
   height: 120px;
+
   border: 1px solid #333;
   background: #000;
 }
 
 .album .album-cover {
   display: block;
+
   width: 100%;
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
   background: #111;
 }
 
 .album .album-cover img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition: opacity 0.25s ease, transform 0.3s ease;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s ease;
 }
 
 .album .album-cover:hover img {
@@ -504,6 +595,7 @@ big {
 
 .album h2 {
   margin: 12px 0 10px;
+
   font-family: Future, sans-serif;
   font-size: 17px;
   font-weight: normal;
@@ -515,15 +607,18 @@ big {
 
 .album p {
   margin: 0 0 12px;
+
   font-family: CommitMono, monospace;
   font-size: 11px;
   line-height: 1.7;
   letter-spacing: 0.01em;
+
   overflow-wrap: anywhere;
 }
 
 .album .album-info {
   margin-top: 16px;
+
   color: #999;
   font-size: 10px;
   line-height: 1.8;
@@ -544,16 +639,29 @@ big {
     font-size: 12px;
   }
 
-  .menu2 {
-    top: 130px;
-    left: 2%;
-    width: 19%;
+  /* Trois colonnes avec des proportions adaptées */
+
+  .layout-columns {
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.8fr)
+      minmax(0, 0.95fr);
+    gap: 2%;
   }
 
+  .menu2,
   .menu3 {
-    top: 130px;
-    right: 2%;
-    width: 21%;
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .menu2,
+  .menu3 {
+    max-height: calc(100vh - 170px);
+  }
+
+  .menu3-header {
+    font-size: 12px;
   }
 
   .menu4 {
@@ -562,8 +670,9 @@ big {
   }
 
   .main {
-    width: 52%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
   }
 
   .album-grid {
@@ -603,6 +712,7 @@ big {
 
   .menu {
     position: relative;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -630,10 +740,86 @@ big {
     padding: 3px 0;
   }
 
-  /* Menus secondaires en flux normal */
+  /* Colonnes empilées verticalement */
+
+  .layout-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+
+    width: 100%;
+    margin: 0;
+  }
 
   .menu2,
-  .menu3,
+  .main,
+  .menu3 {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    max-height: none;
+
+    margin: 0;
+    padding: 8px;
+  }
+
+  /* Présentation */
+
+  .menu2 {
+    overflow: visible;
+    font-size: 11px;
+  }
+
+  /* Playlist */
+
+  .menu3 {
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .menu3 .playlist,
+  .menu3 #playlist {
+    flex: 0 0 auto;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: 250px;
+    max-height: 250px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+  }
+
+  .menu3-header {
+    font-size: 13px;
+  }
+
+  /* Contenu central */
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 8px;
+
+    font-size: 13px;
+    text-align: left;
+  }
+
+  /* Biographie : en dehors des colonnes principales */
+
   .menu4 {
     position: relative;
     top: auto;
@@ -649,35 +835,6 @@ big {
     padding: 8px;
 
     overflow: visible;
-  }
-
-  /* Playlist défilante sur mobile */
-
- .menu3 {
-    overflow: hidden;
-  }
-
-  .menu3 .playlist,
-  .menu3 #playlist {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 100%;
-    min-height: 0;
-    height: 250px;
-    max-height: 250px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* Contenu central */
-
-  .main {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px 0;
-    padding: 8px;
-    font-size: 13px;
-    text-align: left;
   }
 
   shadowbox {
@@ -702,6 +859,7 @@ big {
   .photo-feed:not(:has(.album-grid)) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 5px;
+
     width: 100%;
     margin: 24px 0 0;
   }
