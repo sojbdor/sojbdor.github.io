@@ -143,7 +143,6 @@ body {
   top: 130px;
   right: 2.3%;
   left: auto;
-  bottom: calc(45vh + 36px);
   z-index: 20;
   display: flex;
   flex-direction: column;
