@@ -182,8 +182,8 @@ body {
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  height: auto;
-  max-height: calc(100vh - 250px);
+  height: 300px;
+  max-height: 300px;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
