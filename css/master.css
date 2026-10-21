@@ -734,52 +734,46 @@ big {
    ========================================== */
 
 @media (min-width: 701px) {
-  :root {
-    --page-gutter: 2.3%;
-    --side-width: 22%;
-    --center-width: 48%;
-    --column-gap: 2%;
-    --columns-top: 145px;
-  }
 
-  /* Présentation — colonne gauche */
-
-  .menu2 {
-    position: fixed;
-    top: var(--columns-top);
-    left: var(--page-gutter);
-    right: auto;
-
-    width: var(--side-width);
-    max-width: none;
+  .layout-columns {
+    display: grid;
+    grid-template-columns: 22% minmax(0, 1fr) 22%;
+    column-gap: 2%;
+    align-items: start;
+    width: 100%;
     margin: 0;
   }
 
-  /* Contenu central */
-
-  .main {
-    position: relative;
-    width: var(--center-width);
-    margin-left: 26%;
-    margin-right: 0;
-    padding: 8px;
-    min-width: 0;
+  .menu2 {
+    position: fixed;
+    top: 145px;
+    left: 2.3%;
+    right: auto;
+    width: 22%;
+    max-width: 280px;
+    margin: 0;
   }
 
-  /* Playlist — colonne droite */
+  .main {
+    grid-column: 2;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 8px;
+  }
 
   .menu3 {
     position: fixed;
-    top: var(--columns-top);
-    right: var(--page-gutter);
+    top: 145px;
+    right: 2.3%;
     left: auto;
-
-    width: var(--side-width);
-    max-width: none;
+    width: 22%;
+    max-width: 280px;
     height: 300px;
     min-height: 300px;
     max-height: 300px;
-
+    margin: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -798,19 +792,15 @@ big {
     overflow-x: hidden;
   }
 
-  /* Biographie — sous la playlist */
-
   .menu4 {
     position: fixed;
     top: 465px;
-    right: var(--page-gutter);
+    right: 2.3%;
     left: auto;
     bottom: auto;
-
-    width: var(--side-width);
-    max-width: none;
+    width: 22%;
+    max-width: 280px;
     max-height: calc(100vh - 485px);
-
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
