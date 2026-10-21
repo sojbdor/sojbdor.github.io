@@ -294,7 +294,7 @@ body {
 }
 
 /* =========================
-   CONTENU CENTRAL INDÉPENDANT
+   CONTENU CENTRAL
    ========================= */
 
 .main {
@@ -726,5 +726,93 @@ big {
 
   .album iframe {
     height: 120px;
+  }
+}
+
+/* ==========================================
+   ALIGNEMENT RESPONSIVE — ORDINATEUR
+   ========================================== */
+
+@media (min-width: 701px) {
+  :root {
+    --page-gutter: 2.3%;
+    --side-width: 22%;
+    --center-width: 48%;
+    --column-gap: 2%;
+    --columns-top: 145px;
+  }
+
+  /* Présentation — colonne gauche */
+
+  .menu2 {
+    position: fixed;
+    top: var(--columns-top);
+    left: var(--page-gutter);
+    right: auto;
+
+    width: var(--side-width);
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Contenu central */
+
+  .main {
+    position: relative;
+    width: var(--center-width);
+    margin-left: 26%;
+    margin-right: 0;
+    padding: 8px;
+    min-width: 0;
+  }
+
+  /* Playlist — colonne droite */
+
+  .menu3 {
+    position: fixed;
+    top: var(--columns-top);
+    right: var(--page-gutter);
+    left: auto;
+
+    width: var(--side-width);
+    max-width: none;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .menu3 .menu3-header {
+    flex: 0 0 auto;
+  }
+
+  .menu3 .playlist {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Biographie — sous la playlist */
+
+  .menu4 {
+    position: fixed;
+    top: 465px;
+    right: var(--page-gutter);
+    left: auto;
+    bottom: auto;
+
+    width: var(--side-width);
+    max-width: none;
+    max-height: calc(100vh - 485px);
+
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
