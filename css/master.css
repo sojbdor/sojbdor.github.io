@@ -749,61 +749,172 @@ big {
   }
 }
 
+
 /* =========================================
-   DISPOSITION DES 4 BLOCS — CORRECTION
+   DISPOSITION DES 4 BLOCS
    ========================================= */
+
 .layout-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
-  grid-template-areas: "presentation contenu playlist" ". . biographie";
+  grid-template-areas:
+    "presentation contenu playlist"
+    ". . biographie";
   align-items: start;
   gap: 24px;
   width: 100%;
   margin: 0 auto;
 }
 
+/* MENU 2 — PRÉSENTATION */
+
 .layout-columns > .menu2 {
-  grid-area: presentation; position: relative; inset: auto; z-index: auto;
-  width: 100%; max-width: none; max-height: calc(100vh - 180px);
-  margin: 0; min-width: 0;
+  grid-area: presentation;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-width: none;
+  max-height: calc(100vh - 180px);
+  margin: 0;
+  min-width: 0;
+  overflow-y: auto;
 }
+
+/* CONTENU CENTRAL */
+
 .layout-columns > .main {
-  grid-area: contenu; position: relative; inset: auto;
-  width: 100%; max-width: none; min-width: 0; margin: 0;
+  grid-area: contenu;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
 }
+
+/* MENU 3 — PLAYLIST */
+
 .layout-columns > .menu3 {
-  grid-area: playlist; position: relative; inset: auto; z-index: auto;
-  display: flex; flex-direction: column; width: 100%; max-width: none;
-  min-width: 0; max-height: calc(100vh - 180px); margin: 0;
+  grid-area: playlist;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  height: calc(100vh - 180px);
+  max-height: 700px;
+  min-height: 250px;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
 }
+
+/* En-tête de la playlist */
+
+.layout-columns > .menu3 .menu3-header {
+  flex: 0 0 auto;
+}
+
+/* Liste défilante des morceaux */
+
 .layout-columns > .menu3 .playlist {
-  flex: 1 1 auto; min-height: 0; max-height: calc(100vh - 260px);
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+/* MENU 4 — BIOGRAPHIE */
+
 .layout-columns > .menu4 {
-  grid-area: biographie; position: relative; inset: auto; z-index: auto;
-  width: 100%; max-width: none; max-height: none; min-width: 0;
-  margin: 0; overflow: visible;
+  grid-area: biographie;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-width: none;
+  max-height: 45vh;
+  min-width: 0;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+/* TABLETTE */
 
 @media (min-width: 701px) and (max-width: 1100px) {
   .layout-columns {
-    grid-template-columns: minmax(0, .85fr) minmax(0, 1.6fr) minmax(0, .95fr);
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.6fr)
+      minmax(0, 0.95fr);
     gap: 16px;
   }
 }
 
+/* MOBILE */
+
 @media (max-width: 700px) {
-  .layout-columns { display: flex; flex-direction: column; align-items: stretch; gap: 24px; }
+  .layout-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
   .layout-columns > .menu2,
   .layout-columns > .main,
   .layout-columns > .menu3,
   .layout-columns > .menu4 {
-    position: relative; inset: auto; width: 100%; max-width: none;
-    max-height: none; min-width: 0; margin: 0; overflow-wrap: anywhere;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    min-width: 0;
+    margin: 0;
   }
-  .layout-columns > .menu2 { overflow: visible; }
-  .layout-columns > .main { padding: 8px; }
-  .layout-columns > .menu3 { display: flex; flex-direction: column; overflow: hidden; }
-  .layout-columns > .menu3 .playlist { height: 250px; max-height: 250px; flex: 0 0 auto; overflow-y: auto; }
-  .layout-columns > .menu4 { overflow: visible; }
+
+  .layout-columns > .menu2 {
+    overflow: visible;
+  }
+
+  .layout-columns > .main {
+    padding: 8px;
+  }
+
+  .layout-columns > .menu3 {
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .layout-columns > .menu3 .playlist {
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    flex: 1 1 0;
+    overflow-y: auto;
+  }
+
+  .layout-columns > .menu4 {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 }
