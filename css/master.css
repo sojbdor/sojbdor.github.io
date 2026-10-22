@@ -713,3 +713,69 @@ big {
     height: 120px;
   }
 }
+
+/* ==========================================
+   SUKKUBE — MENUS 2, 3 ET 4 TOUJOURS FIXES
+   ========================================== */
+
+.menu2 {
+  position: fixed;
+  top: 145px;
+  left: 2.3%;
+  right: auto;
+  z-index: 100;
+}
+
+.menu3 {
+  position: fixed;
+  top: 145px;
+  right: 2.3%;
+  left: auto;
+  z-index: 200;
+}
+
+.menu4 {
+  position: fixed;
+  top: 465px;
+  right: 2.3%;
+  left: auto;
+  bottom: auto;
+  z-index: 100;
+}
+
+/* Sur mobile aussi */
+@media (max-width: 700px) {
+  .menu2,
+  .menu3,
+  .menu4 {
+    position: fixed;
+    width: 22%;
+    max-width: 280px;
+    margin: 0;
+  }
+
+  .menu2 {
+    top: 145px;
+    left: 2.3%;
+    right: auto;
+  }
+
+  .menu3 {
+    top: 145px;
+    right: 2.3%;
+    left: auto;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .menu4 {
+    top: 465px;
+    right: 2.3%;
+    left: auto;
+    max-height: calc(100vh - 485px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
