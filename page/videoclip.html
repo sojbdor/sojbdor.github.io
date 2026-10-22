@@ -1,62 +1,189 @@
-<html>
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript">
-	     <!--
-	     function anti_clic()
-	     {
-		  alert('These photos are copyrighted by their respective owners. All rights reserved. Unauthorized use prohibited.');
-		  return false;
-             }
-             //-->
-             </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico"/>
-<link rel="stylesheet" href="/css/master.css">
-<title>Film Score</title>
+  <title>SUKKUBE — Video Clips</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/pix/favicon.ico">
+  <link rel="stylesheet" href="/css/master.css">
+
+  <script>
+    function anti_clic() {
+      alert(
+        "These photos are copyrighted by their respective owners. All rights reserved. Unauthorized use prohibited."
+      );
+      return false;
+    }
+  </script>
+
+  <style>
+    .video-embed {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .clip-project {
+      margin-bottom: 3rem;
+    }
+  </style>
 </head>
 
 <body style="background-color: black;">
-<div class="menu">
-<a href="../index.html"><img src="../pix/cartedevisite.png" width=50%; oncontextmenu="return false" onDragStart="return flase"></a></b><br><br>
-<a href="../page/album.html">album</a><br>
-<a href="../page/ep.html">ep</a><br>
-<a href="../page/single.html">single</a><br>
-<a href="../page/remix.html">remix</a><br>
-<a href="../page/video.html">film score</a><br>
-<a href="../page/videoclip.html">video clip</a><br>
-<a href="../page/label.html">label</a><br>
-<a href="../page/fun.html">fun</a><br>
-</div>
-	
-<div class="main">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/luR29XNlAfw?si=pY7vfX2VpsCb14PA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
-<big><b>SUMMER'S CELL, video clip 5:59, 2020</b></big><br><br>
-This video clip was made for the artist Halosaur to mark the release of his album "Lonely Shapes" on Rythm and Cult. Filming took place in the Oberschoneweide forest, Berlin, Germany.<br><br>
-Music written by Halosaur<br>
-Label: Rhythm Cult<br>
-Video producer: Charlene Levasseur<br>
-Actress: Julia Castel<br><br><br><br>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fSHif5faSLU?si=hHpzHmBUHt1JtpVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>	
-<big><b>DON'T WALK ALONE, video clip 4:00, 2019</b></big><br><br>
-Built in collaboration with the music producer Pablo Mateo. He was inspired by the film Annihilation by Alex Garland. Charlene integrated images that she tooks in Berlin's street. She comes to transform this reel images in a fantastic way with the help of her digital skills, this video grouping their common ideas.<br><br>
-Written: Pablo Mateo<br>
-Label: Figure<br>
-Video producer: Charlene Levasseur<br><br><br><br>
+  <!-- MENU PRINCIPAL -->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JJwlYigzsrU?si=MBx4QXK6B8rzO_E5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br>
-<big><b>I KNOW YOU WANNA BITCH, video clip 3:36, 2021</b></big><br><br>	
-Here my interpretation of the single of Wei.xzy. "I know the feeling when things ain't going the way I thought they would. I call these times a stupid bitch. These two magic words set the rhythm. There are four versions of a stupid bitch for y'all: trip original, accelerated in the interpretation of Roma Zuckerman, hypnotizing, as if it would be under thickened water, Bonus. Minimalistic by Beennooutside.<br><br>
-Music written: Wei.xzy<br>
-Master: Artyom Tuwalski<br>
-Label: Collective Russia<br>
-Video producer : Charlene Levasseur<br>
-Actress: Aya Ando and Kitty4000<br>
-Artwork: Eleonore Verger<br><br><br><br>
+  <nav class="menu" aria-label="Main navigation">
+    <a href="../index.html" aria-label="SUKKUBE home">
+      <img
+        src="../pix/cartedevisite.png"
+        alt="SUKKUBE"
+        style="width: 50%;"
+        oncontextmenu="return anti_clic()"
+        ondragstart="return false"
+      >
+    </a>
 
-</div>
+    <br><br>
+
+    <a href="../page/album.html">album</a><br>
+    <a href="../page/ep.html">ep</a><br>
+    <a href="../page/single.html">single</a><br>
+    <a href="../page/remix.html">remix</a><br>
+    <a href="../page/video.html">film score</a><br>
+    <a href="../page/videoclip.html">video clip</a><br>
+    <a href="../page/label.html">label</a><br>
+    <a href="../page/fun.html">fun</a><br>
+  </nav>
+
+
+  <!-- CONTENU PRINCIPAL -->
+
+  <main class="main">
+
+    <!-- SUMMER'S CELL -->
+
+    <section class="clip-project">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/luR29XNlAfw?si=pY7vfX2VpsCb14PA"
+          title="SUMMER'S CELL — music video"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <big><b>SUMMER'S CELL, video clip 5:59, 2020</b></big>
+
+      <br><br>
+
+      This video clip was made for the artist Halosaur to mark the release
+      of his album "Lonely Shapes" on Rythm and Cult. Filming took place
+      in the Oberschoneweide forest, Berlin, Germany.
+
+      <br><br>
+
+      Music written by Halosaur
+      <br>
+      Label: Rhythm Cult
+      <br>
+      Video producer: Charlene Levasseur
+      <br>
+      Actress: Julia Castel
+    </section>
+
+
+    <!-- DON'T WALK ALONE -->
+
+    <section class="clip-project">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/fSHif5faSLU?si=hHpzHmBUHt1JtpVR"
+          title="DON'T WALK ALONE — music video"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <big><b>DON'T WALK ALONE, video clip 4:00, 2019</b></big>
+
+      <br><br>
+
+      Built in collaboration with the music producer Pablo Mateo. He was
+      inspired by the film Annihilation by Alex Garland. Charlene integrated
+      images that she tooks in Berlin's street. She comes to transform this
+      reel images in a fantastic way with the help of her digital skills,
+      this video grouping their common ideas.
+
+      <br><br>
+
+      Written: Pablo Mateo
+      <br>
+      Label: Figure
+      <br>
+      Video producer: Charlene Levasseur
+    </section>
+
+
+    <!-- I KNOW YOU WANNA BITCH -->
+
+    <section class="clip-project">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/JJwlYigzsrU?si=MBx4QXK6B8rzO_E5"
+          title="I KNOW YOU WANNA BITCH — music video"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <big><b>I KNOW YOU WANNA BITCH, video clip 3:36, 2021</b></big>
+
+      <br><br>
+
+      Here my interpretation of the single of Wei.xzy. "I know the feeling
+      when things ain't going the way I thought they would. I call these
+      times a stupid bitch. These two magic words set the rhythm. There are
+      four versions of a stupid bitch for y'all: trip original, accelerated
+      in the interpretation of Roma Zuckerman, hypnotizing, as if it would
+      be under thickened water, Bonus. Minimalistic by Beennooutside.
+
+      <br><br>
+
+      Music written: Wei.xzy
+      <br>
+      Master: Artyom Tuwalski
+      <br>
+      Label: Collective Russia
+      <br>
+      Video producer: Charlene Levasseur
+      <br>
+      Actress: Aya Ando and Kitty4000
+      <br>
+      Artwork: Eleonore Verger
+    </section>
+
+  </main>
+
 </body>
 </html>
+```
