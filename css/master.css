@@ -1,687 +1,72 @@
+```css
+/* ==========================================
+   SUKKUBE — ALBUM PAGE
+   ========================================== */
 
-/* ==================================================
-   SUKKUBE — MASTER CSS
-   Menu commun, contenu, SoundCloud, photos et albums
-   ================================================== */
+/* La galerie albums ne reprend pas les marges
+   de la galerie photo des autres pages. */
 
-
-/* ==================================================
-   1. POLICES
-   ================================================== */
-
-@font-face {
-  font-family: "CommitMono";
-  src: url("../fonts/CommitMono.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Future";
-  src: url("../fonts/Future-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-
-/* ==================================================
-   2. VARIABLES
-   ================================================== */
-
-:root {
-  --bg: #060606;
-  --text: #ccc;
-  --white: #fff;
-  --accent: #a64dff;
-  --muted: #777;
-  --line: #444;
-
-  --gutter: 2.3%;
-  --header-height: 88px;
-
-  --font-body: "CommitMono", monospace;
-  --font-h2: "Future", sans-serif;
-  --font-menu: "Future", sans-serif;
-}
-
-
-/* ==================================================
-   3. RESET ET STYLE GÉNÉRAL
-   ================================================== */
-
-* {
+.album-page main.photo-feed {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-iframe {
-  max-width: 100%;
-}
-
-a {
-  color: var(--text);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--white);
-}
-
-a:focus-visible {
-  outline: 1px solid var(--white);
-  outline-offset: 3px;
-}
-
-hr,
-.ma-ligne {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-}
-
-
-/* ==================================================
-   4. MENU PRINCIPAL
-   ================================================== */
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 10px 22px;
-
-  width: 100%;
-  min-height: var(--header-height);
-  margin: 0;
-  padding: 12px var(--gutter);
-
-  background: var(--bg);
-  border-bottom: 1px solid #555;
-
-  font-family: var(--font-menu);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  line-height: 1.4;
-  text-transform: uppercase;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.menu::-webkit-scrollbar {
-  display: none;
-}
-
-.menu > a {
-  display: block;
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 8px 0;
-  color: var(--text);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.menu > a:hover {
-  color: var(--white);
-}
-
-.menu > a:active {
-  color: var(--accent);
-}
-
-.menu > a:first-child {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  margin-right: 8px;
-  padding: 0;
-}
-
-.menu > a:first-child img {
-  display: block;
-  width: 58px;
-  max-width: none;
-  height: auto;
-  object-fit: contain;
-}
-
-
-/* ==================================================
-   5. COLONNES PRINCIPALES
-   ================================================== */
-
-.layout-columns {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 22fr)
-    minmax(0, 48fr)
-    minmax(0, 22fr);
-  column-gap: 3%;
-  row-gap: 28px;
-  align-items: start;
-  width: 100%;
-}
-
-.menu2,
-.menu3,
-.menu4 {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.menu2 {
-  grid-column: 1;
-  grid-row: 1;
-  width: 100%;
-}
-
-.main {
-  grid-column: 2;
-  grid-row: 1;
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-}
-
-.menu3 {
-  grid-column: 3;
-  grid-row: 1;
-  width: 100%;
-  min-width: 0;
-}
-
-.menu4 {
-  grid-column: 1;
-  grid-row: 2;
-  width: 100%;
-}
-
-
-/* ==================================================
-   6. CONTENU PRINCIPAL
-   ================================================== */
-
-.main big {
-  line-height: 1.6;
-}
-
-.main em {
-  font-style: italic;
-}
-
-.main b,
-.main strong {
-  color: var(--white);
-}
-
-.iframe-youtube {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border: 0;
-}
-
-.main iframe {
-  max-width: 100%;
-}
-
-
-/* ==================================================
-   7. TITRES H2
-   ================================================== */
-
-h2,
-.main h2 {
-  font-family: var(--font-h2) !important;
-  font-size: 13px;
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-
-/* ==================================================
-   8. BOUTON BOOKING
-   ================================================== */
-
-.sukkube-booking-button {
-  display: inline-block;
-  font-family: var(--font-menu);
-  padding: 6px 12px;
-  border: 1px solid var(--text);
-  color: var(--white);
-  text-decoration: none;
-  transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.sukkube-booking-button:hover {
-  color: var(--bg);
-  background: var(--white);
-  border-color: var(--white);
-}
-
-
-/* ==================================================
-   9. MENU RELEASES ET LECTEUR SOUNDCLOUD
-   ================================================== */
-
-.menu3-header {
-  margin: 0 0 12px;
-  color: var(--white);
-  font-family: var(--font-menu);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.playlist,
-#playlist {
-  width: 100%;
-  max-height: 300px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.loading {
-  padding: 10px 0;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.track {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  width: 100%;
-  padding: 9px 6px;
-  border-bottom: 1px solid #292929;
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 12px;
-  line-height: 1.5;
-  cursor: pointer;
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
-}
-
-.track:hover {
-  color: var(--white);
-  background: #151515;
-}
-
-.track.active {
-  color: var(--accent);
-}
-
-.track.unknown {
-  color: var(--muted);
-  cursor: default;
-}
-
-.track-play {
-  flex: 0 0 14px;
-}
-
-.track-number {
-  flex: 0 0 24px;
-  color: var(--muted);
-}
-
-.track.active .track-play,
-.track.active .track-number {
-  color: var(--accent);
-}
-
-.track-title {
-  flex: 1;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-#soundcloud-player {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 166px;
-  margin-top: 12px;
-  border: 0;
-}
-
-
-/* ==================================================
-   10. GRILLE DE PHOTOS
-   ================================================== */
-
-.photo-feed {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  width: 100%;
-  margin: 36px 0 0;
-}
-
-.photo-feed a {
-  display: block;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.photo-feed img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: opacity 0.2s ease;
-}
-
-.photo-feed a:hover img {
-  opacity: 0.8;
-}
-
-
-/* ==================================================
-   11. GRILLE ALBUM
-   Ordinateur : 6 colonnes
-   ================================================== */
-
-/* Le conteneur album utilise toute la largeur du body */
-
-body:has(.album-grid) {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-body:has(.album-grid) > .photo-feed {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: calc(var(--header-height) + 18px) 12px 24px;
-}
-
-/* Six colonnes sans largeur maximale */
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+/* Ordinateur : 6 colonnes */
+
+.album-page .album-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   gap: 24px 12px;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.album {
+/* Chaque album reste dans sa colonne */
+
+.album-page .album {
   display: block;
   width: 100%;
   min-width: 0;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Lecteurs Bandcamp */
 
-.album-grid .album iframe {
+.album-page .album iframe {
   display: block;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   border: 0;
 }
 
-/* Titres album */
+/* Titres et textes */
 
-.album h2 {
-  margin: 14px 0 10px;
-  font-family: var(--font-h2);
-  font-size: 13px;
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+.album-page .album h2 {
+  margin: 12px 0 8px;
 }
 
-/* Descriptions */
-
-.album p {
-  margin: 0 0 14px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 1.6;
-  color: var(--text);
-  overflow-wrap: anywhere;
+.album-page .album p {
+  overflow-wrap: break-word;
 }
 
-/* Crédits */
-
-.album .album-info {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
+.album-page .album .album-info {
+  margin-top: 12px;
 }
 
-
-/* ==================================================
-   12. TABLETTES
-   2 colonnes album
-   ================================================== */
+/* Tablette et téléphone : 2 colonnes */
 
 @media (max-width: 1100px) {
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .album-page .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
-
-  body {
-    font-size: 12px;
-  }
-
-  .menu {
-    gap: 10px 16px;
-    font-size: 12px;
-  }
-
-  .menu > a:first-child img {
-    width: 48px;
-  }
-
-  .layout-columns {
-    grid-template-columns:
-      minmax(0, 23fr)
-      minmax(0, 48fr)
-      minmax(0, 23fr);
-    column-gap: 2%;
-  }
-
-  .photo-feed:not(:has(.album-grid)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 16px;
-  }
-
-  .album iframe {
-    height: 380px;
-  }
-}
-
-
-/* ==================================================
-   13. MOBILES
-   2 colonnes album
-   ================================================== */
-
-@media (max-width: 700px) {
-  :root {
-    --gutter: 14px;
-    --header-height: 74px;
-  }
-
-  body {
-    padding-top: calc(var(--header-height) + 16px);
-    font-size: 12px;
-  }
-
-  .menu {
-    gap: 16px;
-    min-height: var(--header-height);
-    padding: 8px var(--gutter);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-  }
-
-  .menu > a:first-child {
-    margin-right: 0;
-  }
-
-  .menu > a:first-child img {
-    width: 44px;
-  }
-
-  .layout-columns {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 30px;
-  }
-
-  .menu2,
-  .main,
-  .menu3,
-  .menu4 {
-    position: static;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    height: auto;
-    margin: 0;
-  }
-
-  .main {
-    order: 1;
-  }
-
-  .menu2 {
-    order: 2;
-  }
-
-  .menu3 {
-    order: 3;
-  }
-
-  .menu4 {
-    order: 4;
-  }
-
-  .iframe-youtube {
-    width: 100%;
-  }
-
-  .playlist,
-  #playlist {
-    max-height: 320px;
-  }
-
-  .photo-feed:not(:has(.album-grid)) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 24px;
-  }
-
-  .body:has(.album-grid) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 12px;
-  }
-
-  .album iframe {
-    height: 300px;
-  }
-
-  .album h2 {
-    margin: 10px 0 8px;
-    font-size: 12px;
-  }
-
-  .album p {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .album .album-info {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 1.6;
-  }
-}
-
-
-/* ==================================================
-   14. PETITS ÉCRANS
-   ================================================== */
-
-@media (max-width: 380px) {
-  .menu {
-    gap: 13px;
-    font-size: 10px;
-  }
-
-  .photo-feed:not(:has(.album-grid)) {
-    gap: 6px;
-  }
-
-  .album-grid {
-    gap: 20px 8px;
-  }
-
-  .album iframe {
-    height: 260px;
-  }
-}
+```
