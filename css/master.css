@@ -37,10 +37,8 @@
   --accent: #a64dff;
   --muted: #777;
   --line: #444;
-
   --gutter: 2.3%;
   --header-height: 88px;
-
   --font-body: "CommitMono", monospace;
   --font-h2: "Future", sans-serif;
   --font-menu: "Future", sans-serif;
@@ -111,28 +109,22 @@ hr,
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-
   gap: 10px 22px;
-
   width: 100%;
   min-height: var(--header-height);
   margin: 0;
   padding: 12px var(--gutter);
-
   background: var(--bg);
   border-bottom: 1px solid #555;
-
   font-family: var(--font-menu);
   font-size: 13px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
-
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -190,7 +182,6 @@ hr,
     minmax(0, 22fr)
     minmax(0, 48fr)
     minmax(0, 22fr);
-
   column-gap: 3%;
   row-gap: 28px;
 
@@ -269,11 +260,11 @@ hr,
 
 .sukkube-booking-button {
   display: inline-block;
+  font-family: var(--font-menu);
   padding: 6px 12px;
   border: 1px solid var(--text);
   color: var(--white);
   text-decoration: none;
-
   transition:
     color 0.2s ease,
     background 0.2s ease,
@@ -318,18 +309,14 @@ hr,
   display: flex;
   align-items: flex-start;
   gap: 9px;
-
   width: 100%;
   padding: 9px 6px;
   border-bottom: 1px solid #292929;
-
   color: var(--text);
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.5;
-
   cursor: pointer;
-
   transition:
     color 0.2s ease,
     background 0.2s ease;
