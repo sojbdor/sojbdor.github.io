@@ -49,19 +49,14 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 26px;
-
   width: 100%;
   margin: 0;
   padding: 16px 2.3%;
-
   background: #060606;
-  border-bottom: 1px solid #555;
-
   color: white;
   font-family: Future, sans-serif;
   font-size: 13px;
