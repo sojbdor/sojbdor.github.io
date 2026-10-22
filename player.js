@@ -1,263 +1,207 @@
-const iframe =
-  document.getElementById("soundcloud-player");
 
-const playlistElement =
-  document.getElementById("playlist");
+/* ==================================================
+   SUKKUBE — SOUNDCLOUD PLAYER
+   ================================================== */
 
-const widget =
-  SC.Widget(iframe);
+(function () {
+  "use strict";
 
+  const iframe = document.getElementById("soundcloud-player");
+  const playlistElement = document.getElementById("playlist");
 
-let tracks = [];
-
-let currentTrack = -1;
-
-
-/* =========================
-   SOUNDCLOUD READY
-   ========================= */
-
-widget.bind(
-  SC.Widget.Events.READY,
-  function () {
-
-    console.log("SoundCloud ready");
-
-
-    widget.getSounds(
-      function (sounds) {
-
-        console.log(
-          "Morceaux récupérés :",
-          sounds
-        );
-
-
-        tracks = sounds || [];
-
-
-        /* Nettoyage */
-
-        playlistElement.innerHTML = "";
-
-
-        /* =========================
-           CRÉATION DES TRACKS
-           ========================= */
-
-        tracks.forEach(
-          function (sound, index) {
-
-            const track =
-              document.createElement("div");
-
-
-            track.classList.add("track");
-
-
-            /*
-             * Récupération du titre
-             */
-
-            const title =
-              sound &&
-              sound.title
-                ? sound.title
-                : "TRACK UNAVAILABLE";
-
-
-            /*
-             * Si le titre n'existe pas,
-             * on ajoute la classe unknown.
-             */
-
-            if (
-              !sound ||
-              !sound.title
-            ) {
-
-              track.classList.add("unknown");
-
-            }
-
-
-            track.innerHTML = `
-
-              <span class="track-play">
-                ▷
-              </span>
-
-              <span class="track-number">
-                ${String(index + 1).padStart(2, "0")}
-              </span>
-
-              <span class="track-title">
-                ${title}
-              </span>
-
-            `;
-
-
-            /* =========================
-               CLIC
-               ========================= */
-
-            if (
-              sound &&
-              sound.title
-            ) {
-
-              track.addEventListener(
-                "click",
-                function () {
-
-                  playTrack(index);
-
-                }
-              );
-
-            }
-
-
-            playlistElement.appendChild(
-              track
-            );
-
-          }
-        );
-
-      }
-    );
-
-  }
-);
-
-
-/* =========================
-   LECTURE
-   ========================= */
-
-function playTrack(index) {
-
-  if (!tracks[index]) {
-
+  // Le lecteur n'est pas présent sur cette page.
+  if (!iframe || !playlistElement) {
     return;
-
   }
 
+  // Vérifier que l'API SoundCloud est chargée.
+  if (typeof SC === "undefined" || typeof SC.Widget !== "function") {
+    console.error("SUKKUBE : l'API SoundCloud n'est pas chargée.");
+    playlistElement.textContent = "SoundCloud indisponible.";
+    return;
+  }
 
-  currentTrack = index;
+  const widget = SC.Widget(iframe);
 
+  let tracks = [];
+  let currentTrack = -1;
+  let ready = false;
 
-  /*
-   * Changement de morceau
-   */
+  /* ------------------------------------------
+     Afficher le morceau actif
+     ------------------------------------------ */
 
-  widget.skip(index);
+  function updateActiveTrack() {
+    const elements = playlistElement.querySelectorAll(".track");
 
+    elements.forEach(function (element, index) {
+      const icon = element.querySelector(".track-play");
+      const isActive = index === currentTrack;
 
-  /*
-   * Lecture
-   */
+      element.classList.toggle("active", isActive);
 
-  widget.play();
-
-
-  /*
-   * Mise à jour visuelle
-   */
-
-  updateActiveTrack();
-
-}
-
-
-/* =========================
-   TRACK ACTIF
-   ========================= */
-
-function updateActiveTrack() {
-
-  const elements =
-    document.querySelectorAll(".track");
-
-
-  elements.forEach(
-    function (element, index) {
-
-      const icon =
-        element.querySelector(
-          ".track-play"
-        );
-
-
-      element.classList.remove(
-        "active"
-      );
-
-
-      if (
-        index === currentTrack
-      ) {
-
-        element.classList.add(
-          "active"
-        );
-
-        icon.textContent = "▶";
-
+      if (icon) {
+        icon.textContent = isActive ? "▶" : "▷";
       }
 
-      else {
+      if (isActive) {
+        element.setAttribute("aria-current", "true");
+      } else {
+        element.removeAttribute("aria-current");
+      }
+    });
+  }
 
-        icon.textContent = "▷";
+  /* ------------------------------------------
+     Lancer un morceau
+     ------------------------------------------ */
 
+  function playTrack(index) {
+    if (!ready) return;
+    if (!Number.isInteger(index)) return;
+    if (index < 0 || index >= tracks.length) return;
+
+    const sound = tracks[index];
+
+    // Ne pas lancer les entrées sans titre.
+    if (!sound || !sound.title) return;
+
+    currentTrack = index;
+    updateActiveTrack();
+
+    widget.skip(index);
+    widget.play();
+  }
+
+  /* ------------------------------------------
+     Construire la playlist
+     ------------------------------------------ */
+
+  function renderPlaylist() {
+    playlistElement.replaceChildren();
+
+    if (tracks.length === 0) {
+      const message = document.createElement("div");
+      message.className = "loading";
+      message.textContent = "Aucun morceau disponible.";
+      playlistElement.appendChild(message);
+      return;
+    }
+
+    tracks.forEach(function (sound, index) {
+      const track = document.createElement("div");
+      track.className = "track";
+      track.setAttribute("role", "button");
+      track.setAttribute("tabindex", "0");
+
+      const icon = document.createElement("span");
+      icon.className = "track-play";
+      icon.textContent = "▷";
+      icon.setAttribute("aria-hidden", "true");
+
+      const number = document.createElement("span");
+      number.className = "track-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      number.setAttribute("aria-hidden", "true");
+
+      const title = document.createElement("span");
+      title.className = "track-title";
+      title.textContent =
+        sound && sound.title
+          ? sound.title
+          : "TRACK UNAVAILABLE";
+
+      track.append(icon, number, title);
+
+      if (sound && sound.title) {
+        track.setAttribute("aria-label", "Play " + sound.title);
+
+        track.addEventListener("click", function () {
+          playTrack(index);
+        });
+
+        // Permet aussi la sélection au clavier.
+        track.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            playTrack(index);
+          }
+        });
+      } else {
+        track.classList.add("unknown");
+        track.removeAttribute("tabindex");
+        track.removeAttribute("role");
       }
 
-    }
-  );
+      playlistElement.appendChild(track);
+    });
 
-}
+    updateActiveTrack();
+  }
 
+  /* ------------------------------------------
+     Initialisation du lecteur
+     ------------------------------------------ */
 
-/* =========================
-   FIN DU MORCEAU
-   ========================= */
+  widget.bind(SC.Widget.Events.READY, function () {
+    ready = true;
 
-widget.bind(
-  SC.Widget.Events.FINISH,
-  function () {
+    playlistElement.textContent = "LOADING...";
 
+    widget.getSounds(function (sounds) {
+      tracks = Array.isArray(sounds) ? sounds : [];
+      renderPlaylist();
 
-    /*
-     * S'il reste un morceau
-     */
-
-    if (
-      currentTrack <
-      tracks.length - 1
-    ) {
-
-      currentTrack++;
-
-      playTrack(
-        currentTrack
+      console.log(
+        "SUKKUBE : " + tracks.length + " morceaux récupérés."
       );
+    });
 
-    }
+    // Si une lecture a déjà commencé, repérer le morceau.
+    widget.getCurrentSound(function (sound) {
+      if (!sound) return;
 
+      const index = tracks.findIndex(function (track) {
+        return track && track.id === sound.id;
+      });
 
-    /*
-     * Fin de la playlist
-     */
+      if (index !== -1) {
+        currentTrack = index;
+        updateActiveTrack();
+      }
+    });
+  });
 
-    else {
+  /* ------------------------------------------
+     Synchroniser la sélection avec SoundCloud
+     ------------------------------------------ */
 
+  widget.bind(SC.Widget.Events.PLAY, function () {
+    widget.getCurrentSound(function (sound) {
+      if (!sound) return;
+
+      const index = tracks.findIndex(function (track) {
+        return track && track.id === sound.id;
+      });
+
+      if (index !== -1) {
+        currentTrack = index;
+        updateActiveTrack();
+      }
+    });
+  });
+
+  /* ------------------------------------------
+     Passer au morceau suivant à la fin
+     ------------------------------------------ */
+
+  widget.bind(SC.Widget.Events.FINISH, function () {
+    if (currentTrack >= 0 && currentTrack < tracks.length - 1) {
+      playTrack(currentTrack + 1);
+    } else {
       currentTrack = -1;
-
       updateActiveTrack();
-
     }
+  });
 
-  }
-);
+})();
