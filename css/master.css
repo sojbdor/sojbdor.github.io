@@ -779,3 +779,53 @@ big {
     overflow-x: hidden;
   }
 }
+
+
+/* ==========================================
+   MENUS 2 ET 3 — ALIGNÉS SUR LE MENU FIXE
+   ========================================== */
+
+@media (min-width: 701px) {
+  .menu2 {
+    position: fixed;
+    top: 145px;
+    left: 2.3%;
+    right: auto;
+    z-index: 100;
+  }
+
+  .menu3 {
+    position: fixed;
+    top: 145px;
+    right: 2.3%;
+    left: auto;
+    z-index: 200;
+  }
+}
+
+/* Mobile et tablette étroite */
+@media (max-width: 700px) {
+  .menu2,
+  .menu3 {
+    position: fixed;
+    top: 120px;
+    width: 22%;
+    max-width: 280px;
+    margin: 0;
+  }
+
+  .menu2 {
+    left: 2.3%;
+    right: auto;
+  }
+
+  .menu3 {
+    left: auto;
+    right: 2.3%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+}
+
