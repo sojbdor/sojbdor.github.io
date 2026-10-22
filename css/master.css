@@ -1,7 +1,6 @@
-
 /* ==================================================
    SUKKUBE — MASTER CSS
-   Menu commun, contenu, SoundCloud, photos et albums
+   Menu commun, contenu, SoundCloud et photos
    ================================================== */
 
 
@@ -37,10 +36,8 @@
   --accent: #a64dff;
   --muted: #777;
   --line: #444;
-
   --gutter: 2.3%;
   --header-height: 88px;
-
   --font-body: "CommitMono", monospace;
   --font-h2: "Future", sans-serif;
   --font-menu: "Future", sans-serif;
@@ -69,14 +66,13 @@ body {
   line-height: 1.5;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+img,
+iframe {
+  max-width: 50%;
 }
 
-iframe {
-  max-width: 100%;
+img {
+  height: auto;
 }
 
 a {
@@ -112,27 +108,22 @@ hr,
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   gap: 10px 22px;
-
   width: 100%;
   min-height: var(--header-height);
   margin: 0;
   padding: 12px var(--gutter);
-
   background: var(--bg);
   border-bottom: 1px solid #555;
-
   font-family: var(--font-menu);
   font-size: 13px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
-
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -161,7 +152,7 @@ hr,
   color: var(--accent);
 }
 
-/* Logo */
+/* Logo : taille conservée */
 
 .menu > a:first-child {
   display: flex;
@@ -186,14 +177,13 @@ hr,
 
 .layout-columns {
   display: grid;
-
   grid-template-columns:
     minmax(0, 22fr)
     minmax(0, 48fr)
     minmax(0, 22fr);
-
   column-gap: 3%;
   row-gap: 28px;
+
   align-items: start;
   width: 100%;
 }
@@ -253,7 +243,6 @@ hr,
 .iframe-youtube {
   display: block;
   width: 100%;
-  max-width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
   border: 0;
@@ -265,22 +254,7 @@ hr,
 
 
 /* ==================================================
-   7. TITRES H2
-   ================================================== */
-
-h2,
-.main h2 {
-  font-family: var(--font-h2) !important;
-  font-size: 13px;
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-
-/* ==================================================
-   8. BOUTON BOOKING
+   7. BOUTON BOOKING
    ================================================== */
 
 .sukkube-booking-button {
@@ -290,7 +264,6 @@ h2,
   border: 1px solid var(--text);
   color: var(--white);
   text-decoration: none;
-
   transition:
     color 0.2s ease,
     background 0.2s ease,
@@ -305,7 +278,7 @@ h2,
 
 
 /* ==================================================
-   9. MENU RELEASES ET LECTEUR SOUNDCLOUD
+   8. MENU RELEASES ET LECTEUR SOUNDCLOUD
    ================================================== */
 
 .menu3-header {
@@ -343,7 +316,6 @@ h2,
   font-size: 12px;
   line-height: 1.5;
   cursor: pointer;
-
   transition:
     color 0.2s ease,
     background 0.2s ease;
@@ -394,7 +366,7 @@ h2,
 
 
 /* ==================================================
-   10. GRILLE DE PHOTOS
+   9. GRILLE DE PHOTOS
    ================================================== */
 
 .photo-feed {
@@ -414,7 +386,6 @@ h2,
 .photo-feed img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -427,93 +398,7 @@ h2,
 
 
 /* ==================================================
-   11. GRILLE ALBUM
-   Utilise toute la largeur disponible
-   ================================================== */
-
-/* Le conteneur album ne reprend pas la grille photo */
-
-.photo-feed:has(.album-grid) {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* 6 colonnes sur ordinateur */
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 24px 12px;
-
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
-
-  align-items: start;
-}
-
-.album {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/* Lecteur Bandcamp */
-
-.album iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 280px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: var(--bg);
-}
-
-/* Titres album */
-
-.album h2 {
-  margin: 14px 0 10px;
-  font-family: var(--font-h2);
-  font-size: 13px;
-  font-weight: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.5;
-  overflow-wrap: anywhere;
-}
-
-/* Descriptions */
-
-.album p {
-  margin: 0 0 14px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 1.6;
-  color: var(--text);
-  overflow-wrap: anywhere;
-}
-
-/* Informations et crédits */
-
-.album .album-info {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-
-/* ==================================================
-   12. TABLETTES
+   10. TABLETTES
    ================================================== */
 
 @media (min-width: 701px) and (max-width: 1100px) {
@@ -543,27 +428,14 @@ h2,
     column-gap: 2%;
   }
 
-  /* Grille photo */
-
-  .photo-feed:not(:has(.album-grid)) {
+  .photo-feed {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  /* Grille album : 2 colonnes */
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 16px;
-  }
-
-  .album iframe {
-    height: 380px;
   }
 }
 
 
 /* ==================================================
-   13. MOBILES
+   11. MOBILES
    ================================================== */
 
 @media (max-width: 700px) {
@@ -637,45 +509,16 @@ h2,
     max-height: 320px;
   }
 
-  /* Grille photo : 2 colonnes */
-
-  .photo-feed:not(:has(.album-grid)) {
+  .photo-feed {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     margin-top: 24px;
-  }
-
-  /* Grille album : 2 colonnes */
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 12px;
-  }
-
-  .album iframe {
-    height: 300px;
-  }
-
-  .album h2 {
-    margin: 10px 0 8px;
-    font-size: 12px;
-  }
-
-  .album p {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .album .album-info {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 1.6;
   }
 }
 
 
 /* ==================================================
-   14. PETITS ÉCRANS
+   12. PETITS ÉCRANS
    ================================================== */
 
 @media (max-width: 380px) {
@@ -684,15 +527,7 @@ h2,
     font-size: 10px;
   }
 
-  .photo-feed:not(:has(.album-grid)) {
+  .photo-feed {
     gap: 6px;
-  }
-
-  .album-grid {
-    gap: 20px 8px;
-  }
-
-  .album iframe {
-    height: 260px;
   }
 }
