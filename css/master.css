@@ -112,13 +112,12 @@ hr,
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 10px 22px;
+  gap: 8px 22px;
   width: 100%;
   min-height: var(--header-height);
   margin: 0;
   padding: 10px var(--gutter);
   background: var(--bg);
-  border-bottom: 1px solid #555;
   font-family: var(--font-menu);
   font-size: 13px;
   letter-spacing: 0.08em;
