@@ -1,47 +1,113 @@
 
+/* ==================================================
+   SUKKUBE — MASTER CSS
+   Menu commun, contenu, SoundCloud et photos
+   ================================================== */
+
+
+/* ==================================================
+   1. POLICES
+   Vérifie les chemins des fichiers de polices.
+   ================================================== */
+
 @font-face {
-  font-family: 'CommitMono';
-  src: url('../fonts/CommitMono.otf');
+  font-family: "CommitMono";
+  src: url("../fonts/CommitMono.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Future';
-  src: url('../fonts/Future-Italic.ttf');
+  font-family: "Future";
+  src: url("../fonts/Future.woff2") format("woff2");
   font-display: swap;
 }
 
-/* =========================
-   RÉGLAGES GÉNÉRAUX
-   ========================= */
 
-*,
-*::before,
-*::after {
+/* ==================================================
+   2. VARIABLES
+   ================================================== */
+
+:root {
+  --bg: #060606;
+  --text: #ccc;
+  --white: #fff;
+  --accent: #a64dff;
+  --muted: #777;
+  --line: #444;
+
+  --gutter: 2.3%;
+  --header-height: 88px;
+
+  --font-body: "CommitMono", monospace;
+  --font-menu: "Future", sans-serif;
+}
+
+
+/* ==================================================
+   3. RESET ET STYLE GÉNÉRAL
+   ================================================== */
+
+* {
   box-sizing: border-box;
 }
 
 html {
-  width: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  padding: 110px 2.3% 16px;
-  background: #060606;
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  line-height: 1.6;
-  text-align: left;
-  overflow-x: hidden;
+  padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-/* =========================
-   MENU PRINCIPAL FIXE
-   ========================= */
+img,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+a:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+}
+
+.ma-ligne {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+}
+
+
+/* ==================================================
+   4. MENU PRINCIPAL
+   Identique sur toutes les pages
+   ================================================== */
 
 .menu {
   position: fixed;
@@ -49,732 +115,483 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 26px;
+
+  gap: 10px 22px;
+
   width: 100%;
+  min-height: var(--header-height);
   margin: 0;
-  padding: 16px 2.3%;
-  background: #060606;
-  color: white;
-  font-family: Future, sans-serif;
+  padding: 12px var(--gutter);
+
+  background: var(--bg);
+  border-bottom: 1px solid #555;
+
+  font-family: var(--font-menu);
   font-size: 13px;
-  letter-spacing: 0.10em;
-  line-height: 1.6;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
   text-transform: uppercase;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tous les liens du menu */
+
+.menu > a {
+  display: block;
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 8px 0;
+
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu > a:hover {
+  color: var(--white);
+}
+
+.menu > a:active {
+  color: var(--accent);
+}
+
+/* Logo */
 
 .menu > a:first-child {
   display: flex;
-  align-items: center;
   flex: 0 0 auto;
-  margin-right: 14px;
+  align-items: center;
+
+  margin-right: 8px;
+  padding: 0;
 }
 
 .menu > a:first-child img {
   display: block;
-  width: 60px;
-  max-width: 60px;
+  width: 58px;
+  max-width: none;
   height: auto;
   object-fit: contain;
 }
 
-.menu > a:not(:first-child) {
-  display: inline-block;
-  padding: 4px 0;
-  background: transparent;
-  color: #ccc;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s ease;
+
+/* ==================================================
+   5. COLONNES PRINCIPALES
+   .menu2 : présentation
+   .main  : contenu principal
+   .menu3 : releases / SoundCloud
+   .menu4 : biographie
+   ================================================== */
+
+.layout-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 22fr)
+                         minmax(0, 48fr)
+                         minmax(0, 22fr);
+
+  column-gap: 3%;
+  row-gap: 28px;
+
+  align-items: start;
+  width: 100%;
 }
 
-.menu > a:not(:first-child):hover {
-  color: white;
+/* Colonnes latérales */
+
+.menu2,
+.menu3,
+.menu4 {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.menu > a:not(:first-child):active {
-  color: #a64dff;
-}
-
-/* =========================
-   MENU 2 — PRÉSENTATION
-   ========================= */
+/* Présentation à gauche */
 
 .menu2 {
-  position: fixed;
-  top: 145px;
-  left: 2.3%;
-  right: auto;
-  z-index: 100;
+  grid-column: 1;
+  grid-row: 1;
 
-  width: 22%;
-  max-width: 280px;
-  max-height: calc(100vh - 165px);
-  margin: 0;
-  padding: 8px;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-  overflow-wrap: anywhere;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  line-height: 1.7;
+  width: 100%;
 }
 
-/* =========================
-   MENU 3 — PLAYLIST
-   ========================= */
+/* Contenu central */
+
+.main {
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Releases et playlist à droite */
 
 .menu3 {
-  position: fixed;
-  top: 145px;
-  right: 2.3%;
-  left: auto;
-  z-index: 200;
+  grid-column: 3;
+  grid-row: 1;
 
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
 
-  width: 22%;
-  max-width: 280px;
-  height: 300px;
-  min-height: 300px;
-  max-height: 300px;
-  margin: 0;
-  padding: 8px;
+/* Biographie : sous la colonne de gauche par défaut */
 
-  overflow: hidden;
+.menu4 {
+  grid-column: 1;
+  grid-row: 2;
 
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  width: 100%;
+}
+
+
+/* ==================================================
+   6. CONTENU PRINCIPAL
+   ================================================== */
+
+.main big {
   line-height: 1.6;
 }
 
-.menu3-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex: 0 0 auto;
-
-  padding: 8px 0;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #555;
-
-  font-family: Future, sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.10em;
-}
-
-.playlist {
-  flex: 1 1 0;
-  min-height: 0;
-  height: auto;
-  max-height: none;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-
-  scrollbar-width: thin;
-  scrollbar-color: #555 transparent;
-}
-
-.playlist::-webkit-scrollbar {
-  width: 3px;
-}
-
-.playlist::-webkit-scrollbar-thumb {
-  background: #555;
-}
-
-.playlist::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.track {
-  display: block;
-  padding: 9px 7px;
-  border-bottom: 1px solid #292929;
-  color: #aaa;
-  cursor: pointer;
-
-  transition:
-    color 0.2s ease,
-    padding-left 0.2s ease,
-    background 0.2s ease;
-}
-
-.track:hover {
-  padding-left: 11px;
-  color: white;
-  background: #111;
-}
-
-.track.active {
-  color: #b56cff;
-}
-
-.track-title {
-  display: inline;
-  overflow-wrap: anywhere;
-}
-
-.track button,
-.playlist button {
-  padding: 4px 8px;
-  border: 1px solid #555;
-  border-radius: 0;
-  background: transparent;
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 10px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.track button:hover,
-.playlist button:hover {
-  background: white;
-  color: black;
-}
-
-.loading {
-  padding: 8px 0;
-  color: #777;
-  font-size: 9px;
-}
-
-/* Lecteur SoundCloud invisible */
-
-#soundcloud-player {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* =========================
-   MENU 4 — BIOGRAPHIE
-   ========================= */
-
-.menu4 {
-  position: fixed;
-  top: 465px;
-  right: 2.3%;
-  left: auto;
-  bottom: auto;
-  z-index: 100;
-
-  width: 22%;
-  max-width: 280px;
-  max-height: calc(100vh - 485px);
-  margin: 0;
-  padding: 8px;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-  overflow-wrap: anywhere;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 10px;
-  letter-spacing: 0.03em;
-  line-height: 1.7;
-}
-
-/* =========================
-   CONTENU CENTRAL
-   ========================= */
-
-.main {
-  box-sizing: border-box;
-  width: 48%;
-  margin: 0 auto;
-  padding: 8px;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  text-align: left;
-}
-
-shadowbox {
-  display: block;
-  box-sizing: border-box;
-  width: 40%;
-  margin-right: 0;
-  padding: 8px;
-
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 14px;
-  letter-spacing: 0.07em;
-}
-
-/* =========================
-   LIENS
-   ========================= */
-
-a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:link,
-a:visited {
-  color: #ccc;
-}
-
-a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-a:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 3px;
-}
-
-a:active {
-  color: #a64dff;
-}
-
-/* =========================
-   TITRES
-   ========================= */
-
-big {
-  font-family: Future, sans-serif;
-  font-size: 15px;
+.main em {
   font-style: italic;
-  text-transform: uppercase;
 }
 
-.ma-ligne {
-  width: 100%;
-  margin: 10px 0;
-  border: 0;
-  border-top: 1px solid #555;
+.main b,
+.main strong {
+  color: var(--white);
 }
 
-/* =========================
-   YOUTUBE
-   ========================= */
+/* Vidéo YouTube */
 
 .iframe-youtube {
   display: block;
   width: 100%;
-  height: auto;
   aspect-ratio: 16 / 9;
+  height: auto;
+
   border: 0;
 }
 
-/* =========================
-   GALERIE PHOTO
-   ========================= */
+/* Éviter les débordements de contenu */
 
-.photo-feed:not(:has(.album-grid)) {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-
-  width: 60%;
-  margin: 32px auto 0;
-}
-
-.photo-feed:not(:has(.album-grid)) a {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #222;
-}
-
-.photo-feed:not(:has(.album-grid)) img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.photo-feed:not(:has(.album-grid)) a:hover img {
-  transform: scale(1.04);
-  opacity: 0.8;
-}
-
-/* =========================
-   DISCOGRAPHIE
-   ========================= */
-
-.photo-feed:has(.album-grid) {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 44px 5.5%;
-
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.album {
-  min-width: 0;
-  color: white;
-  font-family: CommitMono, monospace;
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-
-.album iframe {
-  display: block;
-  width: 100%;
+.main iframe {
   max-width: 100%;
-  height: 120px;
-  border: 1px solid #333;
-  background: #000;
 }
 
-.album .album-cover {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #111;
+
+/* ==================================================
+   7. BOUTON BOOKING
+   ================================================== */
+
+.sukkube-booking-button {
+  display: inline-block;
+
+  padding: 6px 12px;
+  border: 1px solid var(--text);
+
+  color: var(--white);
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.album .album-cover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.25s ease, transform 0.3s ease;
+.sukkube-booking-button:hover {
+  color: var(--bg);
+  background: var(--white);
+  border-color: var(--white);
 }
 
-.album .album-cover:hover img {
-  opacity: 0.8;
-  transform: scale(1.02);
-}
 
-.album h2 {
-  margin: 12px 0 10px;
-  font-family: Future, sans-serif;
-  font-size: 17px;
-  font-weight: normal;
-  font-style: italic;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
+/* ==================================================
+   8. MENU RELEASES ET LECTEUR SOUNDCLOUD
+   ================================================== */
+
+.menu3-header {
+  margin: 0 0 12px;
+  color: var(--white);
+
+  font-family: var(--font-menu);
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.album p {
-  margin: 0 0 12px;
-  font-family: CommitMono, monospace;
-  font-size: 11px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+.playlist,
+#playlist {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.loading {
+  padding: 10px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Chaque morceau */
+
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  width: 100%;
+  padding: 9px 6px;
+
+  border-bottom: 1px solid #292929;
+
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.track:hover {
+  color: var(--white);
+  background: #151515;
+}
+
+.track.active {
+  color: var(--accent);
+}
+
+.track.unknown {
+  color: var(--muted);
+  cursor: default;
+}
+
+.track-play {
+  flex: 0 0 14px;
+}
+
+.track-number {
+  flex: 0 0 24px;
+  color: var(--muted);
+}
+
+.track.active .track-play,
+.track.active .track-number {
+  color: var(--accent);
+}
+
+.track-title {
+  flex: 1;
+  min-width: 0;
   overflow-wrap: anywhere;
 }
 
-.album .album-info {
-  margin-top: 16px;
-  color: #999;
-  font-size: 10px;
-  line-height: 1.8;
+/* Iframe SoundCloud */
+
+#soundcloud-player {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 166px;
+  margin-top: 12px;
+  border: 0;
 }
 
-/* =========================
-   TABLETTE
-   ========================= */
+
+/* ==================================================
+   9. GRILLE DE PHOTOS
+   ================================================== */
+
+.photo-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+
+  width: 100%;
+  margin: 36px 0 0;
+}
+
+.photo-feed a {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.photo-feed img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  transition: opacity 0.2s ease;
+}
+
+.photo-feed a:hover img {
+  opacity: 0.8;
+}
+
+
+/* ==================================================
+   10. TABLETTES
+   ================================================== */
 
 @media (min-width: 701px) and (max-width: 1100px) {
-  body {
-    padding-right: 2%;
-    padding-left: 2%;
-  }
-
-  .menu {
-    gap: 10px 18px;
-    font-size: 12px;
-  }
-
-  .menu2 {
-    left: 2%;
-    width: 20%;
-  }
-
-  .menu3 {
-    right: 2%;
-    width: 23%;
-  }
-
-  .menu4 {
-    right: 2%;
-    width: 23%;
-    top: 465px;
-  }
-
-  .main {
-    width: 48%;
-  }
-
-  .album-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px 24px;
-  }
-
-  .photo-feed:not(:has(.album-grid)) {
-    width: 75%;
-  }
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 700px) {
-  html {
-    width: 100%;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  html::-webkit-scrollbar {
-    display: none;
+  :root {
+    --gutter: 2%;
+    --header-height: 82px;
   }
 
   body {
-    width: 100%;
-    padding: 12px 14px;
-    font-size: 14px;
-    overflow-x: hidden;
-  }
-
-  .menu {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 16px;
-
-    width: 100%;
-    margin: 0 0 24px;
-    padding: 0 0 14px;
-
-    border-bottom: 1px solid #555;
-    background: transparent;
     font-size: 12px;
   }
 
-  .menu > a:first-child {
-    flex: 0 0 100%;
-    margin: 0 0 8px;
+  .menu {
+    gap: 10px 16px;
+    font-size: 12px;
   }
 
   .menu > a:first-child img {
-    width: 50px;
-    max-width: 50px;
+    width: 48px;
   }
 
-  .menu > a:not(:first-child) {
-    padding: 3px 0;
+  .layout-columns {
+    grid-template-columns: minmax(0, 23fr)
+                           minmax(0, 48fr)
+                           minmax(0, 23fr);
+    column-gap: 2%;
+  }
+
+  .photo-feed {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* ==================================================
+   11. MOBILES
+   Menu horizontal ; colonnes empilées
+   ================================================== */
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 14px;
+    --header-height: 74px;
+  }
+
+  body {
+    padding-top: calc(var(--header-height) + 16px);
+    font-size: 12px;
+  }
+
+  /* Navigation horizontale */
+
+  .menu {
+    gap: 16px;
+
+    min-height: var(--header-height);
+    padding: 8px var(--gutter);
+
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .menu > a:first-child {
+    margin-right: 0;
+  }
+
+  .menu > a:first-child img {
+    width: 44px;
+  }
+
+  /* Une colonne par bloc sur téléphone */
+
+  .layout-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
   }
 
   .menu2,
+  .main,
   .menu3,
   .menu4 {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+    position: static;
 
     width: 100%;
     max-width: none;
+    min-width: 0;
     height: auto;
-    min-height: 0;
-    max-height: none;
+    margin: 0;
+  }
 
-    margin: 20px 0;
-    padding: 8px;
+  /* Ordre de lecture sur mobile */
 
-    overflow: visible;
+  .main {
+    order: 1;
+  }
+
+  .menu2 {
+    order: 2;
   }
 
   .menu3 {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
-    overflow: hidden;
+    order: 3;
   }
 
-  .menu3 .playlist {
-    flex: 1 1 0;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  .main {
-    width: 100%;
-    margin: 20px 0;
-    padding: 8px;
-    font-size: 13px;
-    text-align: left;
-  }
-
-  shadowbox {
-    width: 100%;
-    margin: 0;
-    padding: 8px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
+  .menu4 {
+    order: 4;
   }
 
   .iframe-youtube {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
   }
 
-  .photo-feed:not(:has(.album-grid)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
-    width: 100%;
-    margin: 24px 0 0;
+  .playlist,
+  #playlist {
+    max-height: 320px;
   }
 
-  .photo-feed:has(.album-grid) {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .album-grid {
+  .photo-feed {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 14px;
+    gap: 8px;
+    margin-top: 24px;
   }
+}
 
-  .album iframe {
-    height: 110px;
-  }
 
-  .album h2 {
-    margin-top: 10px;
-    font-size: 13px;
-  }
+/* ==================================================
+   12. PETITS ÉCRANS
+   ================================================== */
 
-  .album p {
+@media (max-width: 380px) {
+  .menu {
+    gap: 13px;
     font-size: 10px;
   }
 
-  .album .album-info {
-    font-size: 9px;
+  .photo-feed {
+    gap: 6px;
   }
 }
-
-/* =========================
-   PETITS TÉLÉPHONES
-   ========================= */
-
-@media (max-width: 360px) {
-  body {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  .menu {
-    gap: 8px 13px;
-    font-size: 11px;
-  }
-
-  .album-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .album iframe {
-    height: 120px;
-  }
-}
-
-
-/* ==========================================
-   MENUS 2 ET 3 — ALIGNÉS SUR LE MENU FIXE
-   ========================================== */
-
-@media (min-width: 701px) {
-  .menu2 {
-    position: fixed;
-    top: 145px;
-    left: 2.3%;
-    right: auto;
-    z-index: 100;
-  }
-
-  .menu3 {
-    position: fixed;
-    top: 145px;
-    right: 2.3%;
-    left: auto;
-    z-index: 200;
-  }
-}
-
-/* Mobile et tablette étroite */
-@media (max-width: 700px) {
-  .menu2,
-  .menu3 {
-    position: fixed;
-    top: 120px;
-    width: 22%;
-    max-width: 280px;
-    margin: 0;
-  }
-
-  .menu2 {
-    left: 2.3%;
-    right: auto;
-  }
-
-  .menu3 {
-    left: auto;
-    right: 2.3%;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
-    overflow: hidden;
-  }
-}
-
