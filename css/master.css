@@ -49,14 +49,19 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 26px;
+
   width: 100%;
   margin: 0;
   padding: 16px 2.3%;
+
   background: #060606;
+  border-bottom: 1px solid #555;
+
   color: white;
   font-family: Future, sans-serif;
   font-size: 13px;
@@ -104,16 +109,21 @@ body {
 
 .menu2 {
   position: fixed;
-  top: 0px;
+  top: 145px;
   left: 2.3%;
+  right: auto;
   z-index: 100;
+
   width: 22%;
   max-width: 280px;
   max-height: calc(100vh - 165px);
+  margin: 0;
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -127,11 +137,14 @@ body {
 
 .menu3 {
   position: fixed;
-  top: 0px;
+  top: 145px;
   right: 2.3%;
+  left: auto;
   z-index: 200;
+
   display: flex;
   flex-direction: column;
+
   width: 22%;
   max-width: 280px;
   height: 300px;
@@ -139,7 +152,9 @@ body {
   max-height: 300px;
   margin: 0;
   padding: 8px;
+
   overflow: hidden;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -262,15 +277,20 @@ body {
   position: fixed;
   top: 465px;
   right: 2.3%;
+  left: auto;
   bottom: auto;
   z-index: 100;
+
   width: 22%;
   max-width: 280px;
   max-height: calc(100vh - 485px);
+  margin: 0;
   padding: 8px;
+
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
+
   color: white;
   font-family: CommitMono, monospace;
   font-size: 10px;
@@ -713,119 +733,3 @@ big {
     height: 120px;
   }
 }
-
-/* ==========================================
-   SUKKUBE — MENUS 2, 3 ET 4 TOUJOURS FIXES
-   ========================================== */
-
-.menu2 {
-  position: fixed;
-  top: 145px;
-  left: 2.3%;
-  right: auto;
-  z-index: 100;
-}
-
-.menu3 {
-  position: fixed;
-  top: 145px;
-  right: 2.3%;
-  left: auto;
-  z-index: 200;
-}
-
-.menu4 {
-  position: fixed;
-  top: 465px;
-  right: 2.3%;
-  left: auto;
-  bottom: auto;
-  z-index: 100;
-}
-
-/* Sur mobile aussi */
-@media (max-width: 700px) {
-  .menu2,
-  .menu3,
-  .menu4 {
-    position: fixed;
-    width: 22%;
-    max-width: 280px;
-    margin: 0;
-  }
-
-  .menu2 {
-    top: 145px;
-    left: 2.3%;
-    right: auto;
-  }
-
-  .menu3 {
-    top: 145px;
-    right: 2.3%;
-    left: auto;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
-    overflow: hidden;
-  }
-
-  .menu4 {
-    top: 465px;
-    right: 2.3%;
-    left: auto;
-    max-height: calc(100vh - 485px);
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-}
-
-
-/* ==========================================
-   MENUS 2 ET 3 — ALIGNÉS SUR LE MENU FIXE
-   ========================================== */
-
-@media (min-width: 701px) {
-  .menu2 {
-    position: fixed;
-    top: 145px;
-    left: 2.3%;
-    right: auto;
-    z-index: 100;
-  }
-
-  .menu3 {
-    position: fixed;
-    top: 145px;
-    right: 2.3%;
-    left: auto;
-    z-index: 200;
-  }
-}
-
-/* Mobile et tablette étroite */
-@media (max-width: 700px) {
-  .menu2,
-  .menu3 {
-    position: fixed;
-    top: 120px;
-    width: 22%;
-    max-width: 280px;
-    margin: 0;
-  }
-
-  .menu2 {
-    left: 2.3%;
-    right: auto;
-  }
-
-  .menu3 {
-    left: auto;
-    right: 2.3%;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
-    overflow: hidden;
-  }
-}
-
