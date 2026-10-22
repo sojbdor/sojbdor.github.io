@@ -49,19 +49,14 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px 26px;
-
   width: 100%;
   margin: 0;
   padding: 16px 2.3%;
-
   background: #060606;
-  border-bottom: 1px solid #555;
-
   color: white;
   font-family: Future, sans-serif;
   font-size: 13px;
@@ -109,19 +104,16 @@ body {
 
 .menu2 {
   position: fixed;
-  top: 145px;
+  top: 0px;
   left: 2.3%;
   z-index: 100;
-
   width: 22%;
   max-width: 280px;
   max-height: calc(100vh - 165px);
   padding: 8px;
-
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
-
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -135,13 +127,11 @@ body {
 
 .menu3 {
   position: fixed;
-  top: 145px;
+  top: 0px;
   right: 2.3%;
   z-index: 200;
-
   display: flex;
   flex-direction: column;
-
   width: 22%;
   max-width: 280px;
   height: 300px;
@@ -149,9 +139,7 @@ body {
   max-height: 300px;
   margin: 0;
   padding: 8px;
-
   overflow: hidden;
-
   color: white;
   font-family: CommitMono, monospace;
   font-size: 11px;
@@ -276,16 +264,13 @@ body {
   right: 2.3%;
   bottom: auto;
   z-index: 100;
-
   width: 22%;
   max-width: 280px;
   max-height: calc(100vh - 485px);
   padding: 8px;
-
   overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: anywhere;
-
   color: white;
   font-family: CommitMono, monospace;
   font-size: 10px;
