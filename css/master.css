@@ -11,14 +11,15 @@
    ================================================== */
 
 @font-face {
-  font-family: "CommitMono";
-  src: url("../fonts/CommitMono.woff2") format("woff2");
+		
+11 months ago
+  font-family: "CommitMono.otf";
+  src: url("../fonts/CommitMono.otf") format("otf");
   font-display: swap;
 }
-
 @font-face {
   font-family: "Future";
-  src: url("../fonts/Future.woff2") format("woff2");
+  src: url("../fonts/Future-Italic.ttf") format("ttf");
   font-display: swap;
 }
 
