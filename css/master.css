@@ -161,8 +161,6 @@ hr,
   color: var(--accent);
 }
 
-/* Logo */
-
 .menu > a:first-child {
   display: flex;
   flex: 0 0 auto;
@@ -186,12 +184,10 @@ hr,
 
 .layout-columns {
   display: grid;
-
   grid-template-columns:
     minmax(0, 22fr)
     minmax(0, 48fr)
     minmax(0, 22fr);
-
   column-gap: 3%;
   row-gap: 28px;
   align-items: start;
@@ -290,7 +286,6 @@ h2,
   border: 1px solid var(--text);
   color: var(--white);
   text-decoration: none;
-
   transition:
     color 0.2s ease,
     background 0.2s ease,
@@ -343,7 +338,6 @@ h2,
   font-size: 12px;
   line-height: 1.5;
   cursor: pointer;
-
   transition:
     color 0.2s ease,
     background 0.2s ease;
@@ -428,42 +422,46 @@ h2,
 
 /* ==================================================
    11. GRILLE ALBUM
-   Utilise toute la largeur disponible
+   Ordinateur : 6 colonnes
    ================================================== */
 
-/* Le conteneur album ne reprend pas la grille photo */
+/* Le conteneur album utilise toute la largeur du body */
 
-.photo-feed:has(.album-grid) {
+body:has(.album-grid) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body:has(.album-grid) > .photo-feed {
   display: block;
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0;
+  padding: calc(var(--header-height) + 18px) 12px 24px;
 }
 
-/* 6 colonnes sur ordinateur */
+/* Six colonnes sans largeur maximale */
 
 .album-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 24px 12px;
-
   width: 100%;
   max-width: none;
   margin: 0;
   padding: 0;
-
   align-items: start;
 }
 
 .album {
+  display: block;
   width: 100%;
   min-width: 0;
   margin: 0;
   padding: 0;
 }
 
-/* Lecteur Bandcamp */
+/* Lecteurs Bandcamp */
 
 .album iframe {
   display: block;
@@ -502,7 +500,7 @@ h2,
   overflow-wrap: anywhere;
 }
 
-/* Informations et crédits */
+/* Crédits */
 
 .album .album-info {
   margin-top: 18px;
@@ -514,6 +512,7 @@ h2,
 
 /* ==================================================
    12. TABLETTES
+   2 colonnes album
    ================================================== */
 
 @media (min-width: 701px) and (max-width: 1100px) {
@@ -543,13 +542,9 @@ h2,
     column-gap: 2%;
   }
 
-  /* Grille photo */
-
   .photo-feed:not(:has(.album-grid)) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  /* Grille album : 2 colonnes */
 
   .album-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -564,6 +559,7 @@ h2,
 
 /* ==================================================
    13. MOBILES
+   2 colonnes album
    ================================================== */
 
 @media (max-width: 700px) {
@@ -637,15 +633,16 @@ h2,
     max-height: 320px;
   }
 
-  /* Grille photo : 2 colonnes */
-
   .photo-feed:not(:has(.album-grid)) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     margin-top: 24px;
   }
 
-  /* Grille album : 2 colonnes */
+  .body:has(.album-grid) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .album-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
