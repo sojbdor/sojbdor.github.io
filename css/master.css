@@ -298,7 +298,7 @@ hr,
 }
 
 .loading {
-  padding: 10px 0;
+  padding: 8px 0;
   color: var(--muted);
   font-size: 12px;
 }
@@ -353,16 +353,6 @@ hr,
   min-width: 0;
   overflow-wrap: anywhere;
 }
-
-#soundcloud-player {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 166px;
-  margin-top: 12px;
-  border: 0;
-}
-
 
 /* ==================================================
    9. GRILLE DE PHOTOS
