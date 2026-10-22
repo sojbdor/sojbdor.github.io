@@ -374,7 +374,7 @@ hr,
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1px;
   width: 100%;
-  margin: 36px 0 0;
+  margin: 1px 0 0;
 }
 
 .photo-feed a {
