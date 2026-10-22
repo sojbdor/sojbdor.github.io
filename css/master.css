@@ -7,18 +7,21 @@
 
 /* ==================================================
    1. POLICES
-   Vérifie les chemins des fichiers de polices.
    ================================================== */
 
 @font-face {
-		
-  font-family: "CommitMono.otf";
-  src: url("../fonts/CommitMono.otf") format("otf");
+  font-family: "CommitMono";
+  src: url("../fonts/CommitMono.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Future";
-  src: url("../fonts/Future-Italic.ttf") format("ttf");
+  src: url("../fonts/Future-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -58,10 +61,8 @@ html {
 body {
   margin: 0;
   padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
-
   background: var(--bg);
   color: var(--text);
-
   font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.5;
@@ -91,12 +92,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 18px 0;
-}
-
+hr,
 .ma-ligne {
   border: 0;
   border-top: 1px solid var(--line);
@@ -106,7 +102,6 @@ hr {
 
 /* ==================================================
    4. MENU PRINCIPAL
-   Identique sur toutes les pages
    ================================================== */
 
 .menu {
@@ -147,15 +142,11 @@ hr {
   display: none;
 }
 
-/* Tous les liens du menu */
-
 .menu > a {
   display: block;
   flex: 0 0 auto;
-
   margin: 0;
   padding: 8px 0;
-
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
@@ -169,13 +160,12 @@ hr {
   color: var(--accent);
 }
 
-/* Logo */
+/* Logo : taille conservée */
 
 .menu > a:first-child {
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-
   margin-right: 8px;
   padding: 0;
 }
@@ -191,17 +181,14 @@ hr {
 
 /* ==================================================
    5. COLONNES PRINCIPALES
-   .menu2 : présentation
-   .main  : contenu principal
-   .menu3 : releases / SoundCloud
-   .menu4 : biographie
    ================================================== */
 
 .layout-columns {
   display: grid;
-  grid-template-columns: minmax(0, 22fr)
-                         minmax(0, 48fr)
-                         minmax(0, 22fr);
+  grid-template-columns:
+    minmax(0, 22fr)
+    minmax(0, 48fr)
+    minmax(0, 22fr);
 
   column-gap: 3%;
   row-gap: 28px;
@@ -210,8 +197,6 @@ hr {
   width: 100%;
 }
 
-/* Colonnes latérales */
-
 .menu2,
 .menu3,
 .menu4 {
@@ -219,42 +204,30 @@ hr {
   overflow-wrap: anywhere;
 }
 
-/* Présentation à gauche */
-
 .menu2 {
   grid-column: 1;
   grid-row: 1;
-
   width: 100%;
 }
-
-/* Contenu central */
 
 .main {
   grid-column: 2;
   grid-row: 1;
-
   width: 100%;
   min-width: 0;
   margin: 0;
 }
 
-/* Releases et playlist à droite */
-
 .menu3 {
   grid-column: 3;
   grid-row: 1;
-
   width: 100%;
   min-width: 0;
 }
 
-/* Biographie : sous la colonne de gauche par défaut */
-
 .menu4 {
   grid-column: 1;
   grid-row: 2;
-
   width: 100%;
 }
 
@@ -276,18 +249,13 @@ hr {
   color: var(--white);
 }
 
-/* Vidéo YouTube */
-
 .iframe-youtube {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
-
   border: 0;
 }
-
-/* Éviter les débordements de contenu */
 
 .main iframe {
   max-width: 100%;
@@ -300,10 +268,8 @@ hr {
 
 .sukkube-booking-button {
   display: inline-block;
-
   padding: 6px 12px;
   border: 1px solid var(--text);
-
   color: var(--white);
   text-decoration: none;
 
@@ -327,7 +293,6 @@ hr {
 .menu3-header {
   margin: 0 0 12px;
   color: var(--white);
-
   font-family: var(--font-menu);
   font-size: 13px;
   letter-spacing: 0.1em;
@@ -348,8 +313,6 @@ hr {
   font-size: 12px;
 }
 
-/* Chaque morceau */
-
 .track {
   display: flex;
   align-items: flex-start;
@@ -357,7 +320,6 @@ hr {
 
   width: 100%;
   padding: 9px 6px;
-
   border-bottom: 1px solid #292929;
 
   color: var(--text);
@@ -406,8 +368,6 @@ hr {
   overflow-wrap: anywhere;
 }
 
-/* Iframe SoundCloud */
-
 #soundcloud-player {
   display: block;
   width: 100%;
@@ -426,7 +386,6 @@ hr {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
-
   width: 100%;
   margin: 36px 0 0;
 }
@@ -443,7 +402,6 @@ hr {
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-
   transition: opacity 0.2s ease;
 }
 
@@ -476,9 +434,10 @@ hr {
   }
 
   .layout-columns {
-    grid-template-columns: minmax(0, 23fr)
-                           minmax(0, 48fr)
-                           minmax(0, 23fr);
+    grid-template-columns:
+      minmax(0, 23fr)
+      minmax(0, 48fr)
+      minmax(0, 23fr);
     column-gap: 2%;
   }
 
@@ -490,7 +449,6 @@ hr {
 
 /* ==================================================
    11. MOBILES
-   Menu horizontal ; colonnes empilées
    ================================================== */
 
 @media (max-width: 700px) {
@@ -504,14 +462,10 @@ hr {
     font-size: 12px;
   }
 
-  /* Navigation horizontale */
-
   .menu {
     gap: 16px;
-
     min-height: var(--header-height);
     padding: 8px var(--gutter);
-
     font-size: 11px;
     letter-spacing: 0.06em;
   }
@@ -523,8 +477,6 @@ hr {
   .menu > a:first-child img {
     width: 44px;
   }
-
-  /* Une colonne par bloc sur téléphone */
 
   .layout-columns {
     display: flex;
@@ -538,15 +490,12 @@ hr {
   .menu3,
   .menu4 {
     position: static;
-
     width: 100%;
     max-width: none;
     min-width: 0;
     height: auto;
     margin: 0;
   }
-
-  /* Ordre de lecture sur mobile */
 
   .main {
     order: 1;
