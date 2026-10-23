@@ -289,11 +289,6 @@ hr,
   text-transform: uppercase;
 }
 
-.logo {
-  width: 200px;
-  height: 40px;
-  object-fit: contain;
-}
 
 .playlist,
 #playlist {
