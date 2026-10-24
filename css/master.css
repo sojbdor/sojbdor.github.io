@@ -445,6 +445,8 @@ hr,
     padding: 8px var(--gutter);
     font-size: 11px;
     letter-spacing: 0.06em;
+    font-family: var(--font-body);
+
   }
 
   .menu > a:first-child {
@@ -515,6 +517,8 @@ hr,
   .menu {
     gap: 13px;
     font-size: 10px;
+    font-family: var(--font-body);
+
   }
 
   .photo-feed {
