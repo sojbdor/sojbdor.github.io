@@ -245,8 +245,8 @@ hr,
 }
 
 .main em {
-  font-family: "Future", sans-serif;
-  font-style: italic;
+  font-family: "CommitMono", monospace;
+  color: var(--accent);
 }
 
 .main b,
