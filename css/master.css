@@ -39,7 +39,7 @@
   --gutter: 2.3%;
   --header-height: 60px;
   --font-body: "CommitMono", monospace;
-  --font-h2: "Future", sans-serif;
+  --font-h2: "Future", italic;
   --font-menu: "Future", sans-serif;
 }
 
@@ -244,6 +244,7 @@ hr,
 }
 
 .main em {
+  font-family: "Future", sans-serif;
   font-style: italic;
 }
 
@@ -554,6 +555,6 @@ hr,
 }
 
 .releases h2 {
-  font-family: "Futura", sans-serif;
+  font-family: "Future", sans-serif;
   font-style: italic;
 }
