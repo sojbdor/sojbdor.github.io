@@ -295,9 +295,9 @@ hr,
 .playlist,
 #playlist {
   width: 100%;
-  max-height: 300px;
+  max-height: 125px;
   overflow-y: auto;
-  overflow-x: auto;
+  overflow-x: hidden;
   overscroll-behavior: smooth;
 }
 
