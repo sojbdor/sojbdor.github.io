@@ -229,12 +229,11 @@ hr,
 
 .menu4 {
   grid-column: 3;
-  grid-row: 2;
+  grid-row: 1;
   width: 100%;  min-width: 0;
-  margin: 0;
+  align-self: end;
+  margin-top: 0px;
 }
-
-
 
 /* ==================================================
    6. CONTENU PRINCIPAL
