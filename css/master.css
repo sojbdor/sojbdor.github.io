@@ -426,6 +426,12 @@ hr,
     font-size: 12px;
   }
 
+  .main {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   .menu > a:first-child img {
     width: 48px;
   }
@@ -500,6 +506,9 @@ hr,
 
   .main {
     order: 1;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .menu2 {
