@@ -165,8 +165,9 @@ hr,
 
 .menu > a:first-child img {
   display: block;
-  width: 200px;
-  max-width: none;
+  width: 120px !important;
+  height: auto !important;
+  max-width: none !important;
   height: auto;
   object-fit: contain;
 }
