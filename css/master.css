@@ -552,3 +552,11 @@ hr,
     gap: 6px;
   }
 }
+
+.releases h1,
+.releases h2,
+.releases h3,
+.releases h4 {
+  font-family: "Futura", sans-serif;
+  font-style: italic;
+}
