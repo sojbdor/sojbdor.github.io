@@ -87,8 +87,8 @@
       playlistElement.appendChild(message);
       return;
     }
-
-    tracks.forEach(function (sound, index) {
+      
+      tracks.slice(0, 5).forEach(function (sound, index) {
       const track = document.createElement("div");
       track.className = "track";
       track.setAttribute("role", "button");
