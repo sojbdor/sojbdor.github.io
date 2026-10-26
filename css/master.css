@@ -39,8 +39,9 @@
   --gutter: 2.3%;
   --header-height: 60px;
   --font-body: "CommitMono", monospace;
-  --font-h2: "Future", italic;
+  --font-h2: "Future", sans-serif;
   --font-menu: "Future", sans-serif;
+
 }
 
 
