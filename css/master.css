@@ -553,44 +553,45 @@ hr,
 
 
 /* ==================================================
-   13. RELEASES — ALBUMS
+   13. RELEASES — ALBUMS CARRÉS
    ================================================== */
 
-/* Grille des albums */
 .album-page .photo-feed {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
   width: 100%;
+  margin-top: 1px;
+  align-items: start;
 }
 
-/* Chaque album */
-.album-page .photo-feed .album {
+.album-page .album {
   min-width: 0;
   margin: 0;
   padding: 0;
 }
 
 /* Lecteurs Bandcamp */
-.album-page .photo-feed .album iframe {
+.album-page .album iframe {
   display: block;
-  width: 100%;
+  width: 100% !important;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  height: 350px;
+  height: auto;
   border: 0;
 }
 
-/* Titres */
+/* Titres visibles */
 .album-page .album h2 {
   display: block;
+  margin: 8px 0;
   font-family: "Future", sans-serif;
   font-style: italic;
   text-transform: uppercase;
   color: white;
 }
 
-/* Descriptions et crédits */
+/* Descriptions et crédits visibles */
 .album-page .album p {
   display: block;
 }
