@@ -1,3 +1,4 @@
+```css
 /* ==================================================
    SUKKUBE — MASTER CSS
    Menu commun, contenu, SoundCloud et photos
@@ -41,7 +42,6 @@
   --font-body: "CommitMono", monospace;
   --font-h2: "Future", sans-serif;
   --font-menu: "Future", sans-serif;
-
 }
 
 
@@ -154,7 +154,7 @@ hr,
   color: var(--accent);
 }
 
-/* Logo : taille conservée */
+/* Logo */
 
 .menu > a:first-child {
   display: flex;
@@ -169,7 +169,6 @@ hr,
   width: 180px !important;
   height: auto !important;
   max-width: none !important;
-  height: auto;
   object-fit: contain;
 }
 
@@ -195,7 +194,6 @@ hr,
     minmax(0, 22fr);
   column-gap: 3%;
   row-gap: 28px;
-
   align-items: start;
   width: 100%;
 }
@@ -231,10 +229,12 @@ hr,
 .menu4 {
   grid-column: 3;
   grid-row: 1;
-  width: 100%;  min-width: 0;
+  width: 100%;
+  min-width: 0;
   align-self: end;
-  margin-top: 0px;
+  margin-top: 0;
 }
+
 
 /* ==================================================
    6. CONTENU PRINCIPAL
@@ -303,7 +303,6 @@ hr,
   text-transform: uppercase;
 }
 
-
 .playlist,
 #playlist {
   width: 100%;
@@ -370,6 +369,7 @@ hr,
   overflow-wrap: anywhere;
 }
 
+
 /* ==================================================
    9. GRILLE DE PHOTOS
    ================================================== */
@@ -400,11 +400,6 @@ hr,
 
 .photo-feed a:hover img {
   opacity: 0.8;
-}
-
-
-.album {
-  flex: 0 0 350px;
 }
 
 
@@ -461,9 +456,9 @@ hr,
     --header-height: 74px;
   }
 
-   .right-column {
-  display: contents;
-}
+  .right-column {
+    display: contents;
+  }
 
   body {
     padding-top: calc(var(--header-height) + 16px);
@@ -540,6 +535,7 @@ hr,
   }
 }
 
+
 /* ==================================================
    12. PETITS ÉCRANS
    ================================================== */
@@ -555,23 +551,32 @@ hr,
   }
 }
 
-.album h2 {
-  font-family: "Future", sans-serif !important;
-  font-style: italic !important;
-  text-transform: uppercase;
-  color: white;
 
+/* ==================================================
+   13. RELEASES — ALBUMS
+   ================================================== */
+
+/* Masquer les titres, descriptions et crédits sous les lecteurs */
+.album-page .album h2,
+.album-page .album p,
+.album-page .album .description,
+.album-page .album .details {
+  display: none !important;
 }
 
-.album h2,
-.album p,
-.album .description,
-.album .details {
-  display: none;
+/* Afficher les lecteurs Bandcamp */
+.album-page .photo-feed .album {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.album img {
+.album-page .photo-feed .album iframe {
   display: block;
   width: 100%;
-  height: auto;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  height: 350px;
+  border: 0;
 }
+```
