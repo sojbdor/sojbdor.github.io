@@ -559,6 +559,19 @@ hr,
   font-family: "Future", sans-serif !important;
   font-style: italic !important;
   text-transform: uppercase;
-  color: var(--accent);
+  color: white;
 
+}
+
+.album h2,
+.album p,
+.album .description,
+.album .details {
+  display: none;
+}
+
+.album img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
