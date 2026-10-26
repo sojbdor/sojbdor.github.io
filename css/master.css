@@ -177,6 +177,15 @@ hr,
    5. COLONNES PRINCIPALES
    ================================================== */
 
+.right-column {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .layout-columns {
   display: grid;
   grid-template-columns:
@@ -221,8 +230,10 @@ hr,
 .menu4 {
   grid-column: 3;
   grid-row: 2;
-  width: 100%;
+  width: 100%;  min-width: 0;
+  margin: 0;
 }
+
 
 
 /* ==================================================
@@ -443,6 +454,10 @@ hr,
     --header-height: 74px;
   }
 
+   .right-column {
+  display: contents;
+}
+
   body {
     padding-top: calc(var(--header-height) + 16px);
     font-size: 12px;
@@ -514,7 +529,6 @@ hr,
     margin-top: 24px;
   }
 }
-
 
 /* ==================================================
    12. PETITS ÉCRANS
