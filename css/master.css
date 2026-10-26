@@ -559,4 +559,6 @@ hr,
   font-family: "Future", sans-serif !important;
   font-style: italic !important;
   text-transform: uppercase;
+  color: var(--accent);
+
 }
