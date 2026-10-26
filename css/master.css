@@ -553,10 +553,7 @@ hr,
   }
 }
 
-.releases h1,
-.releases h2,
-.releases h3,
-.releases h4 {
+.releases h2 {
   font-family: "Futura", sans-serif;
   font-style: italic;
 }
