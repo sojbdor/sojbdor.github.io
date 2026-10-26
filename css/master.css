@@ -555,8 +555,8 @@ hr,
   }
 }
 
-.album-page .album h2 {
-  font-family: "Future", sans-serif;
-  font-style: italic;
-  color: red !important;
+.album h2 {
+  font-family: "Future", sans-serif !important;
+  font-style: italic !important;
+  text-transform: uppercase;
 }
