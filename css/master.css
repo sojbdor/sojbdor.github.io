@@ -301,10 +301,9 @@ hr,
 .menu3-header {
   margin: 0 0 12px;
   color: var(--white);
-  font-family: var(--font-menu);
+  font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .playlist,
