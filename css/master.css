@@ -225,7 +225,6 @@ hr,
   grid-row: 1;
   width: 100%;
   min-width: 0;
-  font-family: "Commit Mono",
 }
 
 .menu4 {
@@ -235,8 +234,6 @@ hr,
   min-width: 0;
   align-self: end;
   margin-top: 0;
-  font-family: var(--font-menu);
-
 }
 
 
@@ -304,6 +301,7 @@ hr,
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.1em;
+
 }
 
 .playlist,
@@ -318,7 +316,7 @@ hr,
 .loading {
   padding: 8px 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .track {
