@@ -226,8 +226,7 @@ hr,
   grid-row: 1;
   width: 100%;
   min-width: 0;
-  font-family: var(--font-menu);
-
+  font-family: "Commit Mono",
 }
 
 .menu4 {
