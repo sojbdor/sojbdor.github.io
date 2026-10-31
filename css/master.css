@@ -1,3 +1,508 @@
+/* ==================================================
+   SUKKUBE — MASTER CSS
+   Menu commun, contenu, SoundCloud et photos
+   ================================================== */
+
+
+/* ==================================================
+   1. POLICES
+   ================================================== */
+
+@font-face {
+  font-family: "CommitMono";
+  src: url("../fonts/CommitMono.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Future";
+  src: url("../fonts/Future-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* ==================================================
+   2. VARIABLES
+   ================================================== */
+
+:root {
+  --bg: #060606;
+  --text: #ccc;
+  --white: #fff;
+  --accent: #a64dff;
+  --muted: #777;
+  --line: #444;
+  --gutter: 2.3%;
+  --header-height: 60px;
+  --font-body: "CommitMono", monospace;
+  --font-h2: "Future", sans-serif;
+  --font-menu: "Future", sans-serif;
+}
+
+
+/* ==================================================
+   3. RESET ET STYLE GÉNÉRAL
+   ================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+a:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 3px;
+}
+
+hr,
+.ma-ligne {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+}
+
+
+/* ==================================================
+   4. MENU PRINCIPAL
+   ================================================== */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px 22px;
+  width: 100%;
+  min-height: var(--header-height);
+  margin: 0;
+  padding: 10px var(--gutter);
+  background: var(--bg);
+  font-family: var(--font-menu);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu > a {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 6px 0;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu > a:hover {
+  color: var(--white);
+}
+
+.menu > a:active {
+  color: var(--accent);
+}
+
+/* Logo */
+
+.menu > a:first-child {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-right: 8px;
+  padding: 0;
+}
+
+.menu > a:first-child img {
+  display: block;
+  width: 180px !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain;
+}
+
+
+/* ==================================================
+   5. COLONNES PRINCIPALES
+   ================================================== */
+
+.right-column {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.layout-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 22fr)
+    minmax(0, 48fr)
+    minmax(0, 22fr);
+  column-gap: 3%;
+  row-gap: 28px;
+  align-items: start;
+  width: 100%;
+}
+
+.menu2,
+.menu3,
+.menu4 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--font-menu);
+
+}
+
+.menu2 {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.menu3 {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  font-family: "Commit Mono",
+}
+
+.menu4 {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  align-self: end;
+  margin-top: 0;
+  font-family: var(--font-menu);
+
+}
+
+
+/* ==================================================
+   6. CONTENU PRINCIPAL
+   ================================================== */
+
+.main big {
+  line-height: 1.6;
+}
+
+.main em {
+  font-family: "CommitMono", monospace;
+  color: var(--accent);
+}
+
+.main b,
+.main strong {
+  color: var(--white);
+}
+
+.iframe-youtube {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+.main iframe {
+  max-width: 100%;
+}
+
+
+/* ==================================================
+   7. BOUTON BOOKING
+   ================================================== */
+
+.sukkube-booking-button {
+  display: inline-block;
+  font-family: var(--font-menu);
+  padding: 6px 12px;
+  color: var(--white);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sukkube-booking-button:hover {
+  color: var(--bg);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+
+/* ==================================================
+   8. MENU RELEASES ET LECTEUR SOUNDCLOUD
+   ================================================== */
+
+.menu3-header {
+  margin: 0 0 12px;
+  color: var(--white);
+  font-family: var(--font-menu);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.playlist,
+#playlist {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: smooth;
+}
+
+.loading {
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 6px;
+  border-bottom: 1px solid #292929;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.track:hover {
+  color: var(--white);
+  background: #151515;
+}
+
+.track.active {
+  color: var(--accent);
+}
+
+.track.unknown {
+  color: var(--muted);
+  cursor: default;
+}
+
+.track-play {
+  flex: 0 0 14px;
+}
+
+.track-number {
+  flex: 0 0 24px;
+  color: var(--muted);
+}
+
+.track.active .track-play,
+.track.active .track-number {
+  color: var(--accent);
+}
+
+.track-title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   9. GRILLE DE PHOTOS
+   ================================================== */
+
+.photo-feed {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  width: 100%;
+  margin: 1px 0 0;
+  box-sizing: border-box;
+}
+
+.photo-feed a {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.photo-feed img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.photo-feed a:hover img {
+  opacity: 0.8;
+}
+
+
+/* ==================================================
+   10. TABLETTES
+   ================================================== */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  :root {
+    --gutter: 2%;
+    --header-height: 82px;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  .menu {
+    gap: 10px 16px;
+    font-size: 12px;
+  }
+
+  .main {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .menu > a:first-child img {
+    width: 48px;
+  }
+
+  .layout-columns {
+    grid-template-columns:
+      minmax(0, 23fr)
+      minmax(0, 48fr)
+      minmax(0, 23fr);
+    column-gap: 2%;
+  }
+
+  .photo-feed {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+/* ==================================================
+   11. MOBILES
+   ================================================== */
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 14px;
+    --header-height: 74px;
+  }
+
+  .right-column {
+    display: contents;
+  }
+
+  body {
+    padding-top: calc(var(--header-height) + 16px);
+    font-size: 12px;
+  }
+
+  .menu {
+    gap: 16px;
+    min-height: var(--header-height);
+    padding: 8px var(--gutter);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .menu > a:first-child {
+    margin-right: 0;
+  }
+
+  .menu > a:first-child img {
+    width: 44px;
+  }
+
+  .layout-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .menu2,
+  .main,
+  .menu3,
+  .menu4 {
+    position: static;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+  }
 
   .main {
     order: 1;
@@ -109,4 +614,3 @@
     gap: 8px;
   }
 }
-```
