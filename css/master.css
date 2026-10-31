@@ -203,7 +203,6 @@ hr,
 .menu4 {
   min-width: 0;
   overflow-wrap: anywhere;
-  font-family: var(--font-menu);
 
 }
 
@@ -226,7 +225,6 @@ hr,
   grid-row: 1;
   width: 100%;
   min-width: 0;
-  font-family: "Commit Mono",
 }
 
 .menu4 {
@@ -236,8 +234,6 @@ hr,
   min-width: 0;
   align-self: end;
   margin-top: 0;
-  font-family: var(--font-menu);
-
 }
 
 
