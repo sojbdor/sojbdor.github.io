@@ -443,10 +443,6 @@ hr,
     --header-height: 74px;
   }
 
-  .right-column {
-    display: contents;
-  }
-
   body {
     padding-top: calc(var(--header-height) + 16px);
     font-size: 12px;
@@ -477,13 +473,19 @@ hr,
 
   .menu2,
   .main,
-  .menu3,
- 
+  .menu3 {
+    position: static;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
   .main {
     order: 1;
-    max-height: 60vh;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 
   .menu2 {
@@ -491,12 +493,7 @@ hr,
   }
 
   .menu3 {
-  position: static;
-  width: 100%;
-  max-width: none;
-  min-width: 0;
-  height: auto;
-  margin: 0;
+    order: 3;
   }
 
   .iframe-youtube {
@@ -587,4 +584,52 @@ hr,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
+}
+
+/* ==================================================
+   HARMONISATION DES TROIS COLONNES
+   ================================================== */
+
+.menu2,
+.main,
+.menu3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Titres */
+.menu2 h2,
+.main h2,
+.menu3 h2 {
+  font-family: var(--font-h2);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* Textes en gras */
+.menu2 b,
+.menu2 strong,
+.main b,
+.main strong,
+.menu3 b,
+.menu3 strong {
+  color: var(--white);
+}
+
+/* Couleurs des liens */
+.menu2 a,
+.main a,
+.menu3 a {
+  color: inherit;
+}
+
+.menu2 a:hover,
+.main a:hover,
+.menu3 a:hover {
+  color: var(--accent);
 }
