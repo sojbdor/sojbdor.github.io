@@ -61,8 +61,7 @@ body {
   padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
   background: var(--bg);
   color: var(--text);
-  font-body: "CommitMono", monospace;
-  font-h2: "Future", sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.5;
   max-width: 100%;
@@ -172,19 +171,9 @@ hr,
   object-fit: contain;
 }
 
-
 /* ==================================================
    5. COLONNES PRINCIPALES
    ================================================== */
-
-.right-column {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
 
 .layout-columns {
   display: grid;
@@ -198,15 +187,18 @@ hr,
   width: 100%;
 }
 
-.menu2,
-.menu3,
-
+/* COLONNE GAUCHE */
 .menu2 {
   grid-column: 1;
   grid-row: 1;
   width: 100%;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-style: normal;
+  text-transform: none;
 }
 
+/* COLONNE CENTRALE */
 .main {
   grid-column: 2;
   grid-row: 1;
@@ -215,11 +207,13 @@ hr,
   margin: 0;
 }
 
+/* COLONNE DROITE */
 .menu3 {
   grid-column: 3;
   grid-row: 1;
   width: 100%;
   min-width: 0;
+  font-family: var(--font-body);
 }
 
 /* ==================================================
