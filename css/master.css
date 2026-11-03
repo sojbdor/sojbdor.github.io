@@ -200,12 +200,6 @@ hr,
 
 .menu2,
 .menu3,
-.menu4 {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  font-family: var(--font-menu);
-
-}
 
 .menu2 {
   grid-column: 1;
@@ -227,16 +221,6 @@ hr,
   width: 100%;
   min-width: 0;
 }
-
-.menu4 {
-  grid-column: 3;
-  grid-row: 1;
-  width: 100%;
-  min-width: 0;
-  align-self: end;
-  margin-top: 0;
-}
-
 
 /* ==================================================
    6. CONTENU PRINCIPAL
@@ -268,7 +252,6 @@ hr,
   max-width: 100%;
 }
 
-
 /* ==================================================
    7. BOUTON BOOKING
    ================================================== */
@@ -291,7 +274,6 @@ hr,
   border-color: var(--white);
 }
 
-
 /* ==================================================
    8. MENU RELEASES ET LECTEUR SOUNDCLOUD
    ================================================== */
@@ -302,7 +284,6 @@ hr,
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.1em;
-
 }
 
 .playlist,
@@ -404,7 +385,6 @@ hr,
   opacity: 0.8;
 }
 
-
 /* ==================================================
    10. TABLETTES
    ================================================== */
@@ -446,7 +426,6 @@ hr,
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
 
 /* ==================================================
    11. MOBILES
@@ -493,15 +472,7 @@ hr,
   .menu2,
   .main,
   .menu3,
-  .menu4 {
-    position: static;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    height: auto;
-    margin: 0;
-  }
-
+ 
   .main {
     order: 1;
     max-height: 60vh;
@@ -515,10 +486,6 @@ hr,
 
   .menu3 {
     order: 3;
-  }
-
-  .menu4 {
-    order: 4;
   }
 
   .iframe-youtube {
@@ -537,7 +504,6 @@ hr,
   }
 }
 
-
 /* ==================================================
    12. PETITS ÉCRANS
    ================================================== */
@@ -552,7 +518,6 @@ hr,
     gap: 6px;
   }
 }
-
 
 /* ==================================================
    13. RELEASES — ALBUMS CARRÉS
