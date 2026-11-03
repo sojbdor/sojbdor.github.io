@@ -597,6 +597,7 @@ hr,
   font-size: 13px;
   font-weight: 400;
   font-style: normal;
+  text-align: justify;
   line-height: 1.5;
   color: var(--text);
 }
