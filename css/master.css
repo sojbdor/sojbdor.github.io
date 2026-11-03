@@ -660,6 +660,7 @@ hr,
   .main,
   .menu3 {
     height: 100%;
+    font-size: 13px;
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
