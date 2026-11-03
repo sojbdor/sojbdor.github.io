@@ -479,7 +479,12 @@ hr,
   }
 
   .menu3 {
-    order: 3;
+  position: static;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: auto;
+  margin: 0;
   }
 
   .iframe-youtube {
