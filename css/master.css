@@ -633,3 +633,12 @@ hr,
 .menu3 a:hover {
   color: var(--accent);
 }
+
+@media (min-width: 701px) {
+  .menu3 {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
