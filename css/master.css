@@ -40,7 +40,6 @@
   --header-height: 60px;
   --font-body: "CommitMono", monospace;
   --font-h2: "Future", sans-serif;
-  --font-menu: "Future", sans-serif;
 }
 
 
@@ -61,7 +60,8 @@ body {
   padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-body);
+  font-body: "CommitMono", monospace;
+  font-h2: "Future", sans-serif;
   font-size: 13px;
   line-height: 1.5;
   max-width: 100%;
