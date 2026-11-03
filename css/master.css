@@ -606,9 +606,10 @@ hr,
 .menu2 h2,
 .main h2,
 .menu3 h2 {
-  font-family: var(--font-h2);
+  font-family: "Future", sans-serif !important;
   font-style: italic;
   font-weight: 400;
+  text-transform: uppercase;
   color: var(--white);
 }
 
