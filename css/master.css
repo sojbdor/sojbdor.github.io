@@ -171,6 +171,8 @@ hr,
   object-fit: contain;
 }
 
+
+
 /* ==================================================
    5. COLONNES PRINCIPALES
    ================================================== */
@@ -278,6 +280,16 @@ hr,
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: 0.1em;
+}
+
+.menu3-bio {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--text);
 }
 
 .playlist,
