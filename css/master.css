@@ -545,6 +545,18 @@ hr,
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.album-page .album:hover .album-cover {
+    filter: grayscale(0%);
+}
+
+@media (hover: none) {
+    .album-page .album:hover .album-cover {
+        filter: grayscale(100%);
+    }
 }
 
 .album-page .album-cover iframe {
@@ -599,23 +611,6 @@ hr,
   }
 }
 
-/* SUKKUBE — pochettes en noir et blanc */
-.album-page .album-cover {
-    filter: grayscale(100%);
-    transition: filter 0.4s ease;
-}
-
-/* Retour progressif à la couleur au survol */
-.album-page .album:hover .album-cover {
-    filter: grayscale(0%);
-}
-
-/* Sur mobile : garder le noir et blanc */
-@media (hover: none) {
-    .album-page .album:hover .album-cover {
-        filter: grayscale(100%);
-    }
-}
 
 /* ==================================================
    HARMONISATION DES TROIS COLONNES
