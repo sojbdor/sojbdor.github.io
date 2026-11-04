@@ -673,3 +673,17 @@ hr,
     overscroll-behavior: contain;
   }
 }
+
+/* Défilement général de la page Releases */
+.album-page {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+/* Taille uniforme des textes */
+.album-page .album-text {
+    font-size: 13px;
+    line-height: 1.4;
+}
