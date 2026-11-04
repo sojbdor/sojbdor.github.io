@@ -548,13 +548,12 @@ hr,
   flex-direction: column;
 }
 
-/* Lecteurs Bandcamp */
+/* Lecteurs Bandcamp carrés et responsives */
 .album-page .album iframe {
   display: block;
   width: 100% !important;
-  max-width: 100%;
+  height: auto !important;
   aspect-ratio: 1 / 1;
-  height: auto;
   border: 0;
 }
 
