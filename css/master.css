@@ -544,6 +544,8 @@ hr,
   min-width: 0;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Lecteurs Bandcamp */
@@ -569,6 +571,19 @@ hr,
 /* Descriptions et crédits visibles */
 .album-page .album p {
   display: block;
+  height: 110px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+
+/* Informations de production */
+.album-page .album p.album-info {
+  height: 110px;
 }
 
 /* Tablettes */
