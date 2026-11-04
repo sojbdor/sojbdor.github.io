@@ -674,16 +674,37 @@ hr,
   }
 }
 
-/* Défilement général de la page Releases */
-.album-page {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: visible;
-    overflow-x: hidden;
-}
+/* ==================================================
+   RELEASES — DÉFILEMENT VERTICAL UNIQUEMENT
+   ================================================== */
 
-/* Taille uniforme des textes */
-.album-page .album-text {
-    font-size: 13px;
-    line-height: 1.4;
+@media (min-width: 701px) {
+
+  html:has(.album-page),
+  body:has(.album-page),
+  body.album-page {
+    height: auto !important;
+    min-height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body:has(.album-page) .layout-columns,
+  body.album-page .layout-columns {
+    height: auto !important;
+    min-height: 100vh;
+    align-items: start;
+  }
+
+  body:has(.album-page) .menu2,
+  body:has(.album-page) .main,
+  body:has(.album-page) .menu3,
+  body.album-page .menu2,
+  body.album-page .main,
+  body.album-page .menu3 {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
 }
