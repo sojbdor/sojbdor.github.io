@@ -255,13 +255,14 @@ hr,
 .sukkube-booking-button {
   display: inline-block;
   font-family: var(--font-menu);
+  font-size: 13px;
   padding: 6px 12px;
   color: var(--white);
   text-decoration: none;
   transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
+    color 0.1s ease,
+    background 0.1s ease,
+    border-color 0.1s ease;
 }
 
 .sukkube-booking-button:hover {
