@@ -360,36 +360,15 @@ hr,
 
 
 /* ==================================================
-   9. GRILLE DE PHOTOS
+   9. GRILLE DE PHOTOS — IDENTITÉ SUKKUBE
    ================================================== */
 
 .photo-feed {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
   width: 100%;
-  margin: 1px 0 0;
-  box-sizing: border-box;
-}
-
-.photo-feed a {
-  display: block;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.photo-feed img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: opacity 0.2s ease;
-}
-
-.photo-feed a:hover img {
-  opacity: 0.8;
-}
+  m
 
 /* ==================================================
    10. TABLETTES
