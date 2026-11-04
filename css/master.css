@@ -552,6 +552,7 @@ hr,
 .album-page .album h2 {
   display: block;
   margin: 8px 0;
+  font-size: 13px;
   font-family: "Future", sans-serif;
   font-style: italic;
   text-transform: uppercase;
@@ -617,6 +618,7 @@ hr,
   font-family: "Future", sans-serif !important;
   font-style: italic;
   font-weight: 400;
+  font-size: 13px;
   text-transform: uppercase;
   color: var(--white);  
   line-height: 1.3;
