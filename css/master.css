@@ -11,7 +11,7 @@
 @font-face {
   font-family: "CommitMono";
   src: url("../fonts/CommitMono.otf") format("opentype");
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -19,7 +19,7 @@
 @font-face {
   font-family: "Future";
   src: url("../fonts/Future-Italic.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
@@ -286,7 +286,7 @@ hr,
 .menu3-bio {
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   line-height: 1.5;
   letter-spacing: normal;
@@ -602,7 +602,7 @@ hr,
 .menu3 {
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   text-align: justify;
   line-height: 1.4;
@@ -618,7 +618,7 @@ hr,
 .menu3 h2 {
   font-family: "Future", sans-serif !important;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 13px;
   text-transform: uppercase;
   color: var(--white);  
@@ -738,7 +738,7 @@ hr,
     display: block;
     font-family: "Future", sans-serif;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: uppercase;
     color: var(--white);
     line-height: 1.3;
