@@ -540,21 +540,21 @@ hr,
   align-items: start;
 }
 
-.album-page .album {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+.album-page .album-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
-/* Lecteurs Bandcamp carrés et responsives */
-.album-page .album iframe {
-  display: block;
+.album-page .album-cover iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1;
+  height: 600px !important;
   border: 0;
+  display: block;
 }
 
 /* Titres visibles */
@@ -578,7 +578,6 @@ hr,
   margin: 0 0 8px 0;
   color: white;
 }
-
 
 /* Informations de production */
 .album-page .album p.album-info {
