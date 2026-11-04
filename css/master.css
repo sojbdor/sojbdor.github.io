@@ -727,3 +727,29 @@ hr,
   object-fit: contain;
 }
 
+/* ==================================================
+   MUSIC WORKS — TYPOGRAPHIE
+   ================================================== */
+
+.musicworks-page .project-category,
+.musicworks-page .clip-project h2,
+.musicworks-page .film-project h2 {
+  font-family: "Future", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.musicworks-page .film-project {
+  width: 100%;
+  min-width: 0;
+}
+
+.musicworks-page .film-project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
