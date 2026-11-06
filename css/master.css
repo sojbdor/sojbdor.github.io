@@ -999,3 +999,28 @@ hr,
     }
 }
 
+/* MUSIC WORKS — images verticales uniformisées */
+.musicworks-page .album > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Galerie Coordination */
+.musicworks-page .coordination-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Espacement et largeur des images */
+.musicworks-page .photo-feed {
+    gap: 28px 16px;
+}
+
