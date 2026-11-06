@@ -1028,3 +1028,30 @@ hr,
 .musicworks-page .photo-feed {
     gap: 28px 16px;
 }
+
+/* ==================================================
+   MUSIC WORKS — HARMONISATION DES TITRES
+   Identité typographique du menu principal
+   ================================================== */
+
+/* Titres des catégories et des projets */
+.musicworks-page .photo-feed h2 {
+    font-family: var(--font-menu) !important;
+    font-size: 13px !important;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* Titres des catégories */
+.musicworks-page .photo-feed > h2 {
+    margin: 22px 0 -12px;
+}
+
+/* Titres à l'intérieur des projets */
+.musicworks-page .album h2 {
+    margin: 10px 0 8px;
+}
