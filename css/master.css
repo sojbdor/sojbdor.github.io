@@ -789,7 +789,7 @@ hr,
 
 .musicworks-page .photo-feed {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 34px 18px;
     width: 100%;
     margin-top: 18px;
@@ -923,7 +923,7 @@ hr,
 .musicworks-page .video-gallery {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
     width: 100%;
 }
@@ -998,8 +998,11 @@ hr,
         grid-template-columns: 1fr;
     }
 }
+/* ==================================================
+   MUSIC WORKS — IMAGES VERTICALES UNIFORMISÉES
+   ================================================== */
 
-/* MUSIC WORKS — images verticales uniformisées */
+/* Images des projets */
 .musicworks-page .album > img {
     display: block;
     width: 100%;
@@ -1007,9 +1010,10 @@ hr,
     height: auto;
     object-fit: cover;
     object-position: center;
+    margin: 0 0 10px;
 }
 
-/* Galerie Coordination */
+/* Images de coordination */
 .musicworks-page .coordination-gallery img {
     display: block;
     width: 100%;
@@ -1019,8 +1023,7 @@ hr,
     object-position: center;
 }
 
-/* Espacement et largeur des images */
+/* Espacement de la grille */
 .musicworks-page .photo-feed {
     gap: 28px 16px;
 }
-
