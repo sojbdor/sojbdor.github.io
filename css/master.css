@@ -1064,3 +1064,17 @@ img {
     pointer-events: none;
     cursor: default;
 }
+
+/* ==================================================
+   FOND IDENTIQUE SUR TOUTES LES PAGES
+   ================================================== */
+
+html,
+body {
+    background-color: #060606 !important;
+}
+
+body,
+.menu {
+    background: #060606 !important;
+}
