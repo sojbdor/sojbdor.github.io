@@ -778,3 +778,224 @@ hr,
     display: block;
     margin: 8px 0;
 }
+
+
+/* ==================================================
+   SUKKUBE — MUSIC WORKS
+   Harmonisation générale
+   ================================================== */
+
+/* GRILLE PRINCIPALE */
+
+.musicworks-page .photo-feed {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px 18px;
+    width: 100%;
+    margin-top: 18px;
+    align-items: start;
+}
+
+/* SUPPRESSION DES SAUTS DE LIGNE DANS LA GRILLE */
+
+.musicworks-page .photo-feed > br {
+    display: none;
+}
+
+/* TITRES DES CATÉGORIES */
+
+.musicworks-page .photo-feed > h2 {
+    grid-column: 1 / -1;
+    margin: 22px 0 -12px;
+    padding: 0 0 9px;
+    border-bottom: 1px solid #333;
+
+    font-family: var(--font-h2);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* PREMIÈRE CATÉGORIE */
+
+.musicworks-page .photo-feed > h2:first-child {
+    margin-top: 0;
+}
+
+/* BLOCS PROJETS */
+
+.musicworks-page .album {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    align-self: start;
+}
+
+/* IMAGES */
+
+.musicworks-page .album > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 0 10px;
+}
+
+/* TITRES DES PROJETS */
+
+.musicworks-page .album h2 {
+    display: block;
+    margin: 10px 0 8px;
+
+    font-family: var(--font-h2);
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* DESCRIPTIONS */
+
+.musicworks-page .album p,
+.musicworks-page .album p.album-info {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: var(--text);
+}
+
+/* LIENS */
+
+.musicworks-page .album a {
+    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: #666;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.musicworks-page .album a:hover {
+    color: var(--accent);
+}
+
+/* VIDÉOS */
+
+.musicworks-page .video-embed {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+    margin: 0 0 10px;
+}
+
+.musicworks-page .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* GALERIE FUN : GRILLE VIDÉO */
+
+.musicworks-page .video-gallery {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+.musicworks-page .video-gallery .video-embed {
+    width: 100%;
+    margin: 0;
+}
+
+/* IMAGES DE COORDINATION */
+
+.musicworks-page .album:has(> img:only-child) {
+    align-self: start;
+}
+
+/* ==================================================
+   TABLETTES
+   ================================================== */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+    .musicworks-page .photo-feed {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 14px;
+    }
+
+    .musicworks-page .video-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ==================================================
+   MOBILES
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    .musicworks-page .photo-feed {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 14px;
+    }
+
+    .musicworks-page .photo-feed > h2 {
+        margin-top: 16px;
+        margin-bottom: -8px;
+        font-size: 14px;
+    }
+
+    .musicworks-page .album h2 {
+        font-size: 13px;
+    }
+
+    .musicworks-page .album p,
+    .musicworks-page .album p.album-info {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .musicworks-page .video-gallery {
+        grid-column: 1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+/* PETITS ÉCRANS */
+
+@media (max-width: 380px) {
+
+    .musicworks-page .video-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
