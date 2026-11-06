@@ -1055,3 +1055,12 @@ hr,
 .musicworks-page .album h2 {
     margin: 10px 0 8px;
 }
+
+/* ==================================================
+   SUPPRESSION DU ZOOM SUR LES IMAGES
+   ================================================== */
+
+img {
+    pointer-events: none;
+    cursor: default;
+}
