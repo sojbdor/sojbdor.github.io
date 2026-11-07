@@ -1260,18 +1260,47 @@ body,
    ========================================================== */
 
 .menu > a:first-child img {
-  cursor: pointer;
+  position: relative;
 }
 
-.menu > a:first-child img.logo-tourne {
-  animation: rotation-logo 0.8s ease-in-out;
+/* Animation du reflet */
+.menu > a:first-child {
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes rotation-logo {
-  from {
-    transform: rotate(0deg);
+.menu > a:first-child::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu > a:first-child.logo-reflet::after {
+  animation: reflet-logo 0.7s ease-out;
+}
+
+@keyframes reflet-logo {
+  0% {
+    left: -75%;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 130%;
+    opacity: 0;
   }
 }
