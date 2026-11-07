@@ -205,3 +205,23 @@
   });
 
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".menu > a:first-child");
+
+  if (!logo) return;
+
+  logo.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    logo.classList.remove("logo-tourne");
+
+    void logo.offsetWidth;
+
+    logo.classList.add("logo-tourne");
+
+    setTimeout(() => {
+      logo.classList.remove("logo-tourne");
+    }, 800);
+  });
+});
