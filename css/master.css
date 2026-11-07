@@ -1252,3 +1252,10 @@ h6,
 .menu > a:hover {
     color: #fff;
 }
+
+/* LOGO — GRIS IDENTIQUE AU MENU */
+
+.menu > a:first-child img {
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
