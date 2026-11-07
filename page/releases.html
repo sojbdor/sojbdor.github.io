@@ -555,5 +555,61 @@
     </article>
 
   </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.photo-feed .album').forEach(function (album) {
+
+        const title = album.querySelector('h2');
+        const description = album.querySelector('p.album-info');
+
+        if (!title || !description) return;
+
+        // Création du bloc titre + bouton
+        const heading = document.createElement('div');
+        heading.className = 'album-heading';
+
+        const button = document.createElement('button');
+        button.className = 'album-toggle';
+        button.type = 'button';
+        button.textContent = '+';
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute(
+            'aria-label',
+            'Afficher les détails de ' + title.textContent
+        );
+
+        title.parentNode.insertBefore(heading, title);
+        heading.appendChild(title);
+        heading.appendChild(button);
+
+        // Création du bloc détails
+        const details = document.createElement('div');
+        details.className = 'album-details';
+        details.hidden = true;
+
+        heading.after(details);
+        details.appendChild(description);
+
+        // Ouverture et fermeture
+        button.addEventListener('click', function () {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            button.textContent = isExpanded ? '+' : '×';
+            button.setAttribute(
+                'aria-label',
+                (isExpanded ? 'Afficher les détails de ' : 'Masquer les détails de ')
+                + title.textContent
+            );
+
+            details.hidden = isExpanded;
+        });
+
+    });
+
+});
+</script>
 </body>
 </html>
