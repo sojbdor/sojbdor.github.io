@@ -1259,3 +1259,27 @@ h6,
     filter: grayscale(100%);
     opacity: 0.8;
 }
+
+/* ==================================================
+   SUKKUBE — CHARTE TYPOGRAPHIQUE COMMUNE
+   RELEASES / MUSIC WORKS / LABEL
+   ================================================== */
+
+:root {
+    --title-color: #ccc;
+    --title-letter-spacing: 0.08em;
+}
+
+/* Tous les titres des trois rubriques */
+.album-page .photo-feed h2,
+.album-page .album-heading h2 {
+    font-family: var(--font-menu) !important;
+    font-size: 13px !important;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: var(--title-letter-spacing);
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--title-color) !important;
+}
+
