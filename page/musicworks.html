@@ -701,19 +701,20 @@ Artwork : Eleonore Verger
 
     });
   </script>
+
   <script>
-document.querySelectorAll('.logo img').forEach(logo => {
-    logo.addEventListener('click', () => {
-        logo.classList.remove('rotate');
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".menu > a:first-child img");
 
-        void logo.offsetWidth;
+  if (!logo) return;
 
-        logo.classList.add('rotate');
-    });
+  logo.addEventListener("click", () => {
+    logo.classList.remove("logo-tourne");
 
-    logo.addEventListener('transitionend', () => {
-        logo.classList.remove('rotate');
-    });
+    void logo.offsetWidth;
+
+    logo.classList.add("logo-tourne");
+  });
 });
 </script>
 
