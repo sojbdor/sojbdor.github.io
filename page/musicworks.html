@@ -781,6 +781,22 @@
       </iframe>
   </div>
   </article>
+<script>
+document.querySelectorAll('.album-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const details = button.closest('.album').querySelector('.album-details');
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
 
+        button.setAttribute('aria-expanded', !isOpen);
+        button.textContent = isOpen ? '+' : '−';
+        button.setAttribute(
+            'aria-label',
+            isOpen ? 'Afficher les informations' : 'Masquer les informations'
+        );
+
+        details.hidden = isOpen;
+    });
+});
+</script>
 </body>
 </html>
