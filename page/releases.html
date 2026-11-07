@@ -720,6 +720,21 @@
 
     });
   </script>
+  <script>
+document.querySelectorAll('.logo img').forEach(logo => {
+    logo.addEventListener('click', () => {
+        logo.classList.remove('rotate');
+
+        void logo.offsetWidth;
+
+        logo.classList.add('rotate');
+    });
+
+    logo.addEventListener('transitionend', () => {
+        logo.classList.remove('rotate');
+    });
+});
+</script>
 
 </body>
 </html>
