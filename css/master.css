@@ -1079,54 +1079,17 @@ body,
     background: #060606 !important;
 }
 
-/* ==================================================
-   MUSIC WORKS — TITRE ET BOUTON +
-   ================================================== */
-
+/* TITRE ET BOUTON + */
 .musicworks-page .album-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-}
-
-.musicworks-page .album-toggle {
-    flex: 0 0 auto;
-    border: none;
-    outline: none;
-    padding: 0 4px;
-    margin: 0;
-    background: transparent;
-    color: #999;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.musicworks-page .album-toggle:hover {
-    color: var(--accent);
-}
-
-.musicworks-page .album-details {
-    padding: 0 0 8px;
-}
-
-.musicworks-page .album-details[hidden] {
-    display: none;
-}
-
-/* Bouton + à côté du titre */
-.musicworks-page .album-heading {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     gap: 8px;
     margin: 10px 0 8px;
 }
 
 .musicworks-page .album-heading h2 {
-    flex: 0 1 auto;
+    flex: 1;
     margin: 0;
 }
 
