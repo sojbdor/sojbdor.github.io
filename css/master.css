@@ -1256,6 +1256,81 @@ body,
 }
 
 /* ==========================================================
+   RELEASES — TYPOGRAPHIE ET DETAILS DEROULANTS
+   ========================================================== */
+
+/* Titres des albums */
+
+.album-page:not(.musicworks-page) .album-heading h2 {
+  font-family: var(--font-menu) !important;
+  font-size: 11px !important;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--title-color) !important;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Espacement titre et bouton */
+
+.album-page:not(.musicworks-page) .album-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
+/* Bouton + */
+
+.album-page:not(.musicworks-page) .album-toggle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: #999;
+  padding: 2px 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+}
+
+.album-page:not(.musicworks-page) .album-toggle:hover {
+  color: white;
+}
+
+/* Informations déroulantes */
+
+.album-page:not(.musicworks-page) .album-details .album-info {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.55;
+  text-align: left;
+  color: #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+/* Liens dans les descriptions */
+
+.album-page:not(.musicworks-page) .album-details a {
+  color: #ccc;
+}
+
+.album-page:not(.musicworks-page) .album-details a:hover {
+  color: white;
+}
+
+/* Masquer les détails fermés */
+
+.album-page:not(.musicworks-page) .album-details[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================
    ANIMATION DU LOGO AU CLIC
    ========================================================== */
 
