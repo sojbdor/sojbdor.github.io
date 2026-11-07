@@ -1262,3 +1262,13 @@ body,
     aspect-ratio: auto;
     object-fit: contain;
 }
+
+/* Animation du logo au clic */
+.logo img {
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.logo img:active {
+    transform: rotate(360deg);
+}
