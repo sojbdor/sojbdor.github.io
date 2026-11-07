@@ -1078,3 +1078,44 @@ body,
 .menu {
     background: #060606 !important;
 }
+
+/* ==================================================
+   MUSIC WORKS — TITRE ET BOUTON +
+   ================================================== */
+
+.musicworks-page .album-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 8px;
+}
+
+.musicworks-page .album-heading h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.musicworks-page .album-toggle {
+    flex: 0 0 auto;
+    border: 0;
+    padding: 0 4px;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.musicworks-page .album-toggle:hover {
+    color: var(--accent);
+}
+
+.musicworks-page .album-details {
+    padding: 0 0 8px;
+}
+
+.musicworks-page .album-details[hidden] {
+    display: none;
+}
