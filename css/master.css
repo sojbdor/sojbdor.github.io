@@ -1088,23 +1088,19 @@ body,
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    margin: 10px 0 8px;
-}
-
-.musicworks-page .album-heading h2 {
-    margin: 0;
-    flex: 1;
 }
 
 .musicworks-page .album-toggle {
     flex: 0 0 auto;
-    border: 0;
+    border: none;
+    outline: none;
     padding: 0 4px;
+    margin: 0;
     background: transparent;
-    color: var(--white);
-    font-family: var(--font-body);
-    font-size: 18px;
+    color: #999;
+    font-size: 20px;
     font-weight: 300;
+    line-height: 1;
     cursor: pointer;
 }
 
