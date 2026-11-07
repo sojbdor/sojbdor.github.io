@@ -1079,8 +1079,9 @@ body,
     background: #060606 !important;
 }
 
-/* TITRE ET BOUTON + */
-.musicworks-page .album-heading {
+/* TITRES ET BOUTONS DÉROULANTS SUR TOUT LE SITE */
+
+.album-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1088,12 +1089,12 @@ body,
     margin: 10px 0 8px;
 }
 
-.musicworks-page .album-heading h2 {
+.album-heading h2 {
     flex: 1;
     margin: 0;
 }
 
-.musicworks-page .album-toggle {
+.album-toggle {
     flex: 0 0 auto;
     border: none;
     padding: 0;
@@ -1106,8 +1107,12 @@ body,
     cursor: pointer;
 }
 
-.musicworks-page .album-toggle:hover {
+.album-toggle:hover {
     color: #ccc;
+}
+
+.album-details[hidden] {
+    display: none !important;
 }
 
 /* COULEUR UNIFIÉE DES TITRES */
