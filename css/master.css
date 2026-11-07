@@ -1255,12 +1255,15 @@ body,
 
 }
 
-/* Animation du logo au clic */
-.logo img {
-    transition: transform 0.8s ease;
-    cursor: pointer;
+/* ==========================================================
+   ANIMATION DU LOGO AU CLIC
+   ========================================================== */
+
+.menu > a:first-child img {
+  cursor: pointer;
+  transition: transform 0.8s ease-in-out;
 }
 
-.logo img:active {
-    transform: rotate(360deg);
+.menu > a:first-child.logo-tourne img {
+  transform: rotate(360deg);
 }
