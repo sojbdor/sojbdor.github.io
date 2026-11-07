@@ -756,8 +756,8 @@ h6 {
   width: 100%;
   height: auto;
 
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  aspect-ratio: auto;
+  object-fit: contain;
   object-position: center;
 
   max-width: 100%;
@@ -1253,14 +1253,6 @@ body,
     grid-template-columns: 1fr;
   }
 
-}
-
-/* Afficher les images en entier, sans recadrage */
-.musicworks-page .album img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
 }
 
 /* Animation du logo au clic */
