@@ -1126,3 +1126,45 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--title-color);
     letter-spacing: var(--title-letter-spacing);
 }
+
+/* RELEASES — DETAILS DÉROULANTS */
+
+.album-page .album-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 10px 0 8px;
+}
+
+.album-page .album-heading h2 {
+    flex: 1;
+    margin: 0;
+}
+
+.album-page .album-toggle {
+    flex: 0 0 auto;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: #999;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.album-page .album-toggle:hover {
+    color: #ccc;
+}
+
+.album-page .album-details[hidden] {
+    display: none !important;
+}
+
+.album-page .album-details .album-info {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+}
