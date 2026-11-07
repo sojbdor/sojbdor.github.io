@@ -1261,9 +1261,17 @@ body,
 
 .menu > a:first-child img {
   cursor: pointer;
-  transition: transform 0.8s ease-in-out;
 }
 
-.menu > a:first-child.logo-tourne img {
-  transform: rotate(360deg);
+.menu > a:first-child img.logo-tourne {
+  animation: rotation-logo 0.8s ease-in-out;
+}
+
+@keyframes rotation-logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
