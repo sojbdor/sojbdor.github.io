@@ -41,6 +41,8 @@
   --font-body: "CommitMono", monospace;
   --font-h2: "Future", sans-serif;
   --font-menu: "Future", sans-serif;
+  --title-color: var(--text);
+  --title-letter-spacing: 1.5px;
 }
 
 
@@ -1118,10 +1120,15 @@ body,
     display: none !important;
 }
 
-/* COULEUR UNIFIÉE DES TITRES */
-:root {
-    --title-color: var(--accent);
-    --title-letter-spacing: 1.5px;
+/* Couleur globale de tous les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text) !important;
+    letter-spacing: 1.5px;
 }
 
 /* Tous les titres du site */
