@@ -1214,3 +1214,41 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
   white-space: normal;
 }
+
+/* ==================================================
+   SUKKUBE — COULEUR UNIFORME DES TITRES
+   Même gris que le menu principal
+   ================================================== */
+
+:root {
+    --title-color: #ccc;
+}
+
+/* Tous les titres du site */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.menu2 h2,
+.main h2,
+.menu3 h2,
+.album-page .album h2,
+.musicworks-page .photo-feed h2,
+.musicworks-page .album h2,
+.musicworks-page .project-category,
+.musicworks-page .clip-project h2,
+.musicworks-page .film-project h2 {
+    color: #ccc !important;
+}
+
+/* Menu principal */
+.menu > a {
+    color: #ccc;
+}
+
+/* Survol */
+.menu > a:hover {
+    color: #fff;
+}
