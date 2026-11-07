@@ -1119,3 +1119,36 @@ body,
 .musicworks-page .album-details[hidden] {
     display: none;
 }
+
+/* Bouton + à côté du titre */
+.musicworks-page .album-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.musicworks-page .album-toggle {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #777;
+    border-radius: 50%;
+    background: var(--background);
+    color: #999;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.musicworks-page .album-toggle:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
