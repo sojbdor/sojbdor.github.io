@@ -1171,3 +1171,39 @@ h1, h2, h3, h4, h5, h6 {
     max-height: none;
     overflow: visible;
 }
+
+/* ==================================================
+   RELEASES — CORRECTION DU CHEVAUCHEMENT DES INFOS
+   ================================================== */
+
+.album-page .photo-feed {
+  grid-auto-rows: max-content;
+  align-items: start;
+}
+
+.album-page .album {
+  position: static;
+  display: block;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  align-self: start;
+}
+
+.album-page .album-details {
+  position: static;
+  display: block;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+}
+
+.album-page .album-details .album-info {
+  display: block;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
+}
