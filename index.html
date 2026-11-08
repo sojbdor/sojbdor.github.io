@@ -364,28 +364,6 @@
   <script src="https://w.soundcloud.com/player/api.js"></script>
   <script src="../js/player.js" defer></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.querySelector(".menu > a:first-child");
-  const img = logo?.querySelector("img");
-
-  if (!logo || !img) return;
-
-  logo.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    const destination = logo.href;
-
-    img.classList.remove("logo-tourne");
-    void img.offsetWidth;
-    img.classList.add("logo-tourne");
-
-    setTimeout(() => {
-      window.location.href = destination;
-    }, 800);
-  });
-});
-</script>
 
 </body>
 </html>
