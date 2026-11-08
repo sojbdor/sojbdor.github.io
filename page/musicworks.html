@@ -702,19 +702,5 @@ Artwork : Eleonore Verger
     });
   </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.querySelector(".menu > a:first-child");
-
-  if (!logo) return;
-
-  logo.addEventListener("click", () => {
-    logo.classList.remove("logo-reflet");
-    void logo.offsetWidth;
-    logo.classList.add("logo-reflet");
-  });
-});
-</script>
-
 </body>
 </html>
