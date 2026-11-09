@@ -1404,3 +1404,1410 @@ body,
     opacity: 0;
   }
 }
+
+/* ==========================================================
+   SUKKUBE — MASTER CSS
+   Menu commun, contenu, SoundCloud, Releases et Music Works
+   ========================================================== */
+
+
+/* ==========================================================
+   1. POLICES
+   ========================================================== */
+
+@font-face {
+  font-family: "CommitMono";
+  src: url("../fonts/CommitMono.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Future";
+  src: url("../fonts/Future-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* ==========================================================
+   2. VARIABLES
+   ========================================================== */
+
+:root {
+  --bg: #060606;
+  --text: #ccc;
+  --white: #fff;
+  --accent: #a64dff;
+  --muted: #777;
+  --line: #444;
+
+  --gutter: 2.3%;
+  --header-height: 60px;
+
+  --font-body: "CommitMono", monospace;
+  --font-h2: "Future", sans-serif;
+  --font-menu: "Future", sans-serif;
+
+  --title-color: #ccc;
+  --title-letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   3. RESET ET STYLES GÉNÉRAUX
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  padding: calc(var(--header-height) + 18px) var(--gutter) 24px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  pointer-events: none;
+  cursor: default;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+a:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 3px;
+}
+
+hr,
+.ma-ligne {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+}
+
+
+/* ==========================================================
+   4. TITRES GÉNÉRAUX
+   ========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+  letter-spacing: var(--title-letter-spacing);
+}
+
+
+/* ==========================================================
+   5. MENU PRINCIPAL
+   ========================================================== */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  gap: 8px 22px;
+
+  width: 100%;
+  min-height: var(--header-height);
+
+  margin: 0;
+  padding: 10px var(--gutter);
+
+  background: var(--bg);
+
+  font-family: var(--font-menu);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu > a {
+  display: block;
+  flex: 0 0 auto;
+
+  margin: 0;
+  padding: 6px 0;
+
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.menu > a:hover {
+  color: var(--white);
+}
+
+.menu > a:active {
+  color: var(--accent);
+}
+
+/* Logo */
+
+.menu > a:first-child {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+
+  margin-right: 8px;
+  padding: 0;
+}
+
+.menu > a:first-child img {
+  display: block;
+
+  width: 180px !important;
+  height: auto !important;
+  max-width: none !important;
+
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+
+/* ==========================================================
+   6. STRUCTURE DES TROIS COLONNES
+   ========================================================== */
+
+.layout-columns {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 22fr)
+    minmax(0, 48fr)
+    minmax(0, 22fr);
+
+  column-gap: 3%;
+  row-gap: 28px;
+
+  align-items: start;
+  width: 100%;
+}
+
+/* Colonne gauche */
+
+.menu2 {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Colonne centrale */
+
+.main {
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Colonne droite */
+
+.menu3 {
+  grid-column: 3;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   7. TYPOGRAPHIE DES TROIS COLONNES
+   ========================================================== */
+
+.menu2,
+.main,
+.menu3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+
+  text-align: justify;
+  line-height: 1.4;
+
+  color: var(--text);
+
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Titres */
+
+.menu2 h2,
+.main h2,
+.menu3 h2 {
+  font-family: var(--font-h2) !important;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+
+  text-transform: uppercase;
+  color: var(--title-color);
+
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+/* Textes */
+
+.main big {
+  line-height: 1.6;
+}
+
+.main em {
+  font-family: var(--font-body);
+  color: var(--accent);
+}
+
+.menu2 b,
+.menu2 strong,
+.main b,
+.main strong,
+.menu3 b,
+.menu3 strong {
+  color: var(--white);
+}
+
+/* Liens */
+
+.menu2 a,
+.main a,
+.menu3 a {
+  color: inherit;
+}
+
+.menu2 a:hover,
+.main a:hover,
+.menu3 a:hover {
+  color: var(--accent);
+}
+
+/* Vidéo YouTube */
+
+.iframe-youtube {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.main iframe {
+  max-width: 100%;
+}
+
+
+/* ==========================================================
+   8. BOUTON BOOKING
+   ========================================================== */
+
+.sukkube-booking-button {
+  display: inline-block;
+
+  font-family: var(--font-menu);
+  font-size: 13px;
+
+  padding: 6px 12px;
+
+  color: var(--white);
+  text-decoration: none;
+
+  transition:
+    color 0.1s ease,
+    background 0.1s ease,
+    border-color 0.1s ease;
+}
+
+.sukkube-booking-button:hover {
+  color: var(--bg);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+
+/* ==========================================================
+   9. RELEASES ET LECTEUR SOUNDCLOUD
+   ========================================================== */
+
+.menu3-header {
+  margin: 0 0 12px;
+
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.menu3-bio {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+
+  line-height: 1.5;
+  letter-spacing: normal;
+
+  color: var(--text);
+}
+
+/* Playlist */
+
+.playlist,
+#playlist {
+  width: 100%;
+  max-height: 300px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior: smooth;
+}
+
+.loading {
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  width: 100%;
+  padding: 9px 6px;
+
+  border-bottom: 1px solid #292929;
+
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.track:hover {
+  color: var(--white);
+  background: #151515;
+}
+
+.track.active {
+  color: var(--accent);
+}
+
+.track.unknown {
+  color: var(--muted);
+  cursor: default;
+}
+
+.track-play {
+  flex: 0 0 14px;
+}
+
+.track-number {
+  flex: 0 0 24px;
+  color: var(--muted);
+}
+
+.track.active .track-play,
+.track.active .track-number {
+  color: var(--accent);
+}
+
+.track-title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================
+   10. GRILLE DE PHOTOS GÉNÉRALE
+   ========================================================== */
+
+.photo-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+  width: 100%;
+}
+
+
+/* ==========================================================
+   11. PAGES RELEASES — ALBUMS
+   ========================================================== */
+
+/* Grille des pochettes */
+
+.album-page .photo-feed {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 8px;
+  width: 100%;
+  margin-top: 1px;
+
+  grid-auto-rows: max-content;
+  align-items: start;
+}
+
+/* Pochettes */
+
+.album-page .album-cover {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.album-page .album:hover .album-cover {
+  filter: grayscale(0%);
+}
+
+@media (hover: none) {
+  .album-page .album:hover .album-cover {
+    filter: grayscale(100%);
+  }
+}
+
+/* Lecteurs intégrés dans les pochettes */
+
+.album-page .album-cover iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100% !important;
+  height: 600px !important;
+
+  border: 0;
+  display: block;
+}
+
+/* Blocs albums */
+
+.album-page .album {
+  position: static;
+
+  display: block;
+  height: auto;
+
+  min-height: 0;
+  max-height: none;
+
+  overflow: visible;
+  align-self: start;
+}
+
+/* Titres des albums */
+
+.album-page .album h2,
+.album-page .album-heading h2 {
+  display: block;
+
+  font-family: var(--font-menu) !important;
+  font-size: 13px !important;
+  font-style: italic;
+  font-weight: 300;
+
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  color: var(--title-color) !important;
+
+  margin: 8px 0;
+}
+
+/* Descriptions */
+
+.album-page .album p {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: none;
+
+  overflow: visible;
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0 0 8px;
+
+  color: var(--white);
+  line-height: 1.55;
+}
+
+.album-page .album p.album-info {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Détails déroulants */
+
+.album-page .album-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin: 10px 0 8px;
+}
+
+.album-page .album-heading h2 {
+  flex: 1;
+  margin: 0;
+}
+
+.album-page .album-toggle {
+  flex: 0 0 auto;
+
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  color: #999;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.album-page .album-toggle:hover {
+  color: #ccc;
+}
+
+.album-page .album-details {
+  position: static;
+
+  display: block;
+  height: auto;
+
+  min-height: 0;
+  max-height: none;
+
+  overflow: visible;
+}
+
+.album-page .album-details[hidden] {
+  display: none !important;
+}
+
+.album-page .album-details .album-info {
+  display: block;
+
+  height: auto;
+  max-height: none;
+
+  overflow: visible;
+  white-space: normal;
+}
+
+
+/* ==========================================================
+   12. PAGE FILM
+   ========================================================== */
+
+.film-page .film-project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* ==========================================================
+   13. PAGE MUSIC WORKS — STRUCTURE GÉNÉRALE
+   ========================================================== */
+
+/* Grille principale */
+
+.musicworks-page .photo-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 28px 16px;
+
+  width: 100%;
+  margin-top: 18px;
+
+  align-items: start;
+}
+
+
+/* Suppression des retours à la ligne HTML */
+
+.musicworks-page .photo-feed > br {
+  display: none;
+}
+
+/* Titres des catégories */
+
+.musicworks-page .photo-feed > h2 {
+  grid-column: 1 / -1;
+
+  margin: 22px 0 -12px;
+  padding: 0 0 9px;
+
+  border-bottom: 1px solid #333;
+
+  font-family: var(--font-menu) !important;
+  font-size: 13px !important;
+  font-style: italic;
+  font-weight: 300;
+
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  color: var(--title-color) !important;
+}
+
+/* Première catégorie */
+
+.musicworks-page .photo-feed > h2:first-child {
+  margin-top: 0;
+}
+
+/* Blocs projets */
+
+.musicworks-page .album {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  align-self: start;
+}
+
+/* Images des projets */
+
+.musicworks-page .album > img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+
+  max-width: 100%;
+  margin: 0 0 10px;
+}
+
+/* Images horizontales */
+
+.musicworks-page .album > img.landscape {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Images seules */
+
+.musicworks-page .album:has(> img:only-child) {
+  align-self: start;
+}
+
+/* Titres des projets */
+
+.musicworks-page .album h2 {
+  display: block;
+
+  margin: 10px 0 8px;
+
+  font-family: var(--font-menu) !important;
+  font-size: 13px !important;
+  font-style: italic;
+  font-weight: 300;
+
+  letter-spacing: var(--title-letter-spacing);
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  color: var(--title-color) !important;
+}
+
+/* Descriptions */
+
+.musicworks-page .album p,
+.musicworks-page .album p.album-info {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: none;
+
+  overflow: visible;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.55;
+
+  text-align: left;
+  color: var(--text);
+}
+
+/* Liens des projets */
+
+.musicworks-page .album a {
+  color: var(--white);
+
+  text-decoration: underline;
+  text-decoration-color: #666;
+  text-underline-offset: 3px;
+
+  transition: color 0.2s ease;
+}
+
+.musicworks-page .album a:hover {
+  color: var(--accent);
+}
+
+
+/* ==========================================================
+   14. MUSIC WORKS — VIDÉOS YOUTUBE ET VIMEO
+   Dimensions uniformes pour tous les lecteurs
+   ========================================================== */
+
+/* Grille commune de toutes les vidéos */
+.musicworks-page .photo-feed {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Les vidéos seules occupent une cellule de cette grille */
+.musicworks-page .album:has(> .video-embed) {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Conteneur vidéo : format identique */
+.musicworks-page .video-embed {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+  margin: 0 0 10px;
+}
+
+/* Lecteur YouTube ou Vimeo */
+.musicworks-page .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Galerie : même grille que les autres vidéos */
+.musicworks-page .video-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.musicworks-page .video-gallery .video-embed {
+  width: 100%;
+  margin: 0;
+}
+
+/* Tablettes */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .musicworks-page .photo-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .musicworks-page .video-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobiles */
+@media (max-width: 700px) {
+  .musicworks-page .photo-feed {
+    grid-template-columns: 1fr;
+  }
+
+  .musicworks-page .video-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+
+
+/* ==========================================================
+   15. TITRES ET BOUTONS DÉROULANTS — COMMUNS
+   ========================================================== */
+
+.album-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin: 10px 0 8px;
+}
+
+.album-heading h2 {
+  flex: 1;
+  margin: 0;
+}
+
+.album-toggle {
+  flex: 0 0 auto;
+
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  color: #999;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.album-toggle:hover {
+  color: #ccc;
+}
+
+.album-details[hidden] {
+  display: none !important;
+}
+
+
+/* ==========================================================
+   16. FOND GLOBAL
+   ========================================================== */
+
+html,
+body,
+.menu {
+  background: var(--bg) !important;
+}
+
+
+/* ==========================================================
+   17. DÉFILEMENT DES COLONNES — ORDINATEUR
+   ========================================================== */
+
+@media (min-width: 701px) {
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  .layout-columns {
+    height: calc(100vh - var(--header-height) - 42px);
+    align-items: stretch;
+  }
+
+  .menu2,
+  .main,
+  .menu3 {
+    height: 100%;
+
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    overscroll-behavior: contain;
+  }
+
+}
+
+
+/* ==========================================================
+   18. RELEASES ET MUSIC WORKS — DÉFILEMENT VERTICAL
+   ========================================================== */
+
+@media (min-width: 701px) {
+
+  html:has(.album-page),
+  body:has(.album-page),
+  body.album-page {
+    height: auto !important;
+    min-height: 100%;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body:has(.album-page) .layout-columns,
+  body.album-page .layout-columns {
+    height: auto !important;
+    min-height: 100vh;
+
+    align-items: start;
+  }
+
+  body:has(.album-page) .menu2,
+  body:has(.album-page) .main,
+  body:has(.album-page) .menu3,
+  body.album-page .menu2,
+  body.album-page .main,
+  body.album-page .menu3 {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+}
+
+
+/* ==========================================================
+   19. TABLETTES
+   701 PX À 1100 PX
+   ========================================================== */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+  :root {
+    --gutter: 2%;
+    --header-height: 82px;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  /* Menu */
+
+  .menu {
+    gap: 10px 16px;
+    font-size: 12px;
+  }
+
+  .menu > a:first-child img {
+    width: 48px;
+  }
+
+  /* Colonnes */
+
+  .layout-columns {
+    grid-template-columns:
+      minmax(0, 23fr)
+      minmax(0, 48fr)
+      minmax(0, 23fr);
+
+    column-gap: 2%;
+  }
+
+  .main {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Grille générale */
+
+  .photo-feed {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Releases */
+
+  .album-page .photo-feed {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Music Works */
+
+  .musicworks-page .photo-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 14px;
+  }
+
+  .musicworks-page .video-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================================
+   20. MOBILES
+   JUSQU'À 700 PX
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  :root {
+    --gutter: 14px;
+    --header-height: 74px;
+  }
+
+  body {
+    padding-top: calc(var(--header-height) + 16px);
+    font-size: 12px;
+  }
+
+  /* Menu */
+
+  .menu {
+    gap: 16px;
+
+    min-height: var(--header-height);
+    padding: 8px var(--gutter);
+
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .menu > a:first-child {
+    margin-right: 0;
+  }
+
+  .menu > a:first-child img {
+    width: 44px;
+  }
+
+  /* Colonnes */
+
+  .layout-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 30px;
+  }
+
+  .menu2,
+  .main,
+  .menu3 {
+    position: static;
+
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    height: auto;
+    max-height: none;
+
+    margin: 0;
+
+    overflow: visible;
+  }
+
+  .main {
+    order: 1;
+  }
+
+  .menu2 {
+    order: 2;
+  }
+
+  .menu3 {
+    order: 3;
+  }
+
+  /* Vidéos */
+
+  .iframe-youtube {
+    width: 100%;
+  }
+
+  /* Playlist */
+
+  .playlist,
+  #playlist {
+    max-height: 320px;
+  }
+
+  /* Grille générale */
+
+  .photo-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  /* Releases */
+
+  .album-page .photo-feed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  /* Music Works */
+
+  .musicworks-page .photo-feed {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+    margin-top: 14px;
+  }
+
+  .musicworks-page .photo-feed > h2 {
+    margin-top: 16px;
+    margin-bottom: -8px;
+
+    font-size: 14px;
+  }
+
+  .musicworks-page .album h2 {
+    font-size: 13px;
+  }
+
+  .musicworks-page .album p,
+  .musicworks-page .album p.album-info {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Galerie Fun : 2 vidéos par ligne */
+
+  .musicworks-page .video-gallery {
+    grid-column: 1;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+}
+
+
+/* ==========================================================
+   21. TRÈS PETITS ÉCRANS
+   JUSQU'À 380 PX
+   ========================================================== */
+
+@media (max-width: 380px) {
+
+  .menu {
+    gap: 13px;
+    font-size: 10px;
+  }
+
+  .photo-feed {
+    gap: 6px;
+  }
+
+  /* Galerie Fun : 1 vidéo par ligne */
+
+  .musicworks-page .video-gallery {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ==========================================================
+   RELEASES — TYPOGRAPHIE ET DETAILS DEROULANTS
+   ========================================================== */
+
+/* Titres des albums */
+
+.album-page:not(.musicworks-page) .album-heading h2 {
+  font-family: var(--font-menu) !important;
+  font-size: 11px !important;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--title-color) !important;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Espacement titre et bouton */
+
+.album-page:not(.musicworks-page) .album-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
+/* Bouton + */
+
+.album-page:not(.musicworks-page) .album-toggle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: #999;
+  padding: 2px 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+}
+
+.album-page:not(.musicworks-page) .album-toggle:hover {
+  color: white;
+}
+
+/* Informations déroulantes */
+
+.album-page:not(.musicworks-page) .album-details .album-info {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.55;
+  text-align: left;
+  color: #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+/* Liens dans les descriptions */
+
+.album-page:not(.musicworks-page) .album-details a {
+  color: #ccc;
+}
+
+.album-page:not(.musicworks-page) .album-details a:hover {
+  color: white;
+}
+
+/* Masquer les détails fermés */
+
+.album-page:not(.musicworks-page) .album-details[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================
+   ANIMATION DU LOGO AU CLIC
+   ========================================================== */
+
+.menu > a:first-child img {
+  position: relative;
+}
+
+/* Animation du reflet */
+.menu > a:first-child {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu > a:first-child::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu > a:first-child.logo-reflet::after {
+  animation: reflet-logo 0.7s ease-out;
+}
+
+@keyframes reflet-logo {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    left: 130%;
+    opacity: 0;
+  }
+}
