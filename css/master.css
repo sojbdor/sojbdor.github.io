@@ -150,6 +150,7 @@ h6 {
   margin: 0;
   padding: 10px var(--gutter);
 
+  box-sizing: border-box;
   background: var(--bg);
 
   font-family: var(--font-menu);
@@ -188,7 +189,7 @@ h6 {
   color: var(--accent);
 }
 
-/* Logo */
+/* LOGO */
 
 .menu > a:first-child {
   display: flex;
@@ -204,11 +205,79 @@ h6 {
 
   width: 180px !important;
   height: auto !important;
-  max-width: none !important;
+  max-width: 100% !important;
 
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.8;
+}
+
+/* ==========================================================
+   VERSION MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 768px) {
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    min-height: auto;
+    height: auto;
+
+    padding: 8px 12px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px 14px;
+
+    overflow: visible;
+    box-sizing: border-box;
+
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .menu > a {
+    white-space: normal;
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  .menu > a:first-child {
+    flex: 0 0 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .menu > a:first-child img {
+    width: 110px !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* PETITS TELEPHONES */
+
+@media screen and (max-width: 380px) {
+
+  .menu {
+    gap: 4px 10px;
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .menu > a:first-child img {
+    width: 90px !important;
+  }
 }
 
 
