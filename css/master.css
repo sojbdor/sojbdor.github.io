@@ -5355,3 +5355,31 @@ body,
 
 }
 
+/* ==========================================================
+   TOUS LES TITRES : 13PX SUR TOUS LES ÉCRANS
+   ========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.08em;
+
+  }
+}
