@@ -2811,3 +2811,15 @@ body,
     opacity: 0;
   }
 }
+
+/* FORCE LA TYPOGRAPHIE DU MENU SUR MOBILE */
+
+@media (max-width: 700px) {
+  .menu,
+  .menu > a {
+    font-family: "Future", sans-serif !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+  }
+}
