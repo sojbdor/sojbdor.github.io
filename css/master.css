@@ -844,7 +844,7 @@ h6 {
 
 /* Grille commune de toutes les vidéos */
 .musicworks-page .photo-feed {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* Les vidéos seules occupent une cellule de cette grille */
