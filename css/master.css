@@ -147,6 +147,8 @@ h6 {
   font-family: var(--font-menu);
   font-size: 13px;
   letter-spacing: 0.08em;
+  border-bottom: 3px solid #333;
+  padding-bottom: 9px;
   line-height: 1.4;
   text-transform: uppercase;
   overflow-x: auto;
