@@ -358,8 +358,8 @@ h6 {
 .main strong,
 .menu3 b,
 .menu3 strong {
-  color: var(--white);
-}
+ color: inherit;
+  font-weight: bold;}
 
 /* Liens */
 
